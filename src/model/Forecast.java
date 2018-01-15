@@ -2,7 +2,6 @@ package model;
 
 import java.util.Date;
 
-
 public class Forecast {
 	
 	private int f_id;
