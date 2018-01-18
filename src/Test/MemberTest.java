@@ -7,6 +7,8 @@ import java.util.Date;
 
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -14,26 +16,15 @@ import dao.IMemberDao;
 import model.Member;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "/test/applicationContext.xml" })
-public class MemberTest {
-	@Autowired
-	public static IMemberDao memberDao;
 
+public class MemberTest {
 	public static void main(String[] args){
+		ApplicationContext context
+		= new GenericXmlApplicationContext("/Test/applicationContext.xml");
+		IMemberDao memberDao = context.getBean("memberDao",IMemberDao.class);
+		
 		for(Member m : memberDao.selectAllMember())
 			System.out.println(m);
-		/* try{
-	          Class.forName("org.mariadb.jdbc.Driver");  
-
-	        Connection connection = DriverManager.getConnection(  
-	                "jdbc:mariadb://localhost:3306/goldrush", "root", "");  
-	        Statement statement = connection.createStatement(); 
-
-	        String uname="root",pass="bigdata";
-	       statement.executeUpdate("insert into user values('"+uname+"','"+pass+"')");
-	       }//end of try block
-		 catch()*/
-		
 		
 //		Member member = new Member();
 //		Date today = new Date();
