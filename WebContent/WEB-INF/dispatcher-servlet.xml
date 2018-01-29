@@ -7,8 +7,8 @@
 	
 	<context:component-scan base-package="controller"></context:component-scan>
 
+ 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
 		<property name="prefix" value="/WEB-INF/jsp/"></property> <property name="suffix" 
-		value=".jsp"></property> </bean>
-
+		value=".jsp"></property> </bean> 
 </beans>
