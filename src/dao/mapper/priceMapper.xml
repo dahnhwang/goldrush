@@ -3,7 +3,24 @@
 
 <mapper namespace="dao.IPriceDao">
 
+	<resultMap type="price" id="priceMap">
+		<id column="g_id" property="g_id" />
+		<result column="gold_price" property="gold_price" />
+		<result column="gold_date" property="gold_date" />
+		<result column="ex_rate" property="ex_rate" />
+	</resultMap>
 
+	<insert id="insertPrice" useGeneratedKeys="true" keyProperty="g_id"
+		parameterType="price">
+		INSERT INTO price VALUES(0, #{gold_price}, #{gold_date}, #{ex_rate})
+	</insert>
+	<delete id="deletePrice" parameterType="int">
+		DELETE FROM price WHERE g_id=#{g_id}
+	</delete>
+
+	<select id="selectPrice" parameterType="int" resultMap="priceMap">
+		SELECT * FROM price WHERE g_id=#{g_id}
+	</select>
 
 
 

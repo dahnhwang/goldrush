@@ -2,9 +2,36 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="dao.IForecastOthersDao">
+	<resultMap type="forecastOthers" id="forecastOthersMap">
+		<id column="f_others_id" property="f_others_id"/>
+		<result column="f_others_getdate" property="f_others_getdate"/>
+		<result column="f_others_date" property="f_others_date" />	
+		<result column="f_others_site" property="f_others_site" />
+		<result column="f_others_period" property="f_others_period" />
+		<result column="f_others_max" property="f_others_max" />
+		<result column="f_others_min" property="f_others_min" />
+		<result column="f_others_price" property="f_others_price" />
+		<result column="f_others_error" property="f_others_error" />
+	</resultMap>
 
+	<insert id="insertForecastOthers" keyProperty="f_others_id" useGeneratedKeys="true"
+		parameterType="forecast_others">
+		INSERT INTO forecast_others VALUES (0, #{f_others_getdate}, #{f_others_date}, #{f_others_site},
+		#{f_others_period}, #{f_others_max}, #{f_others_min}, #{f_others_price}, #{f_others_error})
+	</insert>
 
+	<delete id="deleteForecastOthers" parameterType="int">
+		DELETE FROM forecast_others WHERE
+		f_others_id=#{f_others_id}
+	</delete>
 
+	<select id="selectAllForecastOthers" resultMap="forecastMap">
+		SELECT * FROM forecast_others
+	</select>
 
+	<select id="selectForecastOthers" parameterType="int" resultMap="forecast_othersMap">
+		SELECT *
+		FROM forecast_others WHERE f_others_id=#{f_others_id}
+	</select>
 
 </mapper>

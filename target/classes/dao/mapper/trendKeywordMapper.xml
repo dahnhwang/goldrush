@@ -2,9 +2,43 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="dao.ITrendKeywordDao">
+	<resultMap type="trendKeyword" id="trendKeywordMap">
+		<id column="k_id" property="k_id" />
+		<result column="k_month" property="k_month" />
+		<result column="keyword1" property="keyword1" />
+		<result column="keyword2" property="keyword2" />
+		<result column="keyword3" property="keyword3" />
+		<result column="keyword4" property="keyword4" />
+		<result column="keyword5" property="keyword5" />
+		<result column="keyword6" property="keyword6" />
+		<result column="keyword7" property="keyword7" />
+		<result column="keyword8" property="keyword8" />
+		<result column="keyword9" property="keyword9" />
+		<result column="keyword10" property="keyword10" />
+		<result column="keyword1_freq" property="keyword1_freq" />
+		<result column="keyword2_freq" property="keyword2_freq" />
+		<result column="keyword3_freq" property="keyword3_freq" />
+		<result column="keyword4_freq" property="keyword4_freq" />
+		<result column="keyword5_freq" property="keyword5_freq" />
+		<result column="keyword6_freq" property="keyword6_freq" />
+		<result column="keyword7_freq" property="keyword7_freq" />
+		<result column="keyword8_freq" property="keyword8_freq" />
+		<result column="keyword9_freq" property="keyword9_freq" />
+		<result column="keyword10_freq" property="keyword10_freq" />
+		<result column="k_total" property="k_total" />
+	</resultMap>
+	<insert id="insertTrendKeyword" useGeneratedKeys="true" keyProperty="k_id"
+		parameterType="trendKeyword">
+		INSERT INTO trend_keywords VALUES(0, #{k_month}, #{keyword1}, #{keyword2}, #{keyword3}, #{keyword4}, #{keyword5}, #{keyword6}, #{keyword7}, #{keyword8}, #{keyword9}, #{keyword10},
+		, #{keyword1_freq}, #{keyword2_freq}, #{keyword3_freq}, #{keyword4_freq}, #{keyword5_freq}, #{keyword6_freq}, #{keyword7_freq}, #{keyword8_freq}, #{keyword9_freq}, #{keyword10_freq}
+		)
+	</insert>
+	<delete id="deleteTrendKeyword" parameterType="int">
+		DELETE FROM trend_keywords WHERE k_id=#{k_id}
+	</delete>
 
-
-
-
+	<select id="selectTrendKeyword" parameterType="int" resultMap="trendKeywordMap">
+		SELECT * FROM trend_keywords WHERE k_id=#{k_id}
+	</select>
 
 </mapper>

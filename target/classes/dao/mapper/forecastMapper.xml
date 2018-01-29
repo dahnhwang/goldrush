@@ -2,9 +2,46 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="dao.IForecastDao">
+	<resultMap type="forecast" id="forecastMap">
+		<id column="f_id" property="f_id"/>
+		<result column="f_date" property="f_date"/>
+		<result column="f_period" property="f_period" />	
+		<result column="f_max" property="f_max" />
+		<result column="f_min" property="f_min" />
+		<result column="f_goldprice" property="f_goldprice" />
+		<result column="f_error" property="f_error" />
+		
+	</resultMap>
+	
+	<insert id="insertForecast" keyProperty="f_id" useGeneratedKeys="true"
+		parameterType="forecast">
+		INSERT INTO forecast VALUES (0, #{f_date}, #{f_period}, #{f_max},
+		#{f_min}, #{f_goldprice}, #{f_error})
+	</insert>
 
+	<delete id="deleteForecast" parameterType="int">
+		DELETE FROM forecast WHERE
+		f_id=#{f_id}
+	</delete>
 
+	<select id="selectAllForecast" resultMap="forecastMap">
+		SELECT * FROM forecast
+	</select>
 
+	<select id="selectForecast" parameterType="int" resultMap="forecastMap">
+		SELECT *
+		FROM forecast WHERE f_id=#{f_id}
+	</select>
 
+	<update id="updateComment" parameterType="forecast">
+		UPDATE forecast SET
+		f_id=#{f_id},
+		f_date=#{f_date},
+		f_period=#{f_period},
+		f_max=${f_max},
+		f_min=${f_min},
+		f_goldprice=${f_goldprice},
+		f_error=${f_error} WHERE f_id=#{f_id}
+	</update>
 
 </mapper>
