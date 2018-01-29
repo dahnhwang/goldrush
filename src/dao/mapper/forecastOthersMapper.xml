@@ -15,7 +15,7 @@
 	</resultMap>
 
 	<insert id="insertForecastOthers" keyProperty="f_others_id" useGeneratedKeys="true"
-		parameterType="forecast_others">
+		parameterType="forecastOthers">
 		INSERT INTO forecast_others VALUES (0, #{f_others_getdate}, #{f_others_date}, #{f_others_site},
 		#{f_others_period}, #{f_others_max}, #{f_others_min}, #{f_others_price}, #{f_others_error})
 	</insert>
@@ -25,11 +25,11 @@
 		f_others_id=#{f_others_id}
 	</delete>
 
-	<select id="selectAllForecastOthers" resultMap="forecastMap">
+	<select id="selectAllForecastOthers" resultMap="forecastOthersMap">
 		SELECT * FROM forecast_others
 	</select>
 
-	<select id="selectForecastOthers" parameterType="int" resultMap="forecast_othersMap">
+	<select id="selectForecastOthers" parameterType="int" resultMap="forecastOthersMap">
 		SELECT *
 		FROM forecast_others WHERE f_others_id=#{f_others_id}
 	</select>
