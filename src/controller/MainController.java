@@ -13,6 +13,12 @@ public class MainController{
 		return mav;
 	}
 	
+	@RequestMapping("trend.do")
+	public ModelAndView trend() {
+		ModelAndView mav = new ModelAndView();
+		return mav;
+	}
+	
 //	@RequestMapping(value="/pages/news.do")
 	@RequestMapping("news.do")
 	public ModelAndView news() {
@@ -23,6 +29,16 @@ public class MainController{
 		return mav;
 	}
 	
+	@RequestMapping("forecast.do")
+	public ModelAndView forecast() {
+		ModelAndView mav = new ModelAndView();
+		return mav;
+	}
+	@RequestMapping("history.do")
+	public ModelAndView history() {
+		ModelAndView mav = new ModelAndView();
+		return mav;
+	}
 }
 
 
