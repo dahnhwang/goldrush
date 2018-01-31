@@ -74,11 +74,11 @@
                                             <div class="card">
                                                 <span class="side"> Gold24K<b style="display:inline-block;float:right; margin:0 35px 0 0;">Buy</b>
                                                     <hr>
-                                                    <p class="text-muted">178,200원</p>    
+                                                    <p class="text-muted">${gold24Buy} won </p>    
                                                 </span>
                                                 <span class="side back">Gold24K<b style="display:inline-block;float:right; margin:0 35px 0 0;">Sell</b>
                                                     <hr>
-                                                    <p class="text-muted">168,200</p>    
+                                                    <p class="text-muted">${gold24Sell } won</p>    
                                                 </span>
                                             </div>
                                         </div>
@@ -87,13 +87,13 @@
                                     <div class="btn-box big span4 ">
                                         <div class="card-container ">
                                             <div class="card">
-                                                <span class="side"> Gold24K<b style="display:inline-block;float:right; margin:0 35px 0 0;">Buy</b>
+                                                <span class="side"> Gold18K<b style="display:inline-block;float:right; margin:0 35px 0 0;">Buy</b>
                                                     <hr>
-                                                    <p class="text-muted">178,200원</p>    
+                                                    <p class="text-muted">${gold18Buy} won</p>    
                                                 </span>
-                                                <span class="side back">Gold24K<b style="display:inline-block;float:right; margin:0 35px 0 0;">Sell</b>
+                                                <span class="side back">Gold18K<b style="display:inline-block;float:right; margin:0 35px 0 0;">Sell</b>
                                                     <hr>
-                                                    <p class="text-muted">168,200</p>    
+                                                    <p class="text-muted">${gold18Sell } won</p>    
                                                 </span>
                                             </div>
                                         </div>
@@ -102,13 +102,13 @@
                                     <div class="btn-box big span4 ">
                                         <div class="card-container ">
                                             <div class="card">
-                                                <span class="side"> Gold24K<b style="display:inline-block;float:right; margin:0 35px 0 0;">Buy</b>
+                                                <span class="side"> Gold14K<b style="display:inline-block;float:right; margin:0 35px 0 0;">Buy</b>
                                                     <hr>
-                                                    <p class="text-muted">178,200원</p>    
+                                                    <p class="text-muted">${gold14Buy} won</p>    
                                                 </span>
-                                                <span class="side back">Gold24K<b style="display:inline-block;float:right; margin:0 35px 0 0;">Sell</b>
+                                                <span class="side back">Gold14K<b style="display:inline-block;float:right; margin:0 35px 0 0;">Sell</b>
                                                     <hr>
-                                                    <p class="text-muted">168,200</p>    
+                                                    <p class="text-muted">${gold14Sell } won</p>    
                                                 </span>
                                             </div>
                                         </div>
