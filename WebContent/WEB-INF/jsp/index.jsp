@@ -60,7 +60,7 @@
                         <!--/.sidebar-->
                     </div>
                     <!--/.span3-->
-                    <div class="span10" style="margin: 0 auto; float: initial; clear: both;">
+                    <div class="span12" style="margin: 0 auto; float: initial; clear: both;">
                         <div class="center-join">
                             <span>미래를 알고 <br> 현명하게 투자하세요.<br>
                                <input type="button" class="btn join-btn" value="가입하기">
