@@ -26,7 +26,7 @@
     <div class="wrapper">
         <div class="container">
             <!--/.span3-->
-            <div class="span11" style="margin: 0 auto; float: initial;">
+            <div class="span12" style="margin: 0 auto; float: initial;">
                 <div class="content">
                     <!-- Forecast -->
                     <h2>Gold Price History</h2>

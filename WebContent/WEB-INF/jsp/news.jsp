@@ -22,7 +22,7 @@
                 <!--<div class="">-->
                    
                     <!--/.span3-->
-                    <div class="span10" style="margin: 0 auto; float: initial; clear: both;">
+                    <div class="span12" style="margin: 0 auto; float: initial; clear: both;">
                         
                         
                         <div class="content">
