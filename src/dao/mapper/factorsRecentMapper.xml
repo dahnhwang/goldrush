@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.IFactorsRecentDao">
+	<resultMap type="factorsRecent" id="factorsRecentMap">
+	</resultMap>
+
+	<select id="selectAllFactorsRecent" resultMap="factorsRecentMap">
+		SELECT * FROM factors_recent
+	</select>
+
+	<select id="selectFactorsRecent" parameterType="int" resultMap="factorsRecentMap">
+		SELECT *
+		FROM factors_recent WHERE fr_id=#{fr_id}
+	</select>
+
+</mapper>

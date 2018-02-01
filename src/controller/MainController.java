@@ -1,13 +1,16 @@
 package controller;
 
 import java.text.DecimalFormat;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import model.FactorsRecent;
 import model.Price;
+import service.IFactorsRecentService;
 import service.IPriceService;
 
 @Controller
@@ -16,36 +19,26 @@ public class MainController {
 	@Autowired
 	private IPriceService pService;
 
+	@Autowired
+	private IFactorsRecentService frService;
+
 	@RequestMapping("index.do")
 	public ModelAndView index() {
-		Price goldPrice = pService.goldPrice();
-		double exRate = goldPrice.getEx_rate();
-		double goldBuy = goldPrice.getGold_buy();
-		double goldSell = goldPrice.getGold_sell();
-		double gold24Buy = goldBuy / 28.35 * 3.75 * exRate;
-		double gold24Sell = goldSell / 28.35 * 3.75 * exRate;
-		double gold18Buy = goldBuy / 28.35 * 3.75 * 0.825 * exRate;
-		double gold18Sell = goldSell / 28.35 * 3.75 * 0.825 * exRate;
-		double gold14Buy = goldBuy / 28.35 * 3.75 * 0.6435 * exRate;
-		double gold14Sell = goldSell / 28.35 * 3.75 * 0.6435 * exRate;
 
-		DecimalFormat df = new DecimalFormat("#,##0.00");
-		
-		String gold24Buy1 = df.format(gold24Buy);
-		String gold24Sell1 = df.format(gold24Sell);
-		String gold18Buy1 = df.format(gold18Buy);
-		String gold18Sell1 = df.format(gold18Sell);
-		String gold14Buy1 = df.format(gold14Buy);
-		String gold14Sell1 = df.format(gold14Sell);
+		Price goldPrice = pService.goldPrice();
+		List<String> goldPriceResult = pService.goldPriceResult();
+
+		List<FactorsRecent> recentAll = frService.factorsRecentAll();
+		FactorsRecent recentResult1Day = frService.factorsRecentResultSomedays(1);
+		FactorsRecent recentResult5Day = frService.factorsRecentResultSomedays(5);
 
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("gold24Buy", gold24Buy1);
-		mav.addObject("gold24Sell", gold24Sell1);
-		mav.addObject("gold18Buy", gold18Buy1);
-		mav.addObject("gold18Sell", gold18Sell1);
+
 		mav.addObject("goldPrice", goldPrice);
-		mav.addObject("gold14Buy", gold14Buy1);
-		mav.addObject("gold14Sell", gold14Sell1);
+		mav.addObject("goldPriceResult", goldPriceResult);
+		mav.addObject("recentAll", recentAll);
+		mav.addObject("result1Day", recentResult1Day);
+		mav.addObject("result5Day", recentResult5Day);
 		return mav;
 	}
 
