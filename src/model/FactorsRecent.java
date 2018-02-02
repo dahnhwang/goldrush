@@ -8,13 +8,12 @@ public class FactorsRecent {
 	private double gold_price;
 	private String gold_price_rate;
 	private Date gold_price_date;
-	
-	private double dow_jones_price;
-	private String dow_jones_price_rate;
-	private Date dow_jones_price_date;
-	private double sp500;
-	private String sp500_rate;
-	private Date sp500_date;
+	private double dow_jones;
+	private String dow_jones_rate;
+	private Date dow_jones_date;
+	private double sp_500;
+	private String sp_500_rate;
+	private Date sp_500_date;
 	private double dollar_index;
 	private String dollar_index_rate;
 	private Date dollar_index_date;
@@ -41,7 +40,7 @@ public class FactorsRecent {
 	private Date gold_mine_date;
 	private double uncertainty;
 	private String uncertainty_rate;
-	private Date uncertainty_date;
+	private Date uncertainty_time;
 	private double money_stock;
 	private String money_stock_rate;
 	private Date money_stock_date;
@@ -78,52 +77,52 @@ public class FactorsRecent {
 		this.gold_price_date = gold_price_date;
 	}
 
-	public double getDow_jones_price() {
-		return dow_jones_price;
+	public double getDow_jones() {
+		return dow_jones;
 	}
 
-	public void setDow_jones_price(double dow_jones_price) {
-		this.dow_jones_price = dow_jones_price;
+	public void setDow_jones(double dow_jones) {
+		this.dow_jones = dow_jones;
 	}
 
-	public String getDow_jones_price_rate() {
-		return dow_jones_price_rate;
+	public String getDow_jones_rate() {
+		return dow_jones_rate;
 	}
 
-	public void setDow_jones_price_rate(String dow_jones_price_rate) {
-		this.dow_jones_price_rate = dow_jones_price_rate;
+	public void setDow_jones_rate(String dow_jones_rate) {
+		this.dow_jones_rate = dow_jones_rate;
 	}
 
-	public Date getDow_jones_price_date() {
-		return dow_jones_price_date;
+	public Date getDow_jones_date() {
+		return dow_jones_date;
 	}
 
-	public void setDow_jones_price_date(Date dow_jones_price_date) {
-		this.dow_jones_price_date = dow_jones_price_date;
+	public void setDow_jones_date(Date dow_jones_date) {
+		this.dow_jones_date = dow_jones_date;
 	}
 
-	public double getSp500() {
-		return sp500;
+	public double getSp_500() {
+		return sp_500;
 	}
 
-	public void setSp500(double sp500) {
-		this.sp500 = sp500;
+	public void setSp_500(double sp_500) {
+		this.sp_500 = sp_500;
 	}
 
-	public String getSp500_rate() {
-		return sp500_rate;
+	public String getSp_500_rate() {
+		return sp_500_rate;
 	}
 
-	public void setSp500_rate(String sp500_rate) {
-		this.sp500_rate = sp500_rate;
+	public void setSp_500_rate(String sp500_rate) {
+		this.sp_500_rate = sp500_rate;
 	}
 
-	public Date getSp500_date() {
-		return sp500_date;
+	public Date getSp_500_date() {
+		return sp_500_date;
 	}
 
-	public void setSp500_date(Date sp500_date) {
-		this.sp500_date = sp500_date;
+	public void setSp_500_date(Date sp_500_date) {
+		this.sp_500_date = sp_500_date;
 	}
 
 	public double getDollar_index() {
@@ -334,12 +333,12 @@ public class FactorsRecent {
 		this.uncertainty_rate = uncertainty_rate;
 	}
 
-	public Date getUncertainty_date() {
-		return uncertainty_date;
+	public Date getUncertainty_time() {
+		return uncertainty_time;
 	}
 
-	public void setUncertainty_date(Date uncertainty_date) {
-		this.uncertainty_date = uncertainty_date;
+	public void setUncertainty_time(Date uncertainty_time) {
+		this.uncertainty_time = uncertainty_time;
 	}
 
 	public double getMoney_stock() {
@@ -369,9 +368,9 @@ public class FactorsRecent {
 	@Override
 	public String toString() {
 		return "FactorsRecent [fr_id=" + fr_id + ", gold_price=" + gold_price + ", gold_price_rate=" + gold_price_rate
-				+ ", gold_price_date=" + gold_price_date + ", dow_jones_price=" + dow_jones_price
-				+ ", dow_jones_price_rate=" + dow_jones_price_rate + ", dow_jones_price_date=" + dow_jones_price_date
-				+ ", sp500=" + sp500 + ", sp500_rate=" + sp500_rate + ", sp500_date=" + sp500_date + ", dollar_index="
+				+ ", gold_price_date=" + gold_price_date + ", dow_jones=" + dow_jones
+				+ ", dow_jones_rate=" + dow_jones_rate + ", dow_jones_date=" + dow_jones_date
+				+ ", sp_500=" + sp_500 + ", sp_500_rate=" + sp_500_rate + ", sp_500_date=" + sp_500_date + ", dollar_index="
 				+ dollar_index + ", dollar_index_rate=" + dollar_index_rate + ", dollar_index_date=" + dollar_index_date
 				+ ", wti=" + wti + ", wti_rate=" + wti_rate + ", wti_date=" + wti_date + ", interest_rate="
 				+ interest_rate + ", interest_rate_rate=" + interest_rate_rate + ", interest_rate_date="
@@ -381,7 +380,7 @@ public class FactorsRecent {
 				+ ", balance_trade_date=" + balance_trade_date + ", cpi=" + cpi + ", cpi_rate=" + cpi_rate
 				+ ", cpi_date=" + cpi_date + ", gold_mine=" + gold_mine + ", gold_mine_rate=" + gold_mine_rate
 				+ ", gold_mine_date=" + gold_mine_date + ", uncertainty=" + uncertainty + ", uncertainty_rate="
-				+ uncertainty_rate + ", uncertainty_date=" + uncertainty_date + ", money_stock=" + money_stock
+				+ uncertainty_rate + ", uncertainty_time=" + uncertainty_time + ", money_stock=" + money_stock
 				+ ", money_stock_rate=" + money_stock_rate + ", money_stock_date=" + money_stock_date + "]";
 	}
 
