@@ -1,11 +1,14 @@
 package controller;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.FactorsRecent;
@@ -29,10 +32,8 @@ public class MainController {
 		List<String> goldPriceResult = pService.goldPriceResult();
 
 		List<FactorsRecent> recentAll = frService.factorsRecentAll();
-		System.out.println(recentAll);
 		FactorsRecent recentResult1Day = frService.factorsRecentResultSomedays(1);
 		/*FactorsRecent recentResult5Day = frService.factorsRecentResultSomedays(5);*/
-		System.out.println("이거"+recentResult1Day);
 
 		ModelAndView mav = new ModelAndView();
 
@@ -42,6 +43,16 @@ public class MainController {
 		mav.addObject("result1Day", recentResult1Day);
 		/*mav.addObject("result5Day", recentResult5Day);*/
 		return mav;
+	}
+	
+	@RequestMapping(value="index_ajax.do", produces= {"application/json"})
+	public @ResponseBody Map<String, Object> getFactors_ajax_json() {
+		Map<String, Object> data = new HashMap<>(); 
+		List<FactorsRecent> recentAll = frService.factorsRecentAll();
+		int size = frService.factorsRecentAll().size();
+		data.put("recentAll", recentAll);
+		data.put("size", size);
+		return data;
 	}
 
 	@RequestMapping("trend.do")

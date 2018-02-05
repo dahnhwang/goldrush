@@ -183,7 +183,7 @@
 								<tbody>
 									<tr class="odd gradeA">
 										<td>1</td>
-										<td>Gold Price</td>
+										<td><a href="#" class="factors" id="GoldPrice">Gold Price</a></td>
 										<td>${result1Day.gold_price}</td>
 										<td>${result1Day.gold_price_rate }</td>
 										<td class="center">${result1Day.gold_price_rate }</td>
@@ -191,7 +191,7 @@
 									</tr>
 									<tr class="even gradeA">
 										<td>2</td>
-										<td>Dow Jones</td>
+										<td><a href="#" class="factors" id="DowJones">Dow Jones</a></td>
 										<td>${result1Day.dow_jones}</td>
 										<td>${result1Day.dow_jones_rate }</td>
 										<td class="center">${result1Day.dow_jones_rate }</td>
@@ -199,7 +199,7 @@
 									</tr>
 									<tr class="odd gradeA">
 										<td>3</td>
-										<td>S&P 500</td>
+										<td><a href="" class="factors" id="SP500">S&P 500</a></td>
 										<td>${result1Day.sp_500}</td>
 										<td>${result1Day.sp_500_rate }</td>
 										<td class="center">${result1Day.sp_500_rate }</td>
@@ -207,7 +207,7 @@
 									</tr>
 									<tr class="even gradeA">
 										<td>4</td>
-										<td>Dollar Index</td>
+										<td class="factors">Dollar Index</td>
 										<td>${result1Day.dollar_index}</td>
 										<td>${result1Day.dollar_index_rate }</td>
 										<td class="center">${result1Day.dollar_index_rate }</td>
@@ -215,7 +215,7 @@
 									</tr>
 									<tr class="odd gradeA">
 										<td>5</td>
-										<td>WTI</td>
+										<td class="factors">WTI</td>
 										<td>${result1Day.wti}</td>
 										<td>${result1Day.wti_rate }</td>
 										<td class="center">${result1Day.wti_rate }</td>
@@ -223,7 +223,7 @@
 									</tr>
 									<tr class="even gradeA">
 										<td>6</td>
-										<td>Interest Rate</td>
+										<td class="factors">Interest Rate</td>
 										<td>${result1Day.interest_rate}</td>
 										<td>${result1Day.interest_rate_rate }</td>
 										<td class="center">${result1Day.interest_rate_rate }</td>
@@ -231,7 +231,7 @@
 									</tr>
 									<tr class="odd gradeA">
 										<td>7</td>
-										<td>GDP</td>
+										<td class="factors">GDP</td>
 										<td>${result1Day.gdp}</td>
 										<td>${result1Day.gdp_rate }</td>
 										<td class="center">${result1Day.gdp_rate }</td>
@@ -239,7 +239,7 @@
 									</tr>
 									<tr class="even gradeA">
 										<td>8</td>
-										<td>Inflation</td>
+										<td class="factors">Inflation</td>
 										<td>${result1Day.inflation}</td>
 										<td>${result1Day.inflation_rate }</td>
 										<td class="center">${result1Day.inflation_rate }</td>
@@ -247,7 +247,7 @@
 									</tr>
 									<tr class="odd gradeA">
 										<td>9</td>
-										<td>Balance of Trade</td>
+										<td class="factors">Balance of Trade</td>
 										<td>${result1Day.balance_trade}</td>
 										<td>${result1Day.balance_trade_rate }</td>
 										<td class="center">${result1Day.balance_trade_rate }</td>
@@ -255,7 +255,7 @@
 									</tr>
 									<tr class="even gradeA">
 										<td>10</td>
-										<td>CPI</td>
+										<td class="factors">CPI</td>
 										<td>${result1Day.cpi}</td>
 										<td>${result1Day.cpi_rate }</td>
 										<td class="center">${result1Day.cpi_rate }</td>
@@ -263,7 +263,7 @@
 									</tr>
 									<tr class="odd gradeA">
 										<td>11</td>
-										<td>Gold Mining Production</td>
+										<td class="factors">Gold Mining Production</td>
 										<td>${result1Day.gold_mine}</td>
 										<td>${result1Day.gold_mine_rate }</td>
 										<td class="center">${result1Day.gold_mine_rate }</td>
@@ -271,7 +271,7 @@
 									</tr>
 									<tr class="even gradeA">
 										<td>12</td>
-										<td>Uncertainty</td>
+										<td class="factors">Uncertainty</td>
 										<td>${result1Day.uncertainty}</td>
 										<td>${result1Day.uncertainty_rate }</td>
 										<td class="center">${result1Day.uncertainty_rate }</td>
@@ -279,7 +279,7 @@
 									</tr>
 									<tr class="even gradeA">
 										<td>13</td>
-										<td>Money Stock</td>
+										<td class="factors">Money Stock</td>
 										<td>${result1Day.money_stock}</td>
 										<td>${result1Day.money_stock_rate }</td>
 										<td class="center">${result1Day.money_stock_rate }</td>
@@ -319,6 +319,7 @@
 		type="text/javascript"></script>
 	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="scripts/flot/jquery.flot.js" type="text/javascript"></script>
+	<script src="scripts/moment.js" type="text/javascript"></script>
 	<script src="scripts/flot/jquery.flot.resize.js" type="text/javascript"></script>
 	<script src="scripts/datatables/jquery.dataTables.js"
 		type="text/javascript"></script>
