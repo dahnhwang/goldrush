@@ -19,8 +19,9 @@
 
 	<select id="selectTrendKeywordByPeriod" parameterType="java.util.HashMap"
 		resultMap="trendKeywordMap">
-		SELECT * FROM trend_keywords WHERE k_month LIKE
-		'%${k_year}%'
+		SELECT * FROM trend_keywords WHERE OR title LIKE k_month
+		LIKE
+		'%${period}%'
 	</select>
 
 </mapper>
