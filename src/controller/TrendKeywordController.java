@@ -12,4 +12,5 @@ public class TrendKeywordController {
 		ModelAndView mav = new ModelAndView();
 		return mav;
 	}
+
 }
