@@ -25,7 +25,7 @@ public class MainController {
 	@Autowired
 	private IFactorsRecentService frService;
 
-	@RequestMapping("index.do")
+	@RequestMapping("main.do")
 	public ModelAndView index() {
 
 		// Price goldPrice = pService.goldPrice();
