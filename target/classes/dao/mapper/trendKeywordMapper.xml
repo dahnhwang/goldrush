@@ -19,9 +19,8 @@
 
 	<select id="selectRecentTrendKeyword" parameterType="java.util.HashMap" resultMap="trendKeywordMap">
 		SELECT * FROM
-		trend_keywords WHERE k_month > '%${endMonth}%'
+		trend_keywords WHERE k_month > '${endMonth}' ORDER BY k_month ASC;
 	</select>
-
 
 	<select id="selectTrendKeywordByYear" parameterType="java.util.HashMap"
 		resultMap="trendKeywordMap">

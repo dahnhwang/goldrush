@@ -3,6 +3,7 @@ package controller;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 
+import model.TrendKeyword;
 import service.ITrendKeywordService;
 
 @Controller
@@ -25,20 +27,19 @@ public class TrendKeywordController {
 
 	@RequestMapping("trend.do")
 	// 트렌드 페이지에 접속할 때 처음 12개월 정보를 가져온다.
-	public ModelAndView trend() {
+	public String trend(Model model) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.MONTH, -13);
 		String fromMonth = format.format(cal.getTime());
+		System.out.print(fromMonth);
 		HashMap<String, Object> trendMap = trendService.getRecentTrendKeywordList(fromMonth);
-		
+		List<TrendKeyword> list = (List<TrendKeyword>) trendMap.get("keywordList");
 		Gson gson = new Gson();
-		String listJson = gson.toJson(trendMap);
-		
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("trendMap", trendMap);
-		mav.setViewName("trend");
-		return mav;
+		String listJson = gson.toJson(list);
+//		System.out.println(listJson);
+		model.addAttribute("listJson", listJson);
+		return "trend";
 
 	}
 
