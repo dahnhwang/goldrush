@@ -17,10 +17,12 @@ public class TrendKeywordService implements ITrendKeywordService {
 
 	@Override
 //	얘는 default로 12개월간 데이터를 일단 땡겨오는 애
-	public HashMap<String, Object> getRecentTrendKeywordList() {
+	public HashMap<String, Object> getRecentTrendKeywordList(String endMonth) {
+		HashMap<String, Object> params = new HashMap<>();
+		params.put("endMonth", endMonth);		
+		List<TrendKeyword> keywordList = keywordDao.selectRecentTrendKeyword(params);
 		
 		HashMap<String, Object> results = new HashMap<>();
-		List<TrendKeyword> keywordList = keywordDao.selectRecentTrendKeyword();
 		results.put("keywordList", keywordList);
 		return results;
 	}

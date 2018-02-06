@@ -17,11 +17,9 @@
 		<result column="keyword5_freq" property="keyword5_freq" />
 	</resultMap>
 
-	<select id="selectRecentTrendKeyword" resultMap="trendKeywordMap">
+	<select id="selectRecentTrendKeyword" parameterType="java.util.HashMap" resultMap="trendKeywordMap">
 		SELECT * FROM
-		trend_keywords WHERE k_id > (SELECT MAX(k_id) FROM
-		trend_keywords)
-		- 12
+		trend_keywords WHERE k_month > '%${endMonth}%'
 	</select>
 
 
