@@ -55,11 +55,7 @@ public class MainController {
 		return data;
 	}
 
-	@RequestMapping("trend.do")
-	public ModelAndView trend() {
-		ModelAndView mav = new ModelAndView();
-		return mav;
-	}
+
 
 	@RequestMapping("news.do")
 	public ModelAndView news() {
