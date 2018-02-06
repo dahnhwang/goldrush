@@ -32,10 +32,15 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 		<property name="mapperInterface" value="dao.IPriceDao"></property>
 	</bean>
-	
+
 	<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="IFactorsRecentDao">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 		<property name="mapperInterface" value="dao.IFactorsRecentDao"></property>
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="ITrendKeywordDao">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+		<property name="mapperInterface" value="dao.ITrendKeywordDao"></property>
 	</bean>
 
 	<bean
