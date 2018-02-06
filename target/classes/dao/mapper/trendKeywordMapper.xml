@@ -21,7 +21,7 @@
 		resultMap="trendKeywordMap">
 		SELECT * FROM trend_keywords WHERE OR title LIKE k_month
 		LIKE
-		'%${period}%'
+		'%${k_year}%'
 	</select>
 
 </mapper>
