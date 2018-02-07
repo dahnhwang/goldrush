@@ -73,6 +73,7 @@
     <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="scripts/piechart.js" type=""></script>
+     <script src="scripts/moment.js" type="text/javascript"></script>
     <script src="scripts/charts.js" type="text/javascript"></script>
 </body>
 </html>

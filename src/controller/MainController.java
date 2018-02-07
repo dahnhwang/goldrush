@@ -37,8 +37,8 @@ public class MainController {
 	@RequestMapping("index.do")
 	public ModelAndView index() {
 
-		// Price goldPrice = pService.goldPrice();
-		// List<String> goldPriceResult = pService.goldPriceResult();
+		Price goldPrice = pService.goldPrice();
+		List<String> goldPriceResult = pService.goldPriceResult();
 
 		List<FactorsRecent> recentAll = frService.factorsRecentAll();
 		FactorsRecent recentResult1Day = frService.factorsRecentResultSomedays(1);
@@ -46,8 +46,8 @@ public class MainController {
 
 		ModelAndView mav = new ModelAndView();
 
-		// mav.addObject("goldPrice", goldPrice);
-		// mav.addObject("goldPriceResult", goldPriceResult);
+		mav.addObject("goldPrice", goldPrice);
+		mav.addObject("goldPriceResult", goldPriceResult);
 		mav.addObject("recentAll", recentAll);
 		mav.addObject("result1Day", recentResult1Day);
 		/* mav.addObject("result5Day", recentResult5Day); */
@@ -99,10 +99,13 @@ public class MainController {
 		int sizeToday = forecastOthersToday.size();
 		List<ForecastOthers> forecastOthersYesterday = foService.selectByDate(yesterday);
 		int sizeYesterday = forecastOthersYesterday.size();
+		double exrate = foService.exrate();
+		
 		data.put("forecastOthersToday", forecastOthersToday);
 		data.put("sizeToday", sizeToday);
 		data.put("forecastOthersYesterday", forecastOthersYesterday);
 		data.put("sizeYesterday", sizeYesterday);
+		data.put("exrate", exrate);
 
 		return data;
 	}
