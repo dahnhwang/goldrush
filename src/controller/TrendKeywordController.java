@@ -26,28 +26,26 @@ public class TrendKeywordController {
 	public ITrendKeywordService trendService;
 
 	@RequestMapping("trend.do")
-	// 트렌드 페이지에 접속할 때 처음 12개월 정보를 가져온다.
 	public String trend() {
 		return "trend";
 	}
 
-	@RequestMapping("trenddefault.do")
-	// select 바를 선택할 경우 선택된 12개월 정보를 가져온다.
-	public @ResponseBody Map<String, Object> trendDefault(Model model,
-			@RequestParam(defaultValue = "", value = "keyword") String k_year) {
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
-		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.MONTH, -13);
-		String fromMonth = format.format(cal.getTime());
-		HashMap<String, Object> trendMap = trendService.getRecentTrendKeywordList(fromMonth);
-		return trendMap;
-	}
-
-	@RequestMapping("trendselect.do")
-	// select 바를 선택할 경우 선택된 12개월 정보를 가져온다.
-	public @ResponseBody Map<String, Object> trendSelect(Model model,
-			@RequestParam(defaultValue = "", value = "keyword") String k_year) {
-		HashMap<String, Object> trendMap = trendService.getTrendKeywordList(k_year);
+	@RequestMapping("trendword.do")
+	public @ResponseBody Map<String, Object> getTrendWord(Model model,
+			@RequestParam(defaultValue = "0", required = false) int mode,
+			@RequestParam(value = "k_year", required = false) String k_year) {
+		HashMap<String, Object> trendMap = null;
+		if (mode == 0) {
+			// default 값 모드 0일 경우 현재 기준 12개월 데이터 전송해줌
+			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
+			Calendar cal = Calendar.getInstance();
+			cal.add(Calendar.MONTH, -13);
+			String fromMonth = format.format(cal.getTime());
+			trendMap = trendService.getRecentTrendKeywordList(fromMonth);
+		} else if (mode == 1) {
+			// 모드 1일 경우 검색하고자 하는 년도의 데이터 전송해줌
+			trendMap = trendService.getTrendKeywordList(k_year);
+		}
 		return trendMap;
 	}
 

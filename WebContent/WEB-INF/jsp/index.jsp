@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="js/jstest.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GoldRush</title>
 <link rel="stylesheet" href="css/reset.css">
@@ -183,7 +182,8 @@
 								<tbody>
 									<tr class="odd gradeA">
 										<td>1</td>
-										<td><a href="#" class="factors" id="GoldPrice">Gold Price</a></td>
+										<td><a href="#" class="factors" id="GoldPrice">Gold
+												Price</a></td>
 										<td>${result1Day.gold_price}</td>
 										<td>${result1Day.gold_price_rate }</td>
 										<td class="center">${result1Day.gold_price_rate }</td>
@@ -191,7 +191,8 @@
 									</tr>
 									<tr class="even gradeA">
 										<td>2</td>
-										<td><a href="#" class="factors" id="DowJones">Dow Jones</a></td>
+										<td><a href="#" class="factors" id="DowJones">Dow
+												Jones</a></td>
 										<td>${result1Day.dow_jones}</td>
 										<td>${result1Day.dow_jones_rate }</td>
 										<td class="center">${result1Day.dow_jones_rate }</td>
