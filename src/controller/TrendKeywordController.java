@@ -27,20 +27,20 @@ public class TrendKeywordController {
 
 	@RequestMapping("trend.do")
 	// 트렌드 페이지에 접속할 때 처음 12개월 정보를 가져온다.
-	public String trend(Model model) {
+	public String trend() {
+		return "trend";
+	}
+
+	@RequestMapping("trenddefault.do")
+	// select 바를 선택할 경우 선택된 12개월 정보를 가져온다.
+	public @ResponseBody Map<String, Object> trendDefault(Model model,
+			@RequestParam(defaultValue = "", value = "keyword") String k_year) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.MONTH, -13);
 		String fromMonth = format.format(cal.getTime());
-		System.out.print(fromMonth);
 		HashMap<String, Object> trendMap = trendService.getRecentTrendKeywordList(fromMonth);
-		List<TrendKeyword> list = (List<TrendKeyword>) trendMap.get("keywordList");
-		Gson gson = new Gson();
-		String listJson = gson.toJson(list);
-//		System.out.println(listJson);
-		model.addAttribute("listJson", listJson);
-		return "trend";
-
+		return trendMap;
 	}
 
 	@RequestMapping("trendselect.do")
