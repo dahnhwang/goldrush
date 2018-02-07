@@ -42,9 +42,11 @@ public class TrendKeywordController {
 			cal.add(Calendar.MONTH, -13);
 			String fromMonth = format.format(cal.getTime());
 			trendMap = trendService.getRecentTrendKeywordList(fromMonth);
+			System.out.println("trend controller : default 12 month");
 		} else if (mode == 1) {
 			// 모드 1일 경우 검색하고자 하는 년도의 데이터 전송해줌
 			trendMap = trendService.getTrendKeywordList(k_year);
+			System.out.println("trend controller : selected 12 month");
 		}
 		return trendMap;
 	}

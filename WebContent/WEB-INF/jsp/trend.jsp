@@ -32,13 +32,25 @@
 			function() {
 
 				$.ajax({
-					url : 'trend.do',
+					url : 'trendword.do',
 					type : 'get',
 					dataType : 'json',
 					success : function(data) {
-
 						if (data) {
-							alert(data.keywordList)
+							var keywordList = data.keywordList
+							$.each(keywordList, function(index, item) {
+								var k_month = item.k_month
+								var keyword1 = item.keyword1
+								var keyword2 = item.keyword2
+								var keyword3 = item.keyword3
+								var keyword4 = item.keyword4
+								var keyword5 = item.keyword5
+								var keyword1_freq = item.keyword1_freq
+								var keyword2_freq = item.keyword2_freq
+								var keyword3_freq = item.keyword3_freq
+								var keyword4_freq = item.keyword4_freq
+								var keyword5_freq = item.keyword5_freq
+							})
 						}
 					}
 
