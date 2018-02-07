@@ -43,6 +43,11 @@
 		<property name="mapperInterface" value="dao.ITrendKeywordDao"></property>
 	</bean>
 
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="IForecastOthersDao">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+		<property name="mapperInterface" value="dao.IForecastOthersDao"></property>
+	</bean>
+
 	<bean
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
 		id="txManager">

@@ -361,7 +361,7 @@ $(function () {
   chart1Options = jQuery.extend(true, {}, options, chart1Options);
   var chart1 = new Highcharts.Chart(chart1Options);
 ////////////차트 구분선///////////////
-  var chart2Options = {
+  /*var chart2Options = {
     chart: {
       renderTo: 'container3',
         zoomType: 'xy'
@@ -448,5 +448,141 @@ $(function () {
     }]
   };
   chart2Options = jQuery.extend(true, {}, options, chart2Options);
-  var chart2 = new Highcharts.Chart(chart2Options);
+  var chart2 = new Highcharts.Chart(chart2Options);*/
+  
+
+  $.ajax({
+  	url:'forecast_others_ajax.do',
+  	type:'get',
+  	dataType:'json',
+  	success:function(data){	
+  		
+  		var todaySite_1=[]
+  		var todaySite_2=[]
+  		var todaySite_3=[]
+  		var yesterdaySite_1=[]
+  		var yesterdaySite_2=[]
+  		var yesterdaySite_3=[]
+  		
+  		var today =data.sizeToday
+  		var yesterday =data.sizeYesterday
+  		
+  		for(var i=0; i<today; i++){
+  			
+  			var forecastToday =data.forecastOthersToday[i].f_others_price			
+  			var checkToday =data.forecastOthersToday[i].f_others_site
+  			
+  			if(checkToday==1){
+  				todaySite_1.push(forecastToday)
+  			}else if(checkToday==2){
+  				todaySite_2.push(forecastToday)
+  			}else if(checkToday==3){
+  				todaySite_3.push(forecastToday)
+  			}
+  		}
+  		
+  		for(var i=0; i<yesterday; i++){		
+  			
+  			var forecastYesterday =data.forecastOthersYesterday[i].f_others_price		
+  			var checkYesterday =data.forecastOthersYesterday[i].f_others_site
+  			
+  			if(checkYesterday==1){
+  				yesterdaySite_1.push(forecastYesterday)				
+  			}else if(checkYesterday==2){
+  				yesterdaySite_2.push(forecastYesterday)			
+  			}else if(checkYesterday==3){
+  				yesterdaySite_3.push(forecastYesterday)
+  			}
+  		}
+  		
+  		var chart2Options = {
+  			    chart: {
+  			      renderTo: 'container3',
+  			        zoomType: 'xy'
+  			    },
+
+//  			    series: [{
+//  			      data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+//  			      pointStart: Date.UTC(2010, 0, 1),
+//  			      pointInterval: 3600 * 1000 // one hour
+//  			    }]
+  			      
+  			      ////새로넣어봄
+  			      //새로 넣어보기
+//  			      chart: {
+//  			        zoomType: 'xy'
+//  			    },
+  			    title: {
+  			        text: 'Gold Price Forecast Compare'
+  			    },
+  			    subtitle: {
+//  			        text: 'Source: WorldClimate.com'
+  			    },
+  			    xAxis: [{
+  			        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  			            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  			        crosshair: true
+  			    }],
+  			    yAxis: [{ // Primary yAxis
+  			        labels: {
+  			            format: '{value}%',
+  			            style: {
+  			                color: Highcharts.getOptions().colors[1]
+  			            }
+  			        },
+  			        title: {
+  			            text: 'Percent',
+  			            style: {
+  			                color: Highcharts.getOptions().colors[1]
+  			            }
+  			        }
+  			    }, { // Secondary yAxis
+  			        title: {
+  			            text: 'Dollar',
+  			            style: {
+  			                color: Highcharts.getOptions().colors[0]
+  			            }
+  			        },
+  			        labels: {
+  			            format: '$ {value}',
+  			            style: {
+  			                color: Highcharts.getOptions().colors[0]
+  			            }
+  			        },
+  			        opposite: true
+  			    }],
+  			    tooltip: {
+  			        shared: true
+  			    },
+  			    legend: {
+  			        layout: 'vertical',
+  			        align: 'left',
+  			        x: 120,
+  			        verticalAlign: 'top',
+  			        y: 100,
+  			        floating: true,
+  			        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+  			    },
+  			      series: [{
+  			        name: 'Dollar',
+  			        type: 'column',
+  			        yAxis: 1,
+  			        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+  			        tooltip: {
+  			            values: '$'
+  			        }
+
+  			    }, {
+  			        name: 'Percent',
+  			        type: 'spline',
+  			        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+  			        tooltip: {
+  			            valueSuffix: '%'
+  			        }
+  			    }]
+  			  };
+  			  chart2Options = jQuery.extend(true, {}, options, chart2Options);
+  			  var chart2 = new Highcharts.Chart(chart2Options);
+  	}
+  })
 });

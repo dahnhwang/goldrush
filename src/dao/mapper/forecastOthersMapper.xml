@@ -4,7 +4,6 @@
 <mapper namespace="dao.IForecastOthersDao">
 	<resultMap type="forecastOthers" id="forecastOthersMap">
 		<id column="f_others_id" property="f_others_id"/>
-		<result column="f_others_getdate" property="f_others_getdate"/>
 		<result column="f_others_date" property="f_others_date" />	
 		<result column="f_others_site" property="f_others_site" />
 		<result column="f_others_period" property="f_others_period" />
@@ -32,6 +31,11 @@
 	<select id="selectForecastOthers" parameterType="int" resultMap="forecastOthersMap">
 		SELECT *
 		FROM forecast_others WHERE f_others_id=#{f_others_id}
+	</select>
+	
+	<select id="selectForecastOthersByDate" parameterType="String" resultMap="forecastOthersMap">
+		SELECT *
+		FROM forecast_others WHERE f_others_getdate=#{f_others_getdate}
 	</select>
 
 </mapper>
