@@ -37,54 +37,64 @@
 					dataType : 'json',
 					success : function(data) {
 						if (data) {
-							var keywordList = data.keywordList
-							$.each(keywordList, function(index, item) {
-								var k_month = item.k_month
-								var keyword1 = item.keyword1
-								var keyword2 = item.keyword2
-								var keyword3 = item.keyword3
-								var keyword4 = item.keyword4
-								var keyword5 = item.keyword5
-								var keyword1_freq = item.keyword1_freq
-								var keyword2_freq = item.keyword2_freq
-								var keyword3_freq = item.keyword3_freq
-								var keyword4_freq = item.keyword4_freq
-								var keyword5_freq = item.keyword5_freq
-							})
+							drawBubbleChart(data)
 						}
 					}
 
 				})
 
-				var chart = bb.generate({
-					data : {
-						columns : [
-								[ "keyword1", 30, 350, 200, 380, 150, 250, 50,
-										80, 55, 220, 294, 34, 60 ],
-								[ "keyword2", 130, 100, 10, 200, 80, 50, 200,
-										123, 185, 98, 4, 66, 30 ],
-								[ "keyword3", 230, 153, 85, 300, 250, 120, 5,
-										84, 99, 289, 43, 82, 500 ],
-								[ "keyword4", 230, 153, 85, 300, 250, 120, 5,
-										84, 99, 289, 66, 88, 100 ],
-								[ "keyword5", 20, 123, 55, 500, 250, 120, 5,
-										84, 99, 289, 66, 99, 8 ] ],
-						type : "bubble",
-						labels : true
-					},
-					bubble : {
-						maxR : 50
-					},
-					axis : {
-						x : {
-							type : "category"
+				function drawBubbleChart(data) {
+					var keywordList = data.keywordList
+					var k_month_array = [ "x" ]
+					var keyword1_freq_array = [ "keyword1" ]
+					var keyword2_freq_array = [ "keyword2" ]
+					var keyword3_freq_array = [ "keyword3" ]
+					var keyword4_freq_array = [ "keyword4" ]
+					var keyword5_freq_array = [ "keyword5" ]
+					$.each(keywordList, function(index, item) {
+						var k_month = item.k_month
+						k_month_array.push(k_month)
+						var keyword1 = item.keyword1
+						var keyword2 = item.keyword2
+						var keyword3 = item.keyword3
+						var keyword4 = item.keyword4
+						var keyword5 = item.keyword5
+						var keyword1_freq = item.keyword1_freq
+						var keyword2_freq = item.keyword2_freq
+						var keyword3_freq = item.keyword3_freq
+						var keyword4_freq = item.keyword4_freq
+						var keyword5_freq = item.keyword5_freq
+						keyword1_freq_array.push(keyword1_freq)
+						keyword2_freq_array.push(keyword2_freq)
+						keyword3_freq_array.push(keyword3_freq)
+						keyword4_freq_array.push(keyword4_freq)
+						keyword5_freq_array.push(keyword5_freq)
+					})
+
+					var chart = bb.generate({
+						data : {
+							x : "x",
+							columns : [ k_month_array, keyword1_freq_array,
+									keyword2_freq_array, keyword3_freq_array,
+									keyword4_freq_array, keyword5_freq_array ],
+							type : "bubble",
+							labels : true
 						},
-						y : {
-							max : 450
-						}
-					},
-					bindto : "#BubbleChart"
-				});
+						bubble : {
+							maxR : 40
+						},
+						axis : {
+							x : {
+								type : "category"
+							},
+							y : {
+								max : 100
+							}
+						},
+						bindto : "#BubbleChart"
+					});
+
+				}
 
 			});
 </script>
