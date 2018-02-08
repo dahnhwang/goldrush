@@ -8,19 +8,27 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import model.FactorsRecent;
 import model.ForecastOthers;
 import model.Price;
+import model.News;
 import service.IFactorsRecentService;
 import service.IForecastOthersService;
 import service.IPriceService;
+import service.INewsService;
+import service.NewsService;
 
 @Controller
 public class MainController {
@@ -33,6 +41,9 @@ public class MainController {
 	
 	@Autowired
 	private IForecastOthersService foService;
+	
+	@Autowired
+	private INewsService newsService;
 
 	@RequestMapping("index.do")
 	public ModelAndView index() {
@@ -68,7 +79,26 @@ public class MainController {
 	public ModelAndView news() {
 
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("news", newsService.getNewsList());
+		mav.setViewName("news");
 		return mav;
+	}
+	
+	@RequestMapping(value="newslist.do", method=RequestMethod.GET)
+	public @ResponseBody List<News> newsList(@RequestParam(defaultValue = "1", value = "eng") int eng,
+			@RequestParam(defaultValue = "", required = false) String keyword) {
+		//System.out.println("hello from newslist.do");
+		List<News> list = null;
+		if (eng == 1) {
+			//System.out.println("영문");
+			// if request is for english news
+			list = newsService.getNewsListSearch(eng, keyword);
+		} else {
+			//System.out.println("국문");
+			// if request is for korean news
+			list = newsService.getNewsListSearch(eng, keyword);
+		}
+		return list;
 	}
 
 	@RequestMapping("forecast.do")
