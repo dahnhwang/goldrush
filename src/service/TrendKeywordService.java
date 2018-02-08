@@ -21,8 +21,10 @@ public class TrendKeywordService implements ITrendKeywordService {
 		HashMap<String, Object> params = new HashMap<>();
 		params.put("endMonth", endMonth);
 		List<TrendKeyword> keywordList = keywordDao.selectRecentTrendKeyword(params);
+		int keywordFreqMax = keywordDao.selectMaxTrendKeywordValue(params);
 		HashMap<String, Object> results = new HashMap<>();
 		results.put("keywordList", keywordList);
+		results.put("keywordFreqMax", keywordFreqMax);
 		return results;
 	}
 
@@ -32,9 +34,10 @@ public class TrendKeywordService implements ITrendKeywordService {
 		HashMap<String, Object> params = new HashMap<>();
 		params.put("k_year", k_year);
 		List<TrendKeyword> keywordList = keywordDao.selectTrendKeywordByYear(params);
-
+		int keywordFreqMax = keywordDao.selectMaxTrendKeywordValue(params);
 		HashMap<String, Object> results = new HashMap<>();
 		results.put("keywordList", keywordList);
+		results.put("keywordFreqMax", keywordFreqMax);
 		return results;
 	}
 

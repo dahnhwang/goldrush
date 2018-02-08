@@ -17,15 +17,53 @@
 		<result column="keyword5_freq" property="keyword5_freq" />
 	</resultMap>
 
-	<select id="selectRecentTrendKeyword" parameterType="java.util.HashMap" resultMap="trendKeywordMap">
+	<select id="selectRecentTrendKeyword" parameterType="java.util.HashMap"
+		resultMap="trendKeywordMap">
 		SELECT * FROM
-		trend_keywords WHERE k_month > '${endMonth}' ORDER BY k_month ASC;
+		trend_keywords WHERE k_month > '${endMonth}'
+		ORDER BY k_month ASC
 	</select>
 
 	<select id="selectTrendKeywordByYear" parameterType="java.util.HashMap"
 		resultMap="trendKeywordMap">
 		SELECT * FROM trend_keywords WHERE k_month LIKE
-		'%${k_year}%'
+		'${k_year}%'
+		ORDER BY k_month ASC
+	</select>
+
+	<select id="selectMaxTrendKeywordValue" parameterType="java.util.HashMap"
+		resultType="int">
+		<if test='k_year != null'>
+			SELECT MAX(tmp) FROM (SELECT MAX(keyword1_freq) as tmp
+			FROM
+			trend_keywords WHERE k_month LIKE '${k_year}%' UNION SELECT
+			MAX(keyword2_freq) as tmp FROM trend_keywords WHERE k_month LIKE
+			'${k_year}%' UNION SELECT MAX(keyword3_freq) as tmp FROM
+			trend_keywords
+			WHERE k_month LIKE '${k_year}%' UNION SELECT
+			MAX(keyword4_freq) as tmp
+			FROM
+			trend_keywords WHERE k_month LIKE
+			'${k_year}%' UNION SELECT
+			MAX(keyword5_freq) as tmp FROM
+			trend_keywords WHERE k_month LIKE
+			'${k_year}%') u;
+		</if>
+		<if test='endMonth != null'>
+			SELECT MAX(tmp) FROM (SELECT MAX(keyword1_freq) as tmp
+			from trend_keywords WHERE k_month > '${endMonth}' UNION SELECT
+			MAX(keyword2_freq) as tmp from trend_keywords WHERE k_month >
+			'${endMonth}' UNION SELECT MAX(keyword3_freq) as tmp from
+			trend_keywords
+			WHERE k_month > '${endMonth}' UNION SELECT
+			MAX(keyword4_freq) as tmp from
+			trend_keywords WHERE k_month >
+			'${endMonth}' UNION SELECT
+			MAX(keyword5_freq) as tmp from
+			trend_keywords WHERE k_month >
+			'${endMonth}') u;
+		</if>
+
 	</select>
 
 </mapper>
