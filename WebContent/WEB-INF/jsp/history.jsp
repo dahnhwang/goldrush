@@ -51,7 +51,8 @@
                         <div class="module-head"><h3>GoldPrice Forecast 타 예측기관과 비교</h3>
                         </div>
                         <div class="module-body" style="padding:0;">
-
+                        <input type="button" value="일별 예측~~" class="daily-forecast">
+<input type="button" value="월별 예측~~" class="monthly-forecast">
                                <div id="container3" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
                         </div>
