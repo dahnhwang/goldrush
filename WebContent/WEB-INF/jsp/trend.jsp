@@ -37,31 +37,55 @@
 					dataType : 'json',
 					success : function(data) {
 						if (data) {
-							drawBubbleChart(data)
+							$('#listTable thead').empty();
+							$('#listTable tbody').empty();
+							var tr1 = $('<tr>').appendTo('#listTable tbody');
+							var tr2 = $('<tr>').appendTo('#listTable tbody');
+							var tr3 = $('<tr>').appendTo('#listTable tbody');
+							var tr4 = $('<tr>').appendTo('#listTable tbody');
+							var tr5 = $('<tr>').appendTo('#listTable tbody');
+							drawBubbleChart(data, tr1, tr2, tr3, tr4, tr5)
+
 						}
 					}
 
 				})
 
-				$(document).on('click', '#btn-year', function() {
-					var year = $("#yearSelect option:selected").val();
-					$.ajax({
-						url : 'trendword.do',
-						type : 'post',
-						data : {
-							mode : 1,
-							k_year : year
-						},
-						dataType : 'json',
-						success : function(data) {
-							if (data) {
-								drawBubbleChart(data)
-							}
-						}
-					})
-				});
+				$(document).on(
+						'click',
+						'#btn-year',
+						function() {
+							var year = $("#yearSelect option:selected").val();
+							$.ajax({
+								url : 'trendword.do',
+								type : 'post',
+								data : {
+									mode : 1,
+									k_year : year
+								},
+								dataType : 'json',
+								success : function(data) {
+									if (data) {
+										$('#listTable thead').empty();
+										$('#listTable tbody').empty();
+										var tr1 = $('<tr>').appendTo(
+												'#listTable tbody');
+										var tr2 = $('<tr>').appendTo(
+												'#listTable tbody');
+										var tr3 = $('<tr>').appendTo(
+												'#listTable tbody');
+										var tr4 = $('<tr>').appendTo(
+												'#listTable tbody');
+										var tr5 = $('<tr>').appendTo(
+												'#listTable tbody');
+										drawBubbleChart(data, tr1, tr2, tr3,
+												tr4, tr5)
+									}
+								}
+							})
+						});
 
-				function drawBubbleChart(data) {
+				function drawBubbleChart(data, tr1, tr2, tr3, tr4, tr5) {
 					var keywordList = data.keywordList
 					var keywordFreqMax = data.keywordFreqMax
 					var k_month_array = [ "x" ]
@@ -88,6 +112,16 @@
 						keyword3_freq_array.push(keyword3_freq)
 						keyword4_freq_array.push(keyword4_freq)
 						keyword5_freq_array.push(keyword5_freq)
+
+						var th = $('<th>').appendTo('#listTable thead');
+						$('<b>').addClass("k_year").text(k_month).appendTo(th)
+
+						$('<td>').text(keyword1).appendTo(tr1);
+						$('<td>').text(keyword2).appendTo(tr2);
+						$('<td>').text(keyword3).appendTo(tr3);
+						$('<td>').text(keyword4).appendTo(tr4);
+						$('<td>').text(keyword5).appendTo(tr5);
+
 					})
 
 					var chart = bb.generate({
@@ -136,12 +170,12 @@
 
 					<div class="module">
 						<div class="module-head">
-							<h3>Keywords of Month (출처 : NewYorkTimes)</h3>
+							<h3>Frequency of Keywords related to Gold Price (Monthly)</h3>
 							<br>
 							<div class="form-row align-items-center">
 								<div class="col-auto my-1">
 									<select class="custom-select mr-sm-2" id="yearSelect">
-										<option selected>Choose...</option>
+										<option selected>Select year...</option>
 										<option value="1987">1987</option>
 										<option value="1988">1988</option>
 										<option value="1989">1989</option>
@@ -173,7 +207,6 @@
 										<option value="2015">2015</option>
 										<option value="2016">2016</option>
 										<option value="2017">2017</option>
-										<option value="2018">2018</option>
 
 									</select>
 									<button type="button" class="btn btn-primary" id="btn-year">Submit</button>
@@ -203,59 +236,16 @@
 					</div>
 					<div class="module">
 						<div class="module-head">
-							<h3>영향요인 상관관계 분석 기준</h3>
+							<h3>Top 5 Keywords related to Gold Price (Monthly)</h3>
 						</div>
 						<div class="module-body table">
-							<table cellpadding="0" cellspacing="0" border="0"
+							<table id="listTable" cellpadding="0" cellspacing="0" border="0"
 								class="datatable-1 table table-bordered table-striped	 display"
 								width="100%">
 								<thead>
-									<tr>
-										<th></th>
-										<th>미국금리</th>
-										<th>국제유가</th>
-										<th>달러화</th>
-										<th>금융상황</th>
-									</tr>
 								</thead>
 								<tbody>
-									<tr class="odd gradeX">
-										<th>미국금리</th>
-										<td>1.0</td>
-										<td></td>
-										<td class="center"></td>
-										<td class="center"></td>
-									</tr>
-
-
-									<tr class="gradeA">
-										<th>국제유가</th>
-										<td>12.1</td>
-										<td>9.2</td>
-										<td class="center"></td>
-										<td class="center"></td>
-									</tr>
-
-
-									<tr class="gradeA">
-										<th>달러화</th>
-										<td>7.5</td>
-										<td>2</td>
-										<td class="center">3</td>
-										<td class="center"></td>
-									</tr>
-
-									<tr>
-										<th>금융상황</th>
-										<td>12</td>
-										<td>1</td>
-										<td>0</td>
-										<td>4</td>
-									</tr>
 								</tbody>
-								<tfoot>
-
-								</tfoot>
 							</table>
 						</div>
 					</div>
