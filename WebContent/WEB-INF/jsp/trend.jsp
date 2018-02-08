@@ -25,8 +25,8 @@
 <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="scripts/datatables/jquery.dataTables.js"
 	type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="css/billboard.min.css">
-<script src="scripts/billboard.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/billboard.css">
+<script src="scripts/billboard.js"></script>
 <script>
 	$(document).ready(
 			function() {
@@ -170,7 +170,7 @@
 
 					<div class="module">
 						<div class="module-head">
-							<h3>Frequency of Keywords related to Gold Price (Monthly)</h3>
+							<h3>Top 5 Gold-related Keywords Frequency (Monthly)</h3>
 							<br>
 							<div class="form-row align-items-center">
 								<div class="col-auto my-1">
@@ -236,7 +236,7 @@
 					</div>
 					<div class="module">
 						<div class="module-head">
-							<h3>Top 5 Keywords related to Gold Price (Monthly)</h3>
+							<h3>Top 5 Gold-related Keywords (Monthly)</h3>
 						</div>
 						<div class="module-body table">
 							<table id="listTable" cellpadding="0" cellspacing="0" border="0"
