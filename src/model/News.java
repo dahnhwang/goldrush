@@ -7,10 +7,18 @@ public class News {
 	private int news_id;
 	private String news_url;
 	private String news_title;
-	private String publisher;
+	private String news_content;
 	private Date news_date;
+	private String news_img;
+	private int eng;
 	
 	
+	public int getEng() {
+		return eng;
+	}
+	public void setEng(int eng) {
+		this.eng = eng;
+	}
 	public int getNews_id() {
 		return news_id;
 	}
@@ -29,11 +37,11 @@ public class News {
 	public void setNews_title(String news_title) {
 		this.news_title = news_title;
 	}
-	public String getPublisher() {
-		return publisher;
+	public String getNews_content() {
+		return news_content;
 	}
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
+	public void setNews_content(String news_content) {
+		this.news_content = news_content;
 	}
 	public Date getNews_date() {
 		return news_date;
@@ -41,11 +49,20 @@ public class News {
 	public void setNews_date(Date news_date) {
 		this.news_date = news_date;
 	}
+	
+	public String getNews_img() {
+		return news_img;
+	}
+	public void setNews_img(String news_img) {
+		this.news_img = news_img;
+	}
+	
 	@Override
 	public String toString() {
-		return "News [news_id=" + news_id + ", news_url=" + news_url + ", news_title=" + news_title + ", publisher="
-				+ publisher + ", news_date=" + news_date + "]";
+		return "News [news_id=" + news_id + ", news_url=" + news_url + ", news_title=" + news_title + ", news_content="
+				+ news_content + ", news_date=" + news_date + ", news_img=" + news_img + ", eng=" + eng + "]";
 	}
+	
 	
 	
 	
