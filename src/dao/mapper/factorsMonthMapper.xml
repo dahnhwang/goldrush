@@ -20,7 +20,7 @@
 	</select>
 	
 	<select id="selectRecentPriceforYear" parameterType="int" resultMap="factorsMonthMap">
-		select * from factors_m where fm_id = '${fm_id}';
+		select * from factors_m where fm_id = #{fm_id}
 	</select>
 	
 	<select id="selectAllMonth" resultMap="factorsMonthMap">

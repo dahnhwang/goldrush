@@ -5,7 +5,7 @@
 	<resultMap type="factorsDaily" id="factorsDailyMap">
 	</resultMap>
 
-	<select id="selectRecentDailyGoldPrice" parameterType="String" resultMap="factorsDailyMap">
+	<select id="selectRecentDailyGoldPrice" parameterType="java.util.HashMap" resultMap="factorsDailyMap">
 		select * from factors_d where k_month like '${k_month}%';
 	</select>
 
