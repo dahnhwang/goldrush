@@ -6923,15 +6923,16 @@ function(window, document, undefined) {
 									// create
 									// a tfoot element for the caption element
 									// to be appended to
-									tfoot = [ document.createElement('tfoot') ];
-									this.appendChild(tfoot[0]);
+//									tfoot = [ document.createElement('tfoot') ];
+									// this.appendChild(tfoot[0]);
+
 								}
 
-								if (tfoot.length > 0) {
-									oSettings.nTFoot = tfoot[0];
-									_fnDetectHeader(oSettings.aoFooter,
-											oSettings.nTFoot);
-								}
+								// if (tfoot.length > 0) {
+								// oSettings.nTFoot = tfoot[0];
+								// _fnDetectHeader(oSettings.aoFooter,
+								// oSettings.nTFoot);
+								// }
 
 								/*
 								 * Check if there is data passing into the
