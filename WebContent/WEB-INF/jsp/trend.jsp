@@ -157,10 +157,19 @@
 					var chart = bb.generate({
 						data : {
 							x : "x",
-							columns : [ k_month_array, keyword1_freq_array,
-									keyword2_freq_array, keyword3_freq_array,
-									keyword4_freq_array, keyword5_freq_array ],
+							columns : [
+									k_month_array,
+									keyword1_freq_array,
+									keyword2_freq_array,
+									keyword3_freq_array,
+									keyword4_freq_array,
+									keyword5_freq_array,
+									[ "data1", 30, 20, 50, 40, 60, 50, 1, 1, 1,
+											1, 1, 1 ] ],
 							type : "bubble",
+							types : {
+								data1 : "spline"
+							},
 							labels : true
 						},
 						bubble : {
@@ -171,7 +180,12 @@
 								type : "category"
 							},
 							y : {
-								max : keywordFreqMax
+								max : keywordFreqMax,
+								label : "word frequency"
+							},
+							y2 : {
+								show : true,
+								label : "gold price"
 							}
 						},
 						bindto : "#BubbleChart"
@@ -280,6 +294,11 @@
 						</div>
 					</div>
 					<!--/.module-->
+					<div class="container">
+						<a href="http://developer.nytimes.com"> <img
+							src='images/poweredby_nytimes.png' />
+						</a>
+					</div>
 				</div>
 				<!--/.content-->
 			</div>
