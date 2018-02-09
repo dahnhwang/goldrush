@@ -123,11 +123,11 @@
 										<span class="side"> Gold14K<b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">Buy</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[4]}won</p>
+											<p class="text-muted">${goldPriceResult[4]}원</p>
 										</span> <span class="side back">Gold14K<b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">Sell</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[5]}won</p>
+											<p class="text-muted">${goldPriceResult[5]}원</p>
 										</span>
 									</div>
 								</div>
