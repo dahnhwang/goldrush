@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mapper namespace="dao.IFactorsMonthDao">
+	<resultMap type="factorsMonth" id="factorsMonthMap">
+	</resultMap>
+
+	<select id="selectRecentGoldPrice" parameterType="java.util.HashMap"
+		resultMap="factorsMonthMap">
+		select * from (select k_month, gold_price from
+		factors_m
+		order by fm_id desc limit 12) as a order by fm_id asc;
+	</select>
+
+	<select id="selectGoldPriceByYear" parameterType="java.util.HashMap"
+		resultMap="factorsMonthMap">
+		
+	</select>
+
+</mapper>

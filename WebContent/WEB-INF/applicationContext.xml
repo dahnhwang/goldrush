@@ -47,10 +47,15 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 		<property name="mapperInterface" value="dao.IForecastOthersDao"></property>
 	</bean>
-	
-		<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="INewsDao">
+
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="INewsDao">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 		<property name="mapperInterface" value="dao.INewsDao"></property>
+	</bean>
+
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="IFactorsMonthDao">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+		<property name="mapperInterface" value="dao.IFactorsMonthDao"></property>
 	</bean>
 
 	<bean
