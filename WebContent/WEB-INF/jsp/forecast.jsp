@@ -68,7 +68,7 @@
      <!--/.wrapper-->
      <div class="footer">
          <div class="container">
-             <b class="copyright">&copy; 2018 GoldRush </b>All rights reserved.
+             <b class="copyright">&copy; 2018 GoldMine </b>All rights reserved.
          </div>
      </div>
      <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
