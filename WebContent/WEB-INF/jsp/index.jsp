@@ -21,6 +21,7 @@
 </head>
 <body>
 
+
 	<jsp:include page="header.jsp"></jsp:include>
 	<!-- /navbar -->
 	<div class="wrapper">
