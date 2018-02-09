@@ -54,7 +54,7 @@
                                 <div class="module-body">
                                     <div class="news">
                                         <ul id="lists">
-                                        	<c:if test="${news.eng == 1}">
+                                        	
                                         	<c:forEach var="news" items="${news}">
                                             <li class="nlist">
                                                <a href="${news.news_url}" target="_blank">
@@ -68,7 +68,7 @@
                                                 </a>
                                             </li>
                                             </c:forEach>
-                                            </c:if>
+                                            
                                         </ul>
                                     </div>
                                 </div>
