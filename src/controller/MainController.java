@@ -42,8 +42,6 @@ public class MainController {
 	@Autowired
 	private IForecastOthersService foService;
 	
-	@Autowired
-	private INewsService newsService;
 
 	@RequestMapping("index.do")
 	public ModelAndView index() {
@@ -75,31 +73,6 @@ public class MainController {
 		return data;
 	}
 
-	@RequestMapping("news.do")
-	public ModelAndView news() {
-
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("news", newsService.getNewsList());
-		mav.setViewName("news");
-		return mav;
-	}
-	
-	@RequestMapping(value="newslist.do", method=RequestMethod.GET)
-	public @ResponseBody List<News> newsList(@RequestParam(defaultValue = "1", value = "eng") int eng,
-			@RequestParam(defaultValue = "", required = false) String keyword) {
-		//System.out.println("hello from newslist.do");
-		List<News> list = null;
-		if (eng == 1) {
-			//System.out.println("영문");
-			// if request is for english news
-			list = newsService.getNewsListSearch(eng, keyword);
-		} else {
-			//System.out.println("국문");
-			// if request is for korean news
-			list = newsService.getNewsListSearch(eng, keyword);
-		}
-		return list;
-	}
 
 	@RequestMapping("forecast.do")
 	public ModelAndView forecast() {
