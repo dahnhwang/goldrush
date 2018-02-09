@@ -181,7 +181,7 @@
 							labels : true
 						},
 						bubble : {
-							maxR : 70
+							maxR : 100
 						},
 						axis : {
 							x : {
@@ -227,7 +227,7 @@
 							<div class="form-row align-items-center">
 								<div class="col-auto my-1">
 									<select class="custom-select mr-sm-2" id="yearSelect">
-										<option selected>Select year...</option>
+										<option selected>연도를 선택하세요...</option>
 										<option value="1987">1987</option>
 										<option value="1988">1988</option>
 										<option value="1989">1989</option>
@@ -261,7 +261,7 @@
 										<option value="2017">2017</option>
 
 									</select>
-									<button type="button" class="btn btn-primary" id="btn-year">Submit</button>
+									<button type="button" class="btn btn-primary" id="btn-year">검색</button>
 								</div>
 							</div>
 						</div>

@@ -91,11 +91,11 @@
 										<span class="side"> Gold24K<b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">Buy</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[0]}won</p>
+											<p class="text-muted">${goldPriceResult[0]}원</p>
 										</span> <span class="side back">Gold24K<b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">Sell</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[1]}won</p>
+											<p class="text-muted">${goldPriceResult[1]}원</p>
 										</span>
 									</div>
 								</div>
@@ -107,11 +107,11 @@
 										<span class="side"> Gold18K<b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">Buy</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[2]}won</p>
+											<p class="text-muted">${goldPriceResult[2]}원</p>
 										</span> <span class="side back">Gold18K<b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">Sell</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[3]}won</p>
+											<p class="text-muted">${goldPriceResult[3]}원</p>
 										</span>
 									</div>
 								</div>
