@@ -11,7 +11,7 @@
 		<div class="navbar-inner"
 			style="min-height: 60px; background-color: #333; text-align: center;">
 			<div class="container">
-				<a class="logo" href="index.do">GoldRush </a>
+				<a class="logo" href="index.do">GoldMine </a>
 			</div>
 			<div class="container">
 				<a class="btn btn-navbar" data-toggle="collapse"
@@ -23,7 +23,7 @@
 								금의 역사</a></li>
 						<li><a href="news.do" style="text-shadow: none;">금 관련
 								최신뉴스</a></li>
-						<li><a class="brand" href="index.do" style="color: #FFCC00;">GoldRush
+						<li><a class="brand" href="index.do" style="color: #FFCC00;">GoldMine
 						</a></li>
 						<li><a href="forecast.do" style="text-shadow: none;">금가격예측모델</a></li>
 						<li><a href="history.do" style="text-shadow: none;">금가격예측데이터</a></li>

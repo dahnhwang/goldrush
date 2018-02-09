@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.google.gson.Gson;
 
 import model.TrendKeyword;
+import service.IPriceService;
 import service.ITrendKeywordService;
 
 @Controller
@@ -24,6 +25,9 @@ public class TrendKeywordController {
 
 	@Autowired
 	public ITrendKeywordService trendService;
+
+	@Autowired
+	public IPriceService priceService;
 
 	@RequestMapping("trend.do")
 	public String trend() {
