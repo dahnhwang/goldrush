@@ -54,7 +54,7 @@
 								class="menu-icon icon-bar-chart"></i>Charts </a></li>
 					</ul>
 					<!--/.widget-nav-->
-					<ul class="widget widget-menu unstyled">
+					<!-- <ul class="widget widget-menu unstyled">
 						<li><a class="collapsed" data-toggle="collapse"
 							href="#togglePages"><i class="menu-icon icon-cog"> </i><i
 								class="icon-chevron-down pull-right"></i><i
@@ -69,7 +69,7 @@
 							</ul></li>
 						<li><a href="#"><i class="menu-icon icon-signout"></i>Logout
 						</a></li>
-					</ul>
+					</ul> -->
 				</div>
 				<!--/.sidebar-->
 			</div>

@@ -2923,9 +2923,10 @@ function(window, document, undefined) {
 						nLength.id = oSettings.sTableId + '_length';
 					}
 					nLength.className = oSettings.oClasses.sLength;
-//					nLength.innerHTML = '<label>'
-//							+ oSettings.oLanguage.sLengthMenu.replace('_MENU_',
-//									sStdMenu) + '</label>';
+					// nLength.innerHTML = '<label>'
+					// + oSettings.oLanguage.sLengthMenu.replace('_MENU_',
+					// sStdMenu) + '</label>';
+					nLength.innerHTML = '안녕하세요'
 
 					/* Set the length to the current display length */
 					$('select', nLength).val(oSettings._iDisplayLength);
