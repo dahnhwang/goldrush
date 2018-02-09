@@ -2923,9 +2923,9 @@ function(window, document, undefined) {
 						nLength.id = oSettings.sTableId + '_length';
 					}
 					nLength.className = oSettings.oClasses.sLength;
-					nLength.innerHTML = '<label>'
-							+ oSettings.oLanguage.sLengthMenu.replace('_MENU_',
-									sStdMenu) + '</label>';
+//					nLength.innerHTML = '<label>'
+//							+ oSettings.oLanguage.sLengthMenu.replace('_MENU_',
+//									sStdMenu) + '</label>';
 
 					/* Set the length to the current display length */
 					$('select', nLength).val(oSettings._iDisplayLength);
@@ -9506,7 +9506,7 @@ function(window, document, undefined) {
 						 *          "info": "Got a total of _TOTAL_ entries to
 						 *          show (_START_ to _END_)" } } ); } );
 						 */
-						"sInfo" : "_TOTAL_개의 데이터",
+						"sInfo" : "_TOTAL_건의 데이터가 있습니다.",
 
 						/**
 						 * Display information string for when the table is
