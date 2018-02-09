@@ -1,14 +1,21 @@
 package service;
 
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import dao.IFactorsDailyDao;
+import dao.IFactorsMonthDao;
 import dao.IFactorsRecentDao;
+import model.FactorsDaily;
+import model.FactorsMonth;
 import model.FactorsRecent;
 
 @Service
@@ -16,6 +23,12 @@ public class FactorsRecentService implements IFactorsRecentService {
 
 	@Autowired
 	private IFactorsRecentDao frDao;
+	
+	@Autowired
+	private IFactorsDailyDao fdDao;
+	
+	@Autowired
+	private IFactorsMonthDao fmDao;
 
 	@Override
 	public List<FactorsRecent> factorsRecentAll() {
@@ -111,5 +124,37 @@ public class FactorsRecentService implements IFactorsRecentService {
 
 		return factorsRecent;
 	}
+
+	@Override
+	public List<FactorsDaily> selectRecentDailyGoldPrice() {
+		// TODO Auto-generated method stub
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
+		Calendar cal = Calendar.getInstance();
+		cal.add(Calendar.MONTH, -1);
+		String fromMonth = format.format(cal.getTime());
+		System.out.println("?????"+fromMonth);
+		List<FactorsDaily> selectDailyPriceInMonth = fdDao.selectRecentDailyGoldPrice(fromMonth);
+		return selectDailyPriceInMonth;
+	}
+
+	@Override
+	public List<FactorsMonth> selectGoldPriceDailyByMonth() {
+		// TODO Auto-generated method stub
+		List<FactorsMonth> selectAllMonth = fmDao.selectAllMonth();
+		return selectAllMonth;
+	}
+
+	@Override
+	public List<FactorsMonth> selectRecentPriceforYear() {
+		// TODO Auto-generated method stub
+		int size = fmDao.selectAllMonth().size();
+		List<FactorsMonth> selectByMonthPrice = new ArrayList<>();
+		for (int i=size-1; i*12>0; i--) {
+			FactorsMonth selectMonthlyPrice =fmDao.selectRecentPriceforYear(i*12);
+			selectByMonthPrice.add(selectMonthlyPrice);
+		}	
+		return selectByMonthPrice;
+	}
+
 
 }

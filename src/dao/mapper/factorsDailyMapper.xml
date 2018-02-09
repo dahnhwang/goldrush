@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.IFactorsDailyDao">
+	<resultMap type="factorsDaily" id="factorsDailyMap">
+	</resultMap>
+
+	<select id="selectRecentDailyGoldPrice" parameterType="String" resultMap="factorsDailyMap">
+		select * from factors_d where k_month like '${k_month}%';
+	</select>
+
+	<select id="selectGoldPriceDailyByMonth" parameterType="int" resultMap="factorsDailyMap">
+	select * from factors_d where fd_id = '${fd_id}';
+	</select>
+	
+	<select id="selectAll" resultMap="factorsDailyMap">
+	select * from factors_d;
+	</select>
+
+</mapper>

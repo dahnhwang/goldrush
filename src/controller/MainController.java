@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import model.FactorsDaily;
 import model.FactorsRecent;
 import model.ForecastOthers;
 import model.Price;
@@ -67,9 +68,21 @@ public class MainController {
 	public @ResponseBody Map<String, Object> getFactors_ajax_json() {
 		Map<String, Object> data = new HashMap<>();
 		List<FactorsRecent> recentAll = frService.factorsRecentAll();
+		/*List<FactorsDaily> byDaily=frService.selectRecentDailyGoldPrice(); */
+		/*List<FactorsMonth> byMonth =frService.selectGoldPriceDailyByMonth();
+		List<FactorsMonth> byYear = frService.selectRecentPriceforYear();*/
 		int size = frService.factorsRecentAll().size();
+		/*int sizeByDaily =byDaily.size();*/
+		/*int sizeByMonth  = byMonth.size();
+		int sizeByYear  = byYear.size();*/
 		data.put("recentAll", recentAll);
 		data.put("size", size);
+		/*data.put("byDaily", byDaily);*/
+		/*data.put("byMonth", byMonth);
+		data.put("byYear", byYear);*/
+		/*data.put("sizeByDaily", sizeByDaily);*/
+		/*data.put("sizeByMonth", sizeByMonth);
+		data.put("sizeByYear", sizeByYear);*/
 		return data;
 	}
 

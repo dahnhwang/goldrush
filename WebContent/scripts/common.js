@@ -12,11 +12,11 @@
 			
 			for(var i=9;i>0;i--){
 				
-				var fr_id=size-i;
+				var fr_id=size-12*i;
 				var gold_price=data.recentAll[fr_id].gold_price;
 				
 				factor=[]
-				factor.push(9-i);
+				factor.push(9*12-12*i);
 				factor.push(gold_price);
 				d1.push(factor)	
 				
@@ -127,7 +127,7 @@ $('.factors').click(function(){
 			
 			for(var i=9;i>0;i--){
 				
-				var fr_id=size-i;
+				var fr_id=size-12*i;
 				var gold_price=data.recentAll[fr_id].gold_price;
 				var gold_price_date=moment(data.recentAll[fr_id].gold_price_date).format('DD');
 				var dow_jones=data.recentAll[fr_id].dow_jones;
@@ -136,15 +136,15 @@ $('.factors').click(function(){
 				var sp_500_date=data.recentAll[fr_id].sp_500_date;
 				
 				gold_price_data=[]
-				gold_price_data.push(9-i);
+				gold_price_data.push(9*12-12*i);
 				gold_price_data.push(gold_price);
 				
 				dow_jones_data=[]
-				dow_jones_data.push(9-i);
+				dow_jones_data.push(9*12-12*i);
 				dow_jones_data.push(dow_jones);
 				
 				sp_500_data=[]
-				sp_500_data.push(9-i);
+				sp_500_data.push(9*12-12*i);
 				sp_500_data.push(sp_500);
 				
 				d1.push(gold_price_data)

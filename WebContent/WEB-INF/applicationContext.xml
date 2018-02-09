@@ -57,6 +57,11 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 		<property name="mapperInterface" value="dao.IFactorsMonthDao"></property>
 	</bean>
+	
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="IFactorsDailyDao">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+		<property name="mapperInterface" value="dao.IFactorsDailyDao"></property>
+	</bean>
 
 	<bean
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
