@@ -14,7 +14,6 @@
 				
 				var fr_id=size-i;
 				var gold_price=data.recentAll[fr_id].gold_price;
-				var gold_price_date=moment(data.recentAll[fr_id].gold_price_date).format('DD');
 				
 				factor=[]
 				factor.push(9-i);
@@ -30,6 +29,7 @@
 
 
 function factor_data(d1){
+	
 	if($('.datatable-1').length>0){
         $('.datatable-1').dataTable();
         $('.dataTables_paginate').addClass('btn-group datatable-pagination');
