@@ -7,7 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoldRush</title>
+<title>GoldMine</title>
 <link rel="stylesheet" href="css/reset.css">
 <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -54,7 +54,7 @@
                                 <div class="module-body">
                                     <div class="news">
                                         <ul id="lists">
-                                        	
+                                        	<c:if test="${news.eng == 1}">
                                         	<c:forEach var="news" items="${news}">
                                             <li class="nlist">
                                                <a href="${news.news_url}" target="_blank">
@@ -68,7 +68,7 @@
                                                 </a>
                                             </li>
                                             </c:forEach>
-                                             
+                                            </c:if>
                                         </ul>
                                     </div>
                                 </div>
