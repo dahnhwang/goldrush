@@ -6,7 +6,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import dao.IFactorsMonthDao;
 import dao.ITrendKeywordDao;
+import model.FactorsMonth;
 import model.TrendKeyword;
 
 @Service
@@ -15,6 +17,9 @@ public class TrendKeywordService implements ITrendKeywordService {
 	@Autowired
 	private ITrendKeywordDao keywordDao;
 
+	@Autowired
+	private IFactorsMonthDao factorMonthDao;
+
 	@Override
 	// 얘는 default로 12개월간 데이터를 일단 땡겨오는 애
 	public HashMap<String, Object> getRecentTrendKeywordList(String endMonth) {
@@ -22,7 +27,9 @@ public class TrendKeywordService implements ITrendKeywordService {
 		params.put("endMonth", endMonth);
 		List<TrendKeyword> keywordList = keywordDao.selectRecentTrendKeyword(params);
 		int keywordFreqMax = keywordDao.selectMaxTrendKeywordValue(params);
+		List<FactorsMonth> goldPriceList = factorMonthDao.selectRecentGoldPrice();
 		HashMap<String, Object> results = new HashMap<>();
+		results.put("goldPriceList", goldPriceList);
 		results.put("keywordList", keywordList);
 		results.put("keywordFreqMax", keywordFreqMax);
 		return results;

@@ -118,12 +118,14 @@
 				function drawBubbleChart(data, tr1, tr2, tr3, tr4, tr5) {
 					var keywordList = data.keywordList
 					var keywordFreqMax = data.keywordFreqMax
+					var goldPriceList = data.goldPriceList
 					var k_month_array = [ "x" ]
 					var keyword1_freq_array = [ "keyword1" ]
 					var keyword2_freq_array = [ "keyword2" ]
 					var keyword3_freq_array = [ "keyword3" ]
 					var keyword4_freq_array = [ "keyword4" ]
 					var keyword5_freq_array = [ "keyword5" ]
+					var goldPrice_array = [ "금가격" ]
 					$.each(keywordList, function(index, item) {
 						var k_month = item.k_month
 						k_month_array.push(k_month)
@@ -154,26 +156,29 @@
 
 					})
 
+					$.each(goldPriceList, function(index, item) {
+						var goldPrice = item.gold_price
+						goldPrice_array.push(goldPrice)
+					})
+
 					var chart = bb.generate({
 						data : {
 							x : "x",
-							columns : [
-									k_month_array,
-									keyword1_freq_array,
-									keyword2_freq_array,
-									keyword3_freq_array,
-									keyword4_freq_array,
-									keyword5_freq_array,
-									[ "data1", 30, 20, 50, 40, 60, 50, 1, 1, 1,
-											1, 1, 1 ] ],
+							columns : [ k_month_array, keyword1_freq_array,
+									keyword2_freq_array, keyword3_freq_array,
+									keyword4_freq_array, keyword5_freq_array,
+									goldPrice_array ],
+							axes : {
+								"금가격" : "y2"
+							},
 							type : "bubble",
 							types : {
-								data1 : "spline"
+								"금가격" : "spline"
 							},
 							labels : true
 						},
 						bubble : {
-							maxR : 50
+							maxR : 100
 						},
 						axis : {
 							x : {
