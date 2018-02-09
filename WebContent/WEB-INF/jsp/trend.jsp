@@ -92,7 +92,6 @@
 						});
 
 				function drawWordOnChart(data) {
-					// keyword1 중에 첫번째달 키워드
 					var keywordList = data.keywordList
 
 					$.each(keywordList, function(index, item) {
@@ -101,7 +100,6 @@
 						var keyword3 = item.keyword3
 						var keyword4 = item.keyword4
 						var keyword5 = item.keyword5
-
 
 						$('.bb-texts-keyword1 > .bb-text-' + index).text(
 								keyword1)
@@ -293,7 +291,7 @@
 	<!--/.wrapper-->
 	<div class="footer">
 		<div class="container">
-			<b class="copyright">&copy; 2018 GoldRush </b>All rights reserved.
+			<b class="copyright">&copy; 2018 GoldMine </b>All rights reserved.
 		</div>
 	</div>
 
