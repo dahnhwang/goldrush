@@ -40,9 +40,12 @@ public class TrendKeywordService implements ITrendKeywordService {
 	public HashMap<String, Object> getTrendKeywordList(String k_year) {
 		HashMap<String, Object> params = new HashMap<>();
 		params.put("k_year", k_year);
+		System.out.println("service가 받은 k_year" + k_year);
 		List<TrendKeyword> keywordList = keywordDao.selectTrendKeywordByYear(params);
 		int keywordFreqMax = keywordDao.selectMaxTrendKeywordValue(params);
+		List<FactorsMonth> goldPriceList = factorMonthDao.selectGoldPriceByYear(params);
 		HashMap<String, Object> results = new HashMap<>();
+		results.put("goldPriceList", goldPriceList);
 		results.put("keywordList", keywordList);
 		results.put("keywordFreqMax", keywordFreqMax);
 		return results;

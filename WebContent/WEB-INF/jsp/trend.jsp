@@ -178,7 +178,7 @@
 							labels : true
 						},
 						bubble : {
-							maxR : 100
+							maxR : 70
 						},
 						axis : {
 							x : {

@@ -26,9 +26,6 @@ public class TrendKeywordController {
 	@Autowired
 	public ITrendKeywordService trendService;
 
-	@Autowired
-	
-
 	@RequestMapping("trend.do")
 	public String trend() {
 		return "trend";

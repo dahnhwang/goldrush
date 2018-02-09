@@ -13,7 +13,10 @@
 
 	<select id="selectGoldPriceByYear" parameterType="java.util.HashMap"
 		resultMap="factorsMonthMap">
-
+		select gold_price from factors_m where k_month LIKE
+		'${k_year}%'
+		order by k_month
+		asc;
 	</select>
 
 </mapper>
