@@ -196,11 +196,10 @@ body [class^="icon-"], body [class*=" icon-"] {
     margin: 0;
     position: relative;
     left: 50%;
-    margin-left: -431.422px;
+    margin-left: -456.469px;
 }
 .navbar .nav>li {
     float: left;
-    margin: 0 20px;
 }
 .navbar .navbar-inner {
 	background: #fff;

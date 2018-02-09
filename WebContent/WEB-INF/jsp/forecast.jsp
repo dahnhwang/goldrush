@@ -46,14 +46,16 @@
                          </div>
 
                          <div class="module-body" style="padding:0;">
-                             <div class="span4 " style="margin-top:20px; margin-bottom:20px;">
+                             <!-- <div class="span4 " style="margin-top:20px; margin-bottom:20px;">
                                  <div>예측내용</div>
                                  <hr>
                                  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa laborum, iure necessitatibus ipsum illo quam officiis praesentium mollitia asperiores magnam delectus suscipit qui debitis reprehenderit voluptates deleniti. Aperiam, odit, magnam?</div>
                              </div>
                              <div class="span6 " style="margin-top:20px; margin-bottom:20px;">
                                  <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-                             </div>
+                             </div> -->
+                             
+                             
                          </div>
                      </div>
                  <!--/.content-->
@@ -72,7 +74,7 @@
      <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
      <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
      <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-     <script>
+     <!-- <script>
             window.onload = function () {
 
 var options = {
@@ -143,7 +145,7 @@ var options = {
 $("#chartContainer").CanvasJSChart(options);
 
 }
-        </script>
+        </script> -->
         <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
 <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 </body>

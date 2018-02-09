@@ -52,7 +52,7 @@
                         </div>
                         <div class="module-body" style="padding:0;">
                         <input type="button" value="일별 예측~~" class="daily-forecast">
-<input type="button" value="월별 예측~~" class="monthly-forecast">
+						<input type="button" value="월별 예측~~" class="monthly-forecast">
                                <div id="container3" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
                         </div>
@@ -73,7 +73,7 @@
     <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
     <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="scripts/piechart.js" type=""></script>
+    <script src="scripts/piechart.js" type="text/javascript"></script>
      <script src="scripts/moment.js" type="text/javascript"></script>
     <script src="scripts/charts.js" type="text/javascript"></script>
 </body>
