@@ -8,15 +8,15 @@
 			var d1 = [];
 			var d2 = [];
 			
-			var size = data.size;
+			var size = data.sizeByMonth;
 			
-			for(var i=9;i>0;i--){
+			for(var i=size-1;i>0;i--){
 				
-				var fr_id=size-12*i;
-				var gold_price=data.recentAll[fr_id].gold_price;
+				var fr_id=size-i;
+				var gold_price=data.byMonth[fr_id].gold_price;
 				
 				factor=[]
-				factor.push(9*12-12*i);
+				factor.push(size -i);
 				factor.push(gold_price);
 				d1.push(factor)	
 				
@@ -56,7 +56,7 @@ function factor_data(d1){
 			   [ { data: d1, label: 'Profits'}], {
 					lines: {
 						show: true,
-						fill: false, 
+						fill: true, 
 						lineWidth: 2
 					},
 					points: {
