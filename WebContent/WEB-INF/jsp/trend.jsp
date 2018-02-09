@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -47,6 +46,11 @@
 							drawBubbleChart(data, tr1, tr2, tr3, tr4, tr5)
 
 						}
+
+						if (data) {
+							drawWordOnChart(data)
+						}
+
 					}
 
 				})
@@ -81,9 +85,37 @@
 										drawBubbleChart(data, tr1, tr2, tr3,
 												tr4, tr5)
 									}
+
+									drawWordOnChart(data)
 								}
 							})
 						});
+
+				function drawWordOnChart(data) {
+					// keyword1 중에 첫번째달 키워드
+					var keywordList = data.keywordList
+
+					$.each(keywordList, function(index, item) {
+						var keyword1 = item.keyword1
+						var keyword2 = item.keyword2
+						var keyword3 = item.keyword3
+						var keyword4 = item.keyword4
+						var keyword5 = item.keyword5
+
+
+						$('.bb-texts-keyword1 > .bb-text-' + index).text(
+								keyword1)
+						$('.bb-texts-keyword2 > .bb-text-' + index).text(
+								keyword2)
+						$('.bb-texts-keyword3 > .bb-text-' + index).text(
+								keyword3)
+						$('.bb-texts-keyword4 > .bb-text-' + index).text(
+								keyword4)
+						$('.bb-texts-keyword5 > .bb-text-' + index).text(
+								keyword5)
+					})
+
+				}
 
 				function drawBubbleChart(data, tr1, tr2, tr3, tr4, tr5) {
 					var keywordList = data.keywordList
