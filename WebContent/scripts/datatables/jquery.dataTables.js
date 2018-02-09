@@ -3027,11 +3027,11 @@ function(window, document, undefined) {
 					nPaginate.className = oSettings.oClasses.sPaging
 							+ oSettings.sPaginationType;
 
-					DataTable.ext.oPagination[oSettings.sPaginationType]
-							.fnInit(oSettings, nPaginate, function(oSettings) {
-								_fnCalculateEnd(oSettings);
-								_fnDraw(oSettings);
-							});
+//					DataTable.ext.oPagination[oSettings.sPaginationType]
+//							.fnInit(oSettings, nPaginate, function(oSettings) {
+//								_fnCalculateEnd(oSettings);
+//								_fnDraw(oSettings);
+//							});
 
 					/*
 					 * Add a draw callback for the pagination on first instance,
@@ -6923,7 +6923,7 @@ function(window, document, undefined) {
 									// create
 									// a tfoot element for the caption element
 									// to be appended to
-//									tfoot = [ document.createElement('tfoot') ];
+									tfoot = [ document.createElement('tfoot') ];
 									// this.appendChild(tfoot[0]);
 
 								}
