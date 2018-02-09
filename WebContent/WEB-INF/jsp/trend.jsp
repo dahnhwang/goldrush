@@ -86,7 +86,10 @@
 												tr4, tr5)
 									}
 
-									drawWordOnChart(data)
+									if (data) {
+										drawWordOnChart(data)
+									}
+
 								}
 							})
 						});
@@ -101,16 +104,16 @@
 						var keyword4 = item.keyword4
 						var keyword5 = item.keyword5
 
-						$('.bb-texts-keyword1 > .bb-text-' + index).text(
-								keyword1)
-						$('.bb-texts-keyword2 > .bb-text-' + index).text(
-								keyword2)
-						$('.bb-texts-keyword3 > .bb-text-' + index).text(
-								keyword3)
-						$('.bb-texts-keyword4 > .bb-text-' + index).text(
-								keyword4)
-						$('.bb-texts-keyword5 > .bb-text-' + index).text(
-								keyword5)
+						$('.bb-texts-연관키워드1 > .bb-text-' + index)
+								.text(keyword1)
+						$('.bb-texts-연관키워드2 > .bb-text-' + index)
+								.text(keyword2)
+						$('.bb-texts-연관키워드3 > .bb-text-' + index)
+								.text(keyword3)
+						$('.bb-texts-연관키워드4 > .bb-text-' + index)
+								.text(keyword4)
+						$('.bb-texts-연관키워드5 > .bb-text-' + index)
+								.text(keyword5)
 					})
 
 				}
@@ -120,11 +123,11 @@
 					var keywordFreqMax = data.keywordFreqMax
 					var goldPriceList = data.goldPriceList
 					var k_month_array = [ "x" ]
-					var keyword1_freq_array = [ "keyword1" ]
-					var keyword2_freq_array = [ "keyword2" ]
-					var keyword3_freq_array = [ "keyword3" ]
-					var keyword4_freq_array = [ "keyword4" ]
-					var keyword5_freq_array = [ "keyword5" ]
+					var keyword1_freq_array = [ "연관키워드1" ]
+					var keyword2_freq_array = [ "연관키워드2" ]
+					var keyword3_freq_array = [ "연관키워드3" ]
+					var keyword4_freq_array = [ "연관키워드4" ]
+					var keyword5_freq_array = [ "연관키워드5" ]
 					var goldPrice_array = [ "금가격" ]
 					$.each(keywordList, function(index, item) {
 						var k_month = item.k_month
@@ -190,7 +193,7 @@
 							},
 							y2 : {
 								show : true,
-								label : "gold price"
+								label : "gold price($)"
 							}
 						},
 						bindto : "#BubbleChart"
