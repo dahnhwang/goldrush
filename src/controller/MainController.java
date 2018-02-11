@@ -64,7 +64,7 @@ public class MainController {
 
 		mav.addObject("goldPrice", goldPrice);
 		mav.addObject("goldPriceResult", goldPriceResult);
-		mav.addObject("recentAll", recentAll);
+		mav.addObject("recentAll", recentAll); 
 		mav.addObject("result1Day", recentResult1Day);
 		/* mav.addObject("result5Day", recentResult5Day); */
 		return mav;
