@@ -10,11 +10,15 @@
 			var size = data.sizeByMonth;
 			var i = 0;
 			var h = 1989;
+			
+			var exRate = data.exrate
 
 			for (var i = 0; i < size; i++) {
 
 				var fr_id = i;
 				var gold_price = data.byMonth[fr_id].gold_price;
+				gold_price = gold_price/ 28.35 * 3.75 * exRate;
+				gold_price = Math.floor(gold_price,2)
 
 				factor = []
 				factor.push(h);
@@ -234,11 +238,15 @@ $('.factors').click(function() {
 			var size = data.sizeByMonth;
 			var i = 0;
 			var h = 1989;
+			
+			var exRate = data.exrate
 
 			for (var i = 0; i < size; i++) {
 
 				var fr_id = i;
 				var gold_price = data.byMonth[fr_id].gold_price;
+				gold_price = gold_price/ 28.35 * 3.75 * exRate;
+				gold_price = Math.floor(gold_price,2)
 				var dow_jones = data.byMonth[fr_id].dow_jones;
 				var sp_500 = data.byMonth[fr_id].sp_500;
 
@@ -397,11 +405,15 @@ $('.select')
 										var size = data.sizeByMonth;
 										var i = 0;
 										var h = 1989;
+										
+										var exRate = data.exrate
 
 										for (var i = 0; i < size; i++) {
 
 											var fr_id = i;
 											var gold_price = data.byMonth[fr_id].gold_price;
+											gold_price = gold_price/ 28.35 * 3.75 * exRate;
+											gold_price = Math.floor(gold_price,2)
 											var dow_jones = data.byMonth[fr_id].dow_jones;
 											var sp_500 = data.byMonth[fr_id].sp_500;
 
@@ -556,11 +568,16 @@ $('.select')
 										var size = data.sizeByMonth;
 										var i = 0;
 										var h = 2018+1/12;
+										
+										var exRate = data.exrate
 
 										for (var i = size-1; i > size-121; i--) {
 
 											var fr_id = i;
 											var gold_price = data.byMonth[fr_id].gold_price;
+											gold_price = gold_price/ 28.35 * 3.75 * exRate;
+											gold_price = Math.floor(gold_price,2)
+											
 											var dow_jones = data.byMonth[fr_id].dow_jones;
 											var sp_500 = data.byMonth[fr_id].sp_500;
 
@@ -715,10 +732,14 @@ $('.select')
 										var size = data.sizeByDaily;
 										var i = 0;
 										var h = 0;
+										
+										var exRate = data.exrate
 
 										for (var i =size-1; i >size-365; i--) {
 											var fr_id = i;
 											var gold_price = data.byDaily[fr_id].gold_price;
+											gold_price = gold_price/ 28.35 * 3.75 * exRate;
+											gold_price = Math.floor(gold_price,2)
 											var dow_jones = data.byDaily[fr_id].dow_jones;
 											var dollar_index = data.byDaily[fr_id].dollar_index;
 											var wti = data.byDaily[fr_id].wti;
@@ -855,11 +876,15 @@ $('.select')
 										var size = data.size;
 
 										var j=0;
+										
+										var exRate = data.exrate
 										for (var i = size; i > size-24*7; i--) {
 											
 
 											var fr_id = size - i;
 											var gold_price = data.recentAll[fr_id].gold_price;
+											gold_price = gold_price/ 28.35 * 3.75 * exRate;
+											gold_price = Math.floor(gold_price,2)
 											var dow_jones = data.recentAll[fr_id].dow_jones;
 											var sp_500 = data.recentAll[fr_id].sp_500;
 											var dollar_index = data.recentAll[fr_id].dollar_index;
@@ -1003,11 +1028,14 @@ $('.select')
 										var size = data.size;
 
 										var j=0;
+										var exRate = data.exrate
 										for (var i = size; i > size-24; i--) {
 											
 
 											var fr_id = size - i;
 											var gold_price = data.recentAll[fr_id].gold_price;
+											gold_price = gold_price/ 28.35 * 3.75 * exRate;
+											gold_price = Math.floor(gold_price,2)
 											var dow_jones = data.recentAll[fr_id].dow_jones;
 											var sp_500 = data.recentAll[fr_id].sp_500;
 											var dollar_index = data.recentAll[fr_id].dollar_index;

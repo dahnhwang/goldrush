@@ -348,16 +348,21 @@ $(function() {
 					var sizeByDaily= data.sizeByDaily
 					var sizeByMonth=data.sizeByMonth
 					var sizeForecast =data.sizeForecast
+					var exRate = data.exrate
 					
 					for (var i = 0; i < sizeByDaily; i++) {
 						
 						var myGoldPrice =data.byDaily[i].gold_price;
+						myGoldPrice = myGoldPrice/ 28.35 * 3.75 * exRate;
+						myGoldPrice = Math.floor(myGoldPrice,2)
 						myData.push(myGoldPrice)
 					}
 					
 					for (var i = 0; i < sizeForecast; i++) {
 						
 						var myGoldPrice2 =data.forecast[i].f_goldprice;
+						myGoldPrice2 = myGoldPrice2/ 28.35 * 3.75 * exRate;
+						myGoldPrice2 = Math.floor(myGoldPrice2,2)
 						myData2.push(myGoldPrice2)
 					}
 					
@@ -674,12 +679,16 @@ $('.daily-forecast').click(function(){
 				for (var i = 0; i < sizeByDaily; i++) {
 					
 					var myGoldPrice =data.byDaily[i].gold_price;
+					myGoldPrice = myGoldPrice/ 28.35 * 3.75 * exRate;
+					myGoldPrice = Math.floor(myGoldPrice,2)
 					myData.push(myGoldPrice)
 				}
 				
 				for (var i = 0; i < sizeForecast; i++) {
 					
 					var myGoldPrice2 =data.forecast[i].f_goldprice;
+					myGoldPrice2 = myGoldPrice2/ 28.35 * 3.75 * exRate;
+					myGoldPrice2 = Math.floor(myGoldPrice2,2)
 					myData2.push(myGoldPrice2)
 				}
 				
@@ -989,12 +998,16 @@ $('.monthly-forecast').click(function(){
 					for (var i = 0; i < sizeByDaily; i++) {
 						
 						var myGoldPrice =data.byDaily[i].gold_price;
+						myGoldPrice = myGoldPrice/ 28.35 * 3.75 * exRate;
+						myGoldPrice = Math.floor(myGoldPrice,2)
 						myData.push(myGoldPrice)
 					}
 					
 					for (var i = 0; i < sizeForecast; i++) {
 						
 						var myGoldPrice2 =data.forecast[i].f_goldprice;
+						myGoldPrice2 = myGoldPrice2/ 28.35 * 3.75 * exRate;
+						myGoldPrice2 = Math.floor(myGoldPrice2,2)
 						myData2.push(myGoldPrice2)
 					}
 					

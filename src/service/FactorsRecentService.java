@@ -14,9 +14,11 @@ import org.springframework.stereotype.Service;
 import dao.IFactorsDailyDao;
 import dao.IFactorsMonthDao;
 import dao.IFactorsRecentDao;
+import dao.IPriceDao;
 import model.FactorsDaily;
 import model.FactorsMonth;
 import model.FactorsRecent;
+import model.Price;
 
 @Service
 public class FactorsRecentService implements IFactorsRecentService {
@@ -29,6 +31,10 @@ public class FactorsRecentService implements IFactorsRecentService {
 	
 	@Autowired
 	private IFactorsMonthDao fmDao;
+	
+	@Autowired
+	private IPriceDao pDao;
+
 
 	@Override
 	public List<FactorsRecent> factorsRecentAll() {
@@ -47,8 +53,17 @@ public class FactorsRecentService implements IFactorsRecentService {
 		int fr_id = factorsRecentAll.size();
 
 		FactorsRecent factorsRecent = frDao.selectFactorsRecent(fr_id);
+		
+		List<Price> priceAll = pDao.selectAllPrice();
+		int ex_size = priceAll.size();
+		
+		Price price =pDao.selectPrice(ex_size);
+		
+		double exRate = price.getEx_rate();
 
 		double gold_price_today = factorsRecent.getGold_price();
+		gold_price_today= gold_price_today/ 28.35 * 3.75 * exRate;
+		gold_price_today = Math.floor(gold_price_today);
 		double dow_jones_today = factorsRecent.getDow_jones();
 		double sp_500_today = factorsRecent.getSp_500();
 		double dollar_index_today = factorsRecent.getDollar_index();
@@ -65,6 +80,8 @@ public class FactorsRecentService implements IFactorsRecentService {
 		FactorsRecent factorsRecent_someday = frDao.selectFactorsRecent(fr_id - somedays * 24);
 
 		double gold_price_1day = factorsRecent_someday.getGold_price();
+		gold_price_1day= gold_price_1day/ 28.35 * 3.75 * exRate;
+		gold_price_1day = Math.floor(gold_price_1day);
 		double dow_jones_1day = factorsRecent_someday.getDow_jones();
 		double sp_500_1day = factorsRecent_someday.getSp_500();
 		double dollar_index_1day = factorsRecent_someday.getDollar_index();
@@ -121,6 +138,20 @@ public class FactorsRecentService implements IFactorsRecentService {
 		factorsRecent.setGold_mine_rate(gold_mine_result_1day1);
 		factorsRecent.setUncertainty_rate(uncertainty_result_1day1);
 		factorsRecent.setMoney_stock_rate(money_stock_result_1day1);
+		
+		factorsRecent.setGold_price(gold_price_today);
+		factorsRecent.setDow_jones(dow_jones_today);
+		factorsRecent.setSp_500(sp_500_today);
+		factorsRecent.setDollar_index(dollar_index_today);
+		factorsRecent.setWti(wti_today);
+		factorsRecent.setInterest_rate(interest_rate_today);
+		factorsRecent.setGdp(gdp_today);
+		factorsRecent.setInflation(inflation_today);
+		factorsRecent.setBalance_trade(balance_trade_today);
+		factorsRecent.setCpi(cpi_today);
+		factorsRecent.setGold_mine(gold_mine_today);
+		factorsRecent.setUncertainty(uncertainty_today);
+		factorsRecent.setMoney_stock(money_stock_today);
 
 		return factorsRecent;
 	}

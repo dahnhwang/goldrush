@@ -60,11 +60,14 @@ public class MainController {
 		FactorsRecent recentResult1Day = frService.factorsRecentResultSomedays(1);
 		/* FactorsRecent recentResult5Day = frService.factorsRecentResultSomedays(5); */
 
+		double exrate = foService.exrate();
+		
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("goldPrice", goldPrice);
 		mav.addObject("goldPriceResult", goldPriceResult);
-		mav.addObject("recentAll", recentAll); 
+		mav.addObject("recentAll", recentAll);
+		mav.addObject("exrate", exrate);
 		mav.addObject("result1Day", recentResult1Day);
 		/* mav.addObject("result5Day", recentResult5Day); */
 		return mav;
