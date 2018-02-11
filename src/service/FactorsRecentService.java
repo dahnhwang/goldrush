@@ -128,15 +128,15 @@ public class FactorsRecentService implements IFactorsRecentService {
 	@Override
 	public List<FactorsDaily> selectRecentDailyGoldPrice() {
 		// TODO Auto-generated method stub
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
+		/*SimpleDateFormat format = new SimpleDateFormat("yyyy-MM");
 		Calendar cal = Calendar.getInstance();
 		cal.add(Calendar.MONTH, -1);
 		String fromMonth = format.format(cal.getTime());
-		System.out.println("?????"+fromMonth);
 		HashMap<String, Object> param = new HashMap<>();
 		param.put("k_month", fromMonth);
-		List<FactorsDaily> selectDailyPriceInMonth = fdDao.selectRecentDailyGoldPrice(param);
-		return selectDailyPriceInMonth;
+		List<FactorsDaily> selectDailyPriceInMonth = fdDao.selectRecentDailyGoldPrice(param);*/
+		List<FactorsDaily> selectAll = fdDao.selectAll();
+		return selectAll;
 	}
 
 	@Override

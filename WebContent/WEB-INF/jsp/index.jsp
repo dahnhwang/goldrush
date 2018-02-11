@@ -156,7 +156,7 @@
 								<option value="MS">13. 통화량</option>
 							</select> <input type="button" value="1989년 이후 월별" class="select" id="monthly-1989">
 							<input type="button" value="최근 10년 월별" class="select" id="monthly-10">
-						<input type="button" value="최근 1년 일별 " class="select" id="daily-1"><input type="button" value="실시간 " class="select" id="daily-time">
+						<input type="button" value="최근 1년 일별 " class="select" id="daily-1"><input type="button" value="최근 일주일 시간별" class="select" id="week-daily-time"><input type="button" value="실시간 " class="select" id="daily-time">
 							
 						</div>
 						<div class="module-body">
