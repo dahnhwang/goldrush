@@ -336,66 +336,94 @@ $(function() {
 
 	});
 
-	// default options
-	var options = {
-		chart : {
-			zoomType : 'xy'
-		},
-
-		xAxis : {
-			type : 'datetime'
-		}
-	};
-
-	// create the chart
-	var chart1Options = {
-		chart : {
-			renderTo : 'container2'
-		},
-		series : [ {
-			data : [ 29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5,
-					216.4, 194.1, 95.6, 54.4 ],
-			pointStart : Date.UTC(2010, 0, 1),
-			pointInterval : 3600 * 1000
-		// one hour
-		} ]
-	};
-	chart1Options = jQuery.extend(true, {}, options, chart1Options);
-	var chart1 = new Highcharts.Chart(chart1Options);
-	// //////////차트 구분선///////////////
-	/*
-	 * var chart2Options = { chart: { renderTo: 'container3', zoomType: 'xy' },
-	 *  // series: [{ // data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
-	 * 148.5, 216.4, 194.1, 95.6, 54.4], // pointStart: Date.UTC(2010, 0, 1), //
-	 * pointInterval: 3600 * 1000 // one hour // }]
-	 * 
-	 * ////새로넣어봄 //새로 넣어보기 // chart: { // zoomType: 'xy' // }, title: { text:
-	 * 'Gold Price Forecast Compare' }, subtitle: { // text: 'Source:
-	 * WorldClimate.com' }, xAxis: [{ categories: ['Jan', 'Feb', 'Mar', 'Apr',
-	 * 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], crosshair: true
-	 * }], yAxis: [{ // Primary yAxis labels: { format: '{value}%', style: {
-	 * color: Highcharts.getOptions().colors[1] } }, title: { text: 'Percent',
-	 * style: { color: Highcharts.getOptions().colors[1] } } }, { // Secondary
-	 * yAxis title: { text: 'Dollar', style: { color:
-	 * Highcharts.getOptions().colors[0] } }, labels: { format: '$ {value}',
-	 * style: { color: Highcharts.getOptions().colors[0] } }, opposite: true }],
-	 * tooltip: { shared: true }, legend: { layout: 'vertical', align: 'left',
-	 * x: 120, verticalAlign: 'top', y: 100, floating: true, backgroundColor:
-	 * (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF' },
-	 * series: [{ name: 'Dollar', type: 'column', yAxis: 1, data: [49.9, 71.5,
-	 * 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-	 * tooltip: { values: '$' }
-	 *  }, { name: 'Percent', type: 'spline', data: [7.0, 6.9, 9.5, 14.5, 18.2,
-	 * 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6], tooltip: { valueSuffix: '%' } }] };
-	 * chart2Options = jQuery.extend(true, {}, options, chart2Options); var
-	 * chart2 = new Highcharts.Chart(chart2Options);
-	 */
 
 	$.ajax({
 				url : 'forecast_others_ajax.do',
 				type : 'get',
 				dataType : 'json',
 				success : function(data) {
+					
+					var myData=[]
+					var myData2=[]
+					var sizeByDaily= data.sizeByDaily
+					var sizeByMonth=data.sizeByMonth
+					var sizeForecast =data.sizeForecast
+					
+					for (var i = 0; i < sizeByDaily; i++) {
+						
+						var myGoldPrice =data.byDaily[i].gold_price;
+						myData.push(myGoldPrice)
+					}
+					
+					for (var i = 0; i < sizeForecast; i++) {
+						
+						var myGoldPrice2 =data.forecast[i].f_goldprice;
+						myData2.push(myGoldPrice2)
+					}
+					
+					
+					// default options
+					var options = {
+							chart : {
+								zoomType : 'xy'
+							},
+							
+							xAxis : {
+								type : 'datetime'
+							}
+					};
+					
+					
+					// create the chart
+					var chart1Options = {
+							chart : {
+								renderTo : 'container2'
+							},
+							series : [ {
+								name : '실제 금값',
+								data : myData,
+									pointStart : Date.UTC(1989, 0, 1),
+									pointInterval :1000*60*60*32.75
+									// one hour
+							} , {
+								name : '우리 예측 금값',
+								type : 'spline',
+								data : myData2,
+									pointStart : Date.UTC(1989, 0, 1),
+									pointInterval : 1000*60*60*32.75
+							} ]
+					};
+					chart1Options = jQuery.extend(true, {}, options, chart1Options);
+					
+					var chart1 = new Highcharts.Chart(chart1Options);
+					// //////////차트 구분선///////////////
+					/*
+					 * var chart2Options = { chart: { renderTo: 'container3', zoomType: 'xy' },
+					 *  // series: [{ // data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
+					 * 148.5, 216.4, 194.1, 95.6, 54.4], // pointStart: Date.UTC(2010, 0, 1), //
+					 * pointInterval: 3600 * 1000 // one hour // }]
+					 * 
+					 * ////새로넣어봄 //새로 넣어보기 // chart: { // zoomType: 'xy' // }, title: { text:
+					 * 'Gold Price Forecast Compare' }, subtitle: { // text: 'Source:
+					 * WorldClimate.com' }, xAxis: [{ categories: ['Jan', 'Feb', 'Mar', 'Apr',
+					 * 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], crosshair: true
+					 * }], yAxis: [{ // Primary yAxis labels: { format: '{value}%', style: {
+					 * color: Highcharts.getOptions().colors[1] } }, title: { text: 'Percent',
+					 * style: { color: Highcharts.getOptions().colors[1] } } }, { // Secondary
+					 * yAxis title: { text: 'Dollar', style: { color:
+					 * Highcharts.getOptions().colors[0] } }, labels: { format: '$ {value}',
+					 * style: { color: Highcharts.getOptions().colors[0] } }, opposite: true }],
+					 * tooltip: { shared: true }, legend: { layout: 'vertical', align: 'left',
+					 * x: 120, verticalAlign: 'top', y: 100, floating: true, backgroundColor:
+					 * (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF' },
+					 * series: [{ name: 'Dollar', type: 'column', yAxis: 1, data: [49.9, 71.5,
+					 * 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+					 * tooltip: { values: '$' }
+					 *  }, { name: 'Percent', type: 'spline', data: [7.0, 6.9, 9.5, 14.5, 18.2,
+					 * 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6], tooltip: { valueSuffix: '%' } }] };
+					 * chart2Options = jQuery.extend(true, {}, options, chart2Options); var
+					 * chart2 = new Highcharts.Chart(chart2Options);
+					 */
 
 					var todaySitePrice_1 = []
 					var todaySitePrice_2 = []
@@ -527,16 +555,7 @@ $(function() {
 					var chart2 = new Highcharts.Chart(chart2Options);
 				}
 			})
-});
-
-
-	
-
-
-
-
-
-
+}); 
 
 
 
@@ -641,66 +660,91 @@ $('.daily-forecast').click(function(){
 
 	});
 
-	// default options
-	var options = {
-		chart : {
-			zoomType : 'xy'
-		},
-
-		xAxis : {
-			type : 'datetime'
-		}
-	};
-
-	// create the chart
-	var chart1Options = {
-		chart : {
-			renderTo : 'container2'
-		},
-		series : [ {
-			data : [ 29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5,
-					216.4, 194.1, 95.6, 54.4 ],
-			pointStart : Date.UTC(2010, 0, 1),
-			pointInterval : 3600 * 1000
-		// one hour
-		} ]
-	};
-	chart1Options = jQuery.extend(true, {}, options, chart1Options);
-	var chart1 = new Highcharts.Chart(chart1Options);
-	// //////////차트 구분선///////////////
-	/*
-	 * var chart2Options = { chart: { renderTo: 'container3', zoomType: 'xy' },
-	 *  // series: [{ // data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
-	 * 148.5, 216.4, 194.1, 95.6, 54.4], // pointStart: Date.UTC(2010, 0, 1), //
-	 * pointInterval: 3600 * 1000 // one hour // }]
-	 * 
-	 * ////새로넣어봄 //새로 넣어보기 // chart: { // zoomType: 'xy' // }, title: { text:
-	 * 'Gold Price Forecast Compare' }, subtitle: { // text: 'Source:
-	 * WorldClimate.com' }, xAxis: [{ categories: ['Jan', 'Feb', 'Mar', 'Apr',
-	 * 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], crosshair: true
-	 * }], yAxis: [{ // Primary yAxis labels: { format: '{value}%', style: {
-	 * color: Highcharts.getOptions().colors[1] } }, title: { text: 'Percent',
-	 * style: { color: Highcharts.getOptions().colors[1] } } }, { // Secondary
-	 * yAxis title: { text: 'Dollar', style: { color:
-	 * Highcharts.getOptions().colors[0] } }, labels: { format: '$ {value}',
-	 * style: { color: Highcharts.getOptions().colors[0] } }, opposite: true }],
-	 * tooltip: { shared: true }, legend: { layout: 'vertical', align: 'left',
-	 * x: 120, verticalAlign: 'top', y: 100, floating: true, backgroundColor:
-	 * (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF' },
-	 * series: [{ name: 'Dollar', type: 'column', yAxis: 1, data: [49.9, 71.5,
-	 * 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-	 * tooltip: { values: '$' }
-	 *  }, { name: 'Percent', type: 'spline', data: [7.0, 6.9, 9.5, 14.5, 18.2,
-	 * 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6], tooltip: { valueSuffix: '%' } }] };
-	 * chart2Options = jQuery.extend(true, {}, options, chart2Options); var
-	 * chart2 = new Highcharts.Chart(chart2Options);
-	 */
 
 	$.ajax({
 				url : 'forecast_others_ajax.do',
 				type : 'get',
 				dataType : 'json',
-				success : function(data) {
+				success : function(data) {var myData=[]
+				var myData2=[]
+				var sizeByDaily= data.sizeByDaily
+				var sizeByMonth=data.sizeByMonth
+				var sizeForecast =data.sizeForecast
+				
+				for (var i = 0; i < sizeByDaily; i++) {
+					
+					var myGoldPrice =data.byDaily[i].gold_price;
+					myData.push(myGoldPrice)
+				}
+				
+				for (var i = 0; i < sizeForecast; i++) {
+					
+					var myGoldPrice2 =data.forecast[i].f_goldprice;
+					myData2.push(myGoldPrice2)
+				}
+				
+				
+				// default options
+				var options = {
+						chart : {
+							zoomType : 'xy'
+						},
+						
+						xAxis : {
+							type : 'datetime'
+						}
+				};
+				
+				
+				// create the chart
+				var chart1Options = {
+						chart : {
+							renderTo : 'container2'
+						},
+						series : [ {
+							name : '실제 금값',
+							data : myData,
+								pointStart : Date.UTC(1989, 0, 1),
+								pointInterval :1000*60*60*32.75
+								// one hour
+						} , {
+							name : '우리 예측 금값',
+							type : 'spline',
+							data : myData2,
+								pointStart : Date.UTC(1989, 0, 1),
+								pointInterval : 1000*60*60*32.75
+						} ]
+				};
+					chart1Options = jQuery.extend(true, {}, options, chart1Options);
+					var chart1 = new Highcharts.Chart(chart1Options);
+					// //////////차트 구분선///////////////
+					/*
+					 * var chart2Options = { chart: { renderTo: 'container3', zoomType: 'xy' },
+					 *  // series: [{ // data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
+					 * 148.5, 216.4, 194.1, 95.6, 54.4], // pointStart: Date.UTC(2010, 0, 1), //
+					 * pointInterval: 3600 * 1000 // one hour // }]
+					 * 
+					 * ////새로넣어봄 //새로 넣어보기 // chart: { // zoomType: 'xy' // }, title: { text:
+					 * 'Gold Price Forecast Compare' }, subtitle: { // text: 'Source:
+					 * WorldClimate.com' }, xAxis: [{ categories: ['Jan', 'Feb', 'Mar', 'Apr',
+					 * 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], crosshair: true
+					 * }], yAxis: [{ // Primary yAxis labels: { format: '{value}%', style: {
+					 * color: Highcharts.getOptions().colors[1] } }, title: { text: 'Percent',
+					 * style: { color: Highcharts.getOptions().colors[1] } } }, { // Secondary
+					 * yAxis title: { text: 'Dollar', style: { color:
+					 * Highcharts.getOptions().colors[0] } }, labels: { format: '$ {value}',
+					 * style: { color: Highcharts.getOptions().colors[0] } }, opposite: true }],
+					 * tooltip: { shared: true }, legend: { layout: 'vertical', align: 'left',
+					 * x: 120, verticalAlign: 'top', y: 100, floating: true, backgroundColor:
+					 * (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF' },
+					 * series: [{ name: 'Dollar', type: 'column', yAxis: 1, data: [49.9, 71.5,
+					 * 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+					 * tooltip: { values: '$' }
+					 *  }, { name: 'Percent', type: 'spline', data: [7.0, 6.9, 9.5, 14.5, 18.2,
+					 * 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6], tooltip: { valueSuffix: '%' } }] };
+					 * chart2Options = jQuery.extend(true, {}, options, chart2Options); var
+					 * chart2 = new Highcharts.Chart(chart2Options);
+					 */
 
 					var todaySitePrice_1 = []
 					var todaySitePrice_2 = []
@@ -930,66 +974,92 @@ $('.monthly-forecast').click(function(){
 
 	});
 
-	// default options
-	var options = {
-		chart : {
-			zoomType : 'xy'
-		},
-
-		xAxis : {
-			type : 'datetime'
-		}
-	};
-
-	// create the chart
-	var chart1Options = {
-		chart : {
-			renderTo : 'container2'
-		},
-		series : [ {
-			data : [ 29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5,
-					216.4, 194.1, 95.6, 54.4 ],
-			pointStart : Date.UTC(2010, 0, 1),
-			pointInterval : 3600 * 1000
-		// one hour
-		} ]
-	};
-	chart1Options = jQuery.extend(true, {}, options, chart1Options);
-	var chart1 = new Highcharts.Chart(chart1Options);
-	// //////////차트 구분선///////////////
-	/*
-	 * var chart2Options = { chart: { renderTo: 'container3', zoomType: 'xy' },
-	 *  // series: [{ // data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
-	 * 148.5, 216.4, 194.1, 95.6, 54.4], // pointStart: Date.UTC(2010, 0, 1), //
-	 * pointInterval: 3600 * 1000 // one hour // }]
-	 * 
-	 * ////새로넣어봄 //새로 넣어보기 // chart: { // zoomType: 'xy' // }, title: { text:
-	 * 'Gold Price Forecast Compare' }, subtitle: { // text: 'Source:
-	 * WorldClimate.com' }, xAxis: [{ categories: ['Jan', 'Feb', 'Mar', 'Apr',
-	 * 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], crosshair: true
-	 * }], yAxis: [{ // Primary yAxis labels: { format: '{value}%', style: {
-	 * color: Highcharts.getOptions().colors[1] } }, title: { text: 'Percent',
-	 * style: { color: Highcharts.getOptions().colors[1] } } }, { // Secondary
-	 * yAxis title: { text: 'Dollar', style: { color:
-	 * Highcharts.getOptions().colors[0] } }, labels: { format: '$ {value}',
-	 * style: { color: Highcharts.getOptions().colors[0] } }, opposite: true }],
-	 * tooltip: { shared: true }, legend: { layout: 'vertical', align: 'left',
-	 * x: 120, verticalAlign: 'top', y: 100, floating: true, backgroundColor:
-	 * (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF' },
-	 * series: [{ name: 'Dollar', type: 'column', yAxis: 1, data: [49.9, 71.5,
-	 * 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-	 * tooltip: { values: '$' }
-	 *  }, { name: 'Percent', type: 'spline', data: [7.0, 6.9, 9.5, 14.5, 18.2,
-	 * 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6], tooltip: { valueSuffix: '%' } }] };
-	 * chart2Options = jQuery.extend(true, {}, options, chart2Options); var
-	 * chart2 = new Highcharts.Chart(chart2Options);
-	 */
 
 	$.ajax({
 				url : 'forecast_others_ajax.do',
 				type : 'get',
 				dataType : 'json',
 				success : function(data) {
+					var myData=[]
+					var myData2=[]
+					var sizeByDaily= data.sizeByDaily
+					var sizeByMonth=data.sizeByMonth
+					var sizeForecast =data.sizeForecast
+					
+					for (var i = 0; i < sizeByDaily; i++) {
+						
+						var myGoldPrice =data.byDaily[i].gold_price;
+						myData.push(myGoldPrice)
+					}
+					
+					for (var i = 0; i < sizeForecast; i++) {
+						
+						var myGoldPrice2 =data.forecast[i].f_goldprice;
+						myData2.push(myGoldPrice2)
+					}
+					
+					
+					// default options
+					var options = {
+							chart : {
+								zoomType : 'xy'
+							},
+							
+							xAxis : {
+								type : 'datetime'
+							}
+					};
+					
+					
+					// create the chart
+					var chart1Options = {
+							chart : {
+								renderTo : 'container2'
+							},
+							series : [ {
+								name : '실제 금값',
+								data : myData,
+									pointStart : Date.UTC(1989, 0, 1),
+									pointInterval :1000*60*60*32.75
+									// one hour
+							} , {
+								name : '우리 예측 금값',
+								type : 'spline',
+								data : myData2,
+									pointStart : Date.UTC(1989, 0, 1),
+									pointInterval : 1000*60*60*32.75
+							} ]
+					};
+					chart1Options = jQuery.extend(true, {}, options, chart1Options);
+					var chart1 = new Highcharts.Chart(chart1Options);
+					// //////////차트 구분선///////////////
+					/*
+					 * var chart2Options = { chart: { renderTo: 'container3', zoomType: 'xy' },
+					 *  // series: [{ // data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6,
+					 * 148.5, 216.4, 194.1, 95.6, 54.4], // pointStart: Date.UTC(2010, 0, 1), //
+					 * pointInterval: 3600 * 1000 // one hour // }]
+					 * 
+					 * ////새로넣어봄 //새로 넣어보기 // chart: { // zoomType: 'xy' // }, title: { text:
+					 * 'Gold Price Forecast Compare' }, subtitle: { // text: 'Source:
+					 * WorldClimate.com' }, xAxis: [{ categories: ['Jan', 'Feb', 'Mar', 'Apr',
+					 * 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], crosshair: true
+					 * }], yAxis: [{ // Primary yAxis labels: { format: '{value}%', style: {
+					 * color: Highcharts.getOptions().colors[1] } }, title: { text: 'Percent',
+					 * style: { color: Highcharts.getOptions().colors[1] } } }, { // Secondary
+					 * yAxis title: { text: 'Dollar', style: { color:
+					 * Highcharts.getOptions().colors[0] } }, labels: { format: '$ {value}',
+					 * style: { color: Highcharts.getOptions().colors[0] } }, opposite: true }],
+					 * tooltip: { shared: true }, legend: { layout: 'vertical', align: 'left',
+					 * x: 120, verticalAlign: 'top', y: 100, floating: true, backgroundColor:
+					 * (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF' },
+					 * series: [{ name: 'Dollar', type: 'column', yAxis: 1, data: [49.9, 71.5,
+					 * 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+					 * tooltip: { values: '$' }
+					 *  }, { name: 'Percent', type: 'spline', data: [7.0, 6.9, 9.5, 14.5, 18.2,
+					 * 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6], tooltip: { valueSuffix: '%' } }] };
+					 * chart2Options = jQuery.extend(true, {}, options, chart2Options); var
+					 * chart2 = new Highcharts.Chart(chart2Options);
+					 */
 
 					var todaySitePrice_1 = []
 					var todaySitePrice_2 = []
