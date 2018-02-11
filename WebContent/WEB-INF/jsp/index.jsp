@@ -139,7 +139,25 @@
 					<!--/#btn-controls-->
 					<div class="module">
 						<div class="module-head">
-							<h3>일별 변동 그래프</h3>
+							<h3>변동 그래프</h3>
+							<select class="factorsGragh" id="factorsSelect">
+								<option selected="selected" value="G">01. 금</option>
+								<option value="DJ">02. 다우존스산업지수</option>
+								<option value="SP">03. S&P500</option>
+								<option value="DI">04. 달러 인덱스</option>
+								<option value="WTI">05. 서부텍사스유</option>
+								<option value="IR">06. 금리</option>
+								<option value="GDP">07. GDP</option>
+								<option value="IF">08. 인플레이션</option>
+								<option value="BT">09. 무역수지</option>
+								<option value="CPI">10. 소비자물가지수</option>
+								<option value="GM">11. 금채굴량</option>
+								<option value="UC">12. 불확실성</option>
+								<option value="MS">13. 통화량</option>
+							</select> <input type="button" value="1989년 이후 월별" class="select" id="monthly-1989">
+							<input type="button" value="최근 10년 월별" class="select" id="monthly-10">
+						<input type="button" value="최근 1년 일별 " class="select" id="daily-1"><input type="button" value="실시간 " class="select" id="daily-time">
+							
 						</div>
 						<div class="module-body">
 							<div class="chart inline-legend grid">
