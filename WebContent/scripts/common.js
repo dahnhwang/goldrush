@@ -1,30 +1,33 @@
-﻿$(document).ready(function () {
-	
+﻿$(document).ready(function() {
+
 	$.ajax({
-		url:'index_ajax.do',
-		type:'get',
-		dataType:'json',
-		success:function(data){
+		url : 'index_ajax.do',
+		type : 'get',
+		dataType : 'json',
+		success : function(data) {
 			var d1 = [];
 			var d2 = [];
-			
+
 			var size = data.sizeByMonth;
-			
-			for(var i=size-1;i>0;i--){
-				
-				var fr_id=size-i;
-				var gold_price=data.byMonth[fr_id].gold_price;
-				
-				factor=[]
-				factor.push(size -i);
+			var i = 0;
+			var h = 1989;
+
+			for (var i = 0; i < size;i++) {
+
+				var fr_id = i;
+				var gold_price = data.byMonth[fr_id].gold_price;
+
+				factor = []
+				factor.push(h);
+				h += 1/12;
 				factor.push(gold_price);
-				d1.push(factor)	
-				
-			}		
+				d1.push(factor)
+			}
+
 			factor_data(d1)
 		}
 	})
-   
+
 });
 
 
@@ -115,6 +118,164 @@ $('.factors').click(function(){
 	var factorId = $(this).attr('id')
 	
 	$.ajax({
+		url : 'index_ajax.do',
+		type : 'get',
+		dataType : 'json',
+		success : function(data) {
+			var d1 = [];
+			var d2 = [];
+			var d3 = [];
+			var d4 = [];
+			var d5 = [];
+			var d6 = [];
+			var d7 = [];
+			var d8 = [];
+			var d9 = [];
+			var d10 = [];
+			var d11 = [];
+			var d12 = [];
+			var d13 = [];
+
+			var size= data.sizeByMonth;
+			var i = 0;
+			var h = 1989;
+
+			for (var i = 0; i < size;i++) {
+
+				var fr_id = i;
+				var gold_price = data.byMonth[fr_id].gold_price;
+				var dow_jones=data.byMonth[fr_id].dow_jones;
+				var sp_500=data.byMonth[fr_id].sp_500;
+				
+				var dollar_index = data.byMonth[fr_id].dollar_index;
+				var wti=data.byMonth[fr_id].wti;
+				var interest_rate=data.byMonth[fr_id].interest_rate;
+				var gdp = data.byMonth[fr_id].gdp;
+				var inflation=data.byMonth[fr_id].inflation;
+				var balance_trade=data.byMonth[fr_id].balance_trade;
+				var cpi = data.byMonth[fr_id].cpi;
+				var gold_mine=data.byMonth[fr_id].gold_mine;
+				var uncertainty=data.byMonth[fr_id].uncertainty;
+				var money_stock = data.byMonth[fr_id].money_stock;
+				
+
+				gold_price_data = []
+				gold_price_data.push(h);
+				
+				dow_jones_data = []
+				dow_jones_data.push(h);
+				
+				sp_500_data = []
+				sp_500_data.push(h);
+
+				dollar_index_data = []
+				dollar_index_data.push(h);
+				
+				wti_data = []
+				wti_data.push(h);
+				
+				interest_rate_data = []
+				interest_rate_data.push(h);
+				
+				gdp_data = []
+				gdp_data.push(h);
+				
+				inflation_data = []
+				inflation_data.push(h);
+				
+				balance_trade_data = []
+				balance_trade_data.push(h);
+				
+				cpi_data = []
+				cpi_data.push(h);
+				
+				gold_mine_data = []
+				gold_mine_data.push(h);
+				
+				uncertainty_data = []
+				uncertainty_data.push(h);
+				
+				money_stock_data = []
+				money_stock_data.push(h);
+				
+				h += 1/12;
+				
+				gold_price_data.push(gold_price);
+				d1.push(gold_price_data)
+				
+				dow_jones_data.push(dow_jones);
+				d2.push(dow_jones_data)
+			
+				sp_500_data.push(sp_500);
+				d3.push(sp_500_data)
+				
+				dollar_index_data.push(dollar_index);
+				d4.push(dollar_index_data)
+				
+				wti_data.push(wti);
+				d5.push(wti_data)
+			
+				interest_rate_data.push(interest_rate);
+				d6.push(interest_rate_data)
+				
+				gdp_data.push(gdp);
+				d7.push(gdp)
+				
+				inflation_data.push(inflation);
+				d8.push(inflation_data)
+			
+				balance_trade_data.push(balance_trade);
+				d9.push(balance_trade_data)
+				
+				cpi_data.push(cpi);
+				d10.push(cpi_data)
+				
+				gold_mine_data.push(gold_mine);
+				d11.push(gold_mine_data)
+			
+				uncertainty_data.push(uncertainty);
+				d12.push(uncertainty_data)
+				
+				money_stock_data.push(money_stock);
+				d13.push(money_stock_data)
+			}
+
+			if(factorId=="G"){
+				factor_data(d1)
+			}else if(factorId=="DJ"){
+				factor_data(d2)
+			}else if(factorId=="SP"){
+				factor_data(d3)
+			}else if(factorId=="DI"){
+				factor_data(d4)
+			}else if(factorId=="WTI"){
+				factor_data(d5)
+			}else if(factorId=="IR"){
+				factor_data(d6)
+			}else if(factorId=="GDP"){
+				factor_data(d7)
+			}else if(factorId=="IF"){
+				factor_data(d8)
+			}else if(factorId=="BT"){
+				factor_data(d9)
+			}else if(factorId=="CPI"){
+				factor_data(d10)
+			}else if(factorId=="GM"){
+				factor_data(d11)
+			}else if(factorId=="UC"){
+				factor_data(d12)
+			}else if(factorId=="MS"){
+				factor_data(d13)
+			}
+		}
+	})
+	
+})
+
+/*$('.factors').click(function(){
+	var factorId = $(this).attr('id')
+	
+	$.ajax({
 		url:'index_ajax.do',
 		type:'get',
 		dataType:'json',
@@ -163,7 +324,7 @@ $('.factors').click(function(){
 		}
 	})
 	
-})
+})*/
 
 /*$(document).ready(function () {
     if($('.datatable-1').length>0){
