@@ -57,12 +57,16 @@ public class MainController {
 		List<String> goldPriceResult = pService.goldPriceResult();
 
 		List<FactorsRecent> recentAll = frService.factorsRecentAll();
+		FactorsRecent recentResult1Day = frService.factorsRecentResultSomedays(1);
+		/* FactorsRecent recentResult5Day = frService.factorsRecentResultSomedays(5); */
 
 		ModelAndView mav = new ModelAndView();
 
 		mav.addObject("goldPrice", goldPrice);
 		mav.addObject("goldPriceResult", goldPriceResult);
 		mav.addObject("recentAll", recentAll);
+		mav.addObject("result1Day", recentResult1Day);
+		/* mav.addObject("result5Day", recentResult5Day); */
 		return mav;
 	}
 
