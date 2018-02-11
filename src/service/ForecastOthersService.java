@@ -38,10 +38,15 @@ public class ForecastOthersService implements IForecastOthersService {
 	@Override
 	public List<ForecastOthers> selectByToday() {
 		// TODO Auto-generated method stub
-		Date today = new Date();
+		
+		List<ForecastOthers> selectAll = foDao.selectAllForecastOthers();
+		int sizeAll = selectAll.size();
+		ForecastOthers ForecastOthersLast = foDao.selectForecastOthers(sizeAll-1);
+		Date last = ForecastOthersLast.getF_others_getdate();
+		
 		DateFormat df = new SimpleDateFormat("yyyy-MM-dd 00:00:00");
 
-		String str = df.format(today);
+		String str = df.format(last);
 
 		List<ForecastOthers> forecastOthersToday = foDao.selectForecastOthersByDate(str);
 		
@@ -66,6 +71,22 @@ public class ForecastOthersService implements IForecastOthersService {
 		Price goldPrice = pDao.selectPrice(g_id);		
 		double exRate = goldPrice.getEx_rate();	
 		return exRate;
+	}
+
+	@Override
+	public ForecastOthers selectbyId(int f_others_id) {
+		// TODO Auto-generated method stub
+		ForecastOthers forecastOthersId =foDao.selectForecastOthers(f_others_id);
+		
+		return forecastOthersId;
+	}
+
+	@Override
+	public List<ForecastOthers> selectAll() {
+		// TODO Auto-generated method stub
+		List<ForecastOthers> selectAll = foDao.selectAllForecastOthers();
+		
+		return selectAll;
 	}
 
 }

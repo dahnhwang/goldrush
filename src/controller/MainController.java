@@ -103,25 +103,14 @@ public class MainController {
 	@RequestMapping(value = "forecast_others_ajax.do", produces = { "application/json" })
 	public @ResponseBody Map<String, Object> getForecast_Others_ajax_json() {
 		
-		Date today = new Date();
-		Map<String, Object> data = new HashMap<>();		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd 00:00:00");
-		
-		GregorianCalendar cal = new GregorianCalendar();
-		cal.add(cal.DATE,-1);
-		Date date = cal.getTime(); //연산된 날자를 생성. 
-		String yesterday = sdf.format(date);
-		
 		List<ForecastOthers> forecastOthersToday = foService.selectByToday();
 		int sizeToday = forecastOthersToday.size();
-		List<ForecastOthers> forecastOthersYesterday = foService.selectByDate(yesterday);
-		int sizeYesterday = forecastOthersYesterday.size();
 		double exrate = foService.exrate();
+
+		Map<String, Object> data = new HashMap<>();	
 		
 		data.put("forecastOthersToday", forecastOthersToday);
 		data.put("sizeToday", sizeToday);
-		data.put("forecastOthersYesterday", forecastOthersYesterday);
-		data.put("sizeYesterday", sizeYesterday);
 		data.put("exrate", exrate);
 
 		return data;

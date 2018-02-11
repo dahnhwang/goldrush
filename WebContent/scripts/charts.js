@@ -404,15 +404,7 @@ $(function() {
 					var todaySiteDate_2 = []
 					var todaySiteDate_3 = []
 
-					var yesterdaySitePrice_1 = []
-					var yesterdaySitePrice_2 = []
-					var yesterdaySitePrice_3 = []
-					var yesterdaySiteDate_1 = []
-					var yesterdaySiteDate_2 = []
-					var yesterdaySiteDate_3 = []
-
 					var today = data.sizeToday
-					var yesterday = data.sizeYesterday
 					var exRate = data.exrate
 
 					for (var i = 0; i < today; i++) {
@@ -437,27 +429,6 @@ $(function() {
 						}
 					}			
 
-					for (var i = 0; i < yesterday; i++) {
-
-						var priceYesterday = data.forecastOthersYesterday[i].f_others_price
-						priceYesterday = priceYesterday/ 28.35 * 3.75 * exRate;
-						priceYesterday = Math.floor(priceToday,0);
-						var dateYesterday = data.forecastOthersYesterday[i].f_others_date
-						dateYesterday = moment(dateYesterday).format(
-								'YYYY-MM-DD');
-						var checkYesterday = data.forecastOthersYesterday[i].f_others_site
-
-						if (checkYesterday == 1) {
-							yesterdaySitePrice_1.push(priceYesterday)
-							yesterdaySiteDate_1.push(dateYesterday)
-						} else if (checkYesterday == 2) {
-							yesterdaySitePrice_2.push(priceYesterday)
-							yesterdaySiteDate_2.push(dateYesterday)
-						} else if (checkYesterday == 3) {
-							yesterdaySitePrice_2.push(priceYesterday)
-							yesterdaySiteDate_2.push(dateYesterday)
-						}
-					}
 
 					var chart2Options = {
 						chart : {
@@ -738,15 +709,7 @@ $('.daily-forecast').click(function(){
 					var todaySiteDate_2 = []
 					var todaySiteDate_3 = []
 
-					var yesterdaySitePrice_1 = []
-					var yesterdaySitePrice_2 = []
-					var yesterdaySitePrice_3 = []
-					var yesterdaySiteDate_1 = []
-					var yesterdaySiteDate_2 = []
-					var yesterdaySiteDate_3 = []
-
 					var today = data.sizeToday
-					var yesterday = data.sizeYesterday
 					var exRate = data.exrate
 
 					for (var i = 0; i < today; i++) {
@@ -771,27 +734,6 @@ $('.daily-forecast').click(function(){
 						}
 					}			
 
-					for (var i = 0; i < yesterday; i++) {
-
-						var priceYesterday = data.forecastOthersYesterday[i].f_others_price
-						priceYesterday = priceYesterday/ 28.35 * 3.75 * exRate;
-						priceYesterday = Math.floor(priceToday,0);
-						var dateYesterday = data.forecastOthersYesterday[i].f_others_date
-						dateYesterday = moment(dateYesterday).format(
-								'YYYY-MM-DD');
-						var checkYesterday = data.forecastOthersYesterday[i].f_others_site
-
-						if (checkYesterday == 1) {
-							yesterdaySitePrice_1.push(priceYesterday)
-							yesterdaySiteDate_1.push(dateYesterday)
-						} else if (checkYesterday == 2) {
-							yesterdaySitePrice_2.push(priceYesterday)
-							yesterdaySiteDate_2.push(dateYesterday)
-						} else if (checkYesterday == 3) {
-							yesterdaySitePrice_2.push(priceYesterday)
-							yesterdaySiteDate_2.push(dateYesterday)
-						}
-					}
 
 					var chart2Options = {
 						chart : {

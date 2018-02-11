@@ -5,6 +5,7 @@ import java.util.Date;
 public class ForecastOthers {
 
 	private int f_others_id;
+	private Date f_others_getdate;
 	private Date f_others_date;
 	private int f_others_site;
 	private String f_others_period;
@@ -12,11 +13,18 @@ public class ForecastOthers {
 	private Double f_others_min;
 	private Double f_others_price;
 	private Double f_others_error;
+	
 	public int getF_others_id() {
 		return f_others_id;
 	}
 	public void setF_others_id(int f_others_id) {
 		this.f_others_id = f_others_id;
+	}
+	public Date getF_others_getdate() {
+		return f_others_getdate;
+	}
+	public void setF_others_getdate(Date f_others_getdate) {
+		this.f_others_getdate = f_others_getdate;
 	}
 	public Date getF_others_date() {
 		return f_others_date;
@@ -60,16 +68,13 @@ public class ForecastOthers {
 	public void setF_others_error(Double f_others_error) {
 		this.f_others_error = f_others_error;
 	}
+	
 	@Override
 	public String toString() {
-		return "ForecastOthers [f_others_id=" + f_others_id + ", f_others_date=" + f_others_date + ", f_others_site="
-				+ f_others_site + ", f_others_period=" + f_others_period + ", f_others_max=" + f_others_max
-				+ ", f_others_min=" + f_others_min + ", f_others_price=" + f_others_price + ", f_others_error="
-				+ f_others_error + "]";
+		return "ForecastOthers [f_others_id=" + f_others_id + ", f_others_getdate=" + f_others_getdate
+				+ ", f_others_date=" + f_others_date + ", f_others_site=" + f_others_site + ", f_others_period="
+				+ f_others_period + ", f_others_max=" + f_others_max + ", f_others_min=" + f_others_min
+				+ ", f_others_price=" + f_others_price + ", f_others_error=" + f_others_error + "]";
 	}
-	
-	
-	
-	
 
 }
