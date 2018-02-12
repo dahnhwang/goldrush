@@ -106,7 +106,9 @@
 				</div>
 				<div class="content">
 					<div class="btn-controls">
-						Updated by ${goldPrice.gold_date }
+						업데이트 일시 <fmt:formatDate
+												value="${goldPrice.gold_date }"
+												pattern="yyyy-MM-dd hh:mm" />
 						<div class="btn-box-row row-fluid ">
 							<div class="btn-box big span4 ">
 								<div class="card-container ">
