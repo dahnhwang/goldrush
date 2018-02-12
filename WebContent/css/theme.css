@@ -910,7 +910,6 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
 .center-join>span {
 	display: block;
-	width: 900px;
 	padding: 2%;
 	text-align: center;
 	margin: 0 auto;
@@ -936,7 +935,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	text-align: center;
 	padding: 10px;
 	text-decoration: none;
-	width: 70px;
+	width: 250px;
 }
 
 .center-join2 {
