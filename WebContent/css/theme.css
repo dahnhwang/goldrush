@@ -946,6 +946,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	margin: 0 auto;
 	background-color: rgba(0, 0, 0, 0.4);
 	border-radius: 100%;
+	
 }
 
 .center-join2 {
@@ -954,7 +955,10 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .index_img {
-	background: url(../images/joseph-barrientos-93565.jpg);
+	background: linear-gradient(
+                     rgba(20,20,20, .5), 
+                     rgba(20,20,20, .5)),
+                     url(../images/joseph-barrientos-93565.jpg);
 	background-attachment: fixed;
 	background-position: 0 center;
 	background-size: 100%;
