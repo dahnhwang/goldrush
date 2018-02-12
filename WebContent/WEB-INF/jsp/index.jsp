@@ -77,7 +77,7 @@
 			<!--/.span3-->
 			<div class="span12"
 				style="margin: 0 auto; float: initial; clear: both;">
-				<div class="center-join">
+				<div class="center-join index_img">
 					<span>미래를 알고 <br> 현명하게 투자하세요.<br> <input
 						type="button" class="btn join-btn" value="가입하기">
 					</span>
