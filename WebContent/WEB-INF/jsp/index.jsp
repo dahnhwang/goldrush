@@ -77,11 +77,12 @@
 			<!--/.span3-->
 			<div class="span12"
 				style="margin: 0 auto; float: initial; clear: both;">
-				<div class="bg-wrapper">
-					<div class="center-join index_img">
-						<span>골드마인은 빅데이터 분석, 머신러닝과 같은 최신 기술을 통해<br> 사람들에게 더 나은
-							투자 정보를 제공하고 싶습니다.
-						</span>
+
+				<div class="center-join index_img">
+					<span>골드마인은 빅데이터 분석, 머신러닝과 같은 최신 기술을 통해<br> 사람들에게 더 나은
+						투자 정보를 제공하고 싶습니다.
+					</span>
+					<div class="center-desc">
 						<ul>
 							<li>어쩌구</li>
 							<li>어쩌구</li>
@@ -89,6 +90,7 @@
 						</ul>
 
 					</div>
+
 				</div>
 				<div class="content">
 					<div class="btn-controls">

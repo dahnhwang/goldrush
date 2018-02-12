@@ -901,10 +901,6 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	}
 }
 
-.bg-wrapper {
-	
-}
-
 .center-join {
 	height: 650px;
 	color: #eee;
@@ -922,13 +918,25 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	line-height: 50px;
 }
 
-.center-join>ul {
-	list-style: none;
+.center-desc {
 	text-align: center;
 }
 
-.center-join>li {
+.center-join ul {
+	list-style: none;
+	padding: 2%;
+	display: inline-block;
+	margin: 0;
+}
+
+.center-join li {
+	float: left;
 	display: block;
+	color: black;
+	text-align: center;
+	padding: 10px;
+	text-decoration: none;
+	width: 70px;
 }
 
 .center-join2 {
