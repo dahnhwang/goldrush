@@ -87,20 +87,26 @@
 							<li>
 								<p class="center-p">금과 관련된 최신 정보를 한 눈에 확인하세요</p>
 								<div class="center-circle">
-									<p class="center-circle-p">최신 금시세 정보, 최신 환율 정보 외 주요 경제 지표
-										제공</p>
+									<div class="center-circle-wrapper">
+										<p class="center-circle-p">최신 금시세 정보, 최신 환율 정보<br> 외 주요 경제 지표
+											제공</p>
+									</div>
 								</div>
 							</li>
 							<li>
 								<p class="center-p">금과 관련된 역사를 월별 키워드를 통해 확인하세요</p>
 								<div class="center-circle">
-									<p class="center-circle-p">30년간 금가격 및 뉴욕타임즈 추출 키워드 월별 제공</p>
+									<div class="center-circle-wrapper">
+										<p class="center-circle-p">30년간 금가격 및 뉴욕타임즈 <br>추출 키워드 월별 제공</p>
+									</div>
 								</div>
 							</li>
 							<li>
 								<p class="center-p">금의 미래를 한 눈에 확인하세요</p>
 								<div class="center-circle">
-									<p class="center-circle-p">금가격 예측치, 신뢰도 및 예측모델 관련 정보 제공</p>
+									<div class="center-circle-wrapper">
+										<p class="center-circle-p">금가격 예측치, 신뢰도 및<br>예측모델 관련 정보 제공</p>
+									</div>
 								</div>
 							</li>
 						</ul>
