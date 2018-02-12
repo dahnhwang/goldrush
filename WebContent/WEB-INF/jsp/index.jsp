@@ -80,7 +80,7 @@
 
 				<div class="center-join index_img">
 					<span>골드마인은 빅데이터 분석, 머신러닝과 같은 최신 기술을 통해<br> 사람들에게 더 나은
-						투자 정보를 제공하고 싶습니다.
+						투자 정보를 제공합니다.
 					</span>
 					<div class="center-desc">
 						<ul>
