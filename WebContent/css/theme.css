@@ -944,16 +944,23 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	margin-bottom: 20px;
 }
 
-
 .center-circle {
 	width: 250px;
 	height: 250px;
-	line-height: 250px;
+	/* line-height: 250px; */
 	text-align: center;
 	margin: 0 auto;
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(255, 204, 0, 0.4);
 	border-radius: 100%;
-	text-align: center;
+}
+
+.center-circle-p {
+	margin-top: 30%;
+	font-size: 15px;
+	margin-left: 30px;
+	margin-right: auto;
+	font-size: 15px;
+	float: left;
 }
 
 .center-join2 {

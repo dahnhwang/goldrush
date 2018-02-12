@@ -93,11 +93,15 @@
 							</li>
 							<li>
 								<p class="center-p">금과 관련된 역사를 월별 키워드를 통해 확인하세요</p>
-								<div class="center-circle">30년간 금가격 및 뉴욕타임즈 추출 키워드 월별 제공</div>
+								<div class="center-circle">
+									<p class="center-circle-p">30년간 금가격 및 뉴욕타임즈 추출 키워드 월별 제공</p>
+								</div>
 							</li>
 							<li>
 								<p class="center-p">금의 미래를 한 눈에 확인하세요</p>
-								<div class="center-circle">금가격 예측치, 신뢰도 및 예측모델 관련 정보 제공</div>
+								<div class="center-circle">
+									<p class="center-circle-p">금가격 예측치, 신뢰도 및 예측모델 관련 정보 제공</p>
+								</div>
 							</li>
 						</ul>
 
@@ -106,9 +110,9 @@
 				</div>
 				<div class="content">
 					<div class="btn-controls">
-						업데이트 일시 <fmt:formatDate
-												value="${goldPrice.gold_date }"
-												pattern="yyyy-MM-dd hh:mm" />
+						업데이트 일시
+						<fmt:formatDate value="${goldPrice.gold_date }"
+							pattern="yyyy-MM-dd hh:mm" />
 						<div class="btn-box-row row-fluid ">
 							<div class="btn-box big span4 ">
 								<div class="card-container ">
@@ -232,7 +236,8 @@
 									<tr class="odd gradeA">
 										<td>1</td>
 										<td><a href="#" class="factors" id="G">금</a></td>
-										<td><fmt:formatNumber value="${result1Day.gold_price}" pattern="#,###"/></td>
+										<td><fmt:formatNumber value="${result1Day.gold_price}"
+												pattern="#,###" /></td>
 										<%-- <td>${result1Day.gold_price_rate }</td> --%>
 										<td>원/1돈</td>
 										<td class="center">주요 탐구 대상</td>
@@ -244,11 +249,12 @@
 									<tr class="even gradeA">
 										<td>2</td>
 										<td><a href="#" class="factors" id="DJ">다우산업지수</a></td>
-										<td><fmt:formatNumber value="${result1Day.dow_jones}" pattern="#,###.##"/></td>
+										<td><fmt:formatNumber value="${result1Day.dow_jones}"
+												pattern="#,###.##" /></td>
 										<td>달러(USD)</td>
 										<td class="center">대표적인 주가지수로, 투자자들의 심리를 대변한다는 점에서 경제상황의
 											변동을 알 수 있다.</td>
-											<td class="center">23:30~06:00</td>
+										<td class="center">23:30~06:00</td>
 										<td class="center"><fmt:formatDate
 												value="${result1Day.dow_jones_date}"
 												pattern="yyyy-MM-dd hh:mm" /></td>
@@ -261,7 +267,7 @@
 										<td>달러(USD)</td>
 										<td class="center">대표적인 주가지수로, 투자자들의 심리를 대변한다는 점에서 경제상황의
 											변동을 알 수 있다.</td>
-											<td class="center">23:30~06:00</td>
+										<td class="center">23:30~06:00</td>
 										<td class="center"><fmt:formatDate
 												value="${result1Day.sp_500_date}" pattern="yyyy-MM-dd hh:mm" /></td>
 									</tr>
@@ -283,7 +289,7 @@
 										<td>달러/배럴</td>
 										<td class="center">2008년 경제위기 전까지 그 변동추세가 금가격과 비슷한 경향을
 											가진다.</td>
-											<td class="center"></td>
+										<td class="center"></td>
 										<td class="center"><fmt:formatDate
 												value="${result1Day.wti_date}" pattern="yyyy-MM-dd hh:mm" /></td>
 									</tr>
@@ -315,7 +321,7 @@
 										<td>%</td>
 										<td class="center">지속적으로 가치가 상승하는 금 가격과 인플레이션과의 관계를 알 수
 											있다.</td>
-											<td class="center"></td>
+										<td class="center"></td>
 										<td class="center"><fmt:formatDate
 												value="${result1Day.inflation_date}"
 												pattern="yyyy-MM-dd hh:mm" /></td>
@@ -338,7 +344,7 @@
 										<td>82년=100</td>
 										<td class="center">물가지수를 통한 실질금리를 파악함으로써 금가격과의 영향을 알 수
 											있다.</td>
-											<td class="center"></td>
+										<td class="center"></td>
 										<td class="center"><fmt:formatDate
 												value="${result1Day.cpi_date}" pattern="yyyy-MM-dd hh:mm" /></td>
 									</tr>
@@ -349,7 +355,7 @@
 										<td>12년=100</td>
 										<td class="center">금 채굴량이 인건비 등의 이유로 줄어들고 있는데, 이는 금 가격과
 											음의 관계의 경향을 가진다.</td>
-											<td class="center"></td>
+										<td class="center"></td>
 										<td class="center"><fmt:formatDate
 												value="${result1Day.gold_mine_date}"
 												pattern="yyyy-MM-dd hh:mm" /></td>
@@ -361,7 +367,7 @@
 										<td>자체지수</td>
 										<td class="center">정치 및 경제적인 위험이 있을 때 금에 대한 수요가 높아지는 경향이
 											있다.</td>
-											<td class="center"></td>
+										<td class="center"></td>
 										<td class="center"><fmt:formatDate
 												value="${result1Day.uncertainty_time}"
 												pattern="yyyy-MM-dd hh:mm" /></td>
@@ -374,7 +380,7 @@
 										<td>십억달러</td>
 										<td class="center">통화량에 따라 미국의 정치경향을 알 수 있는데, 이는 금가격에 영향을
 											미치게 된다.</td>
-											<td class="center"></td>
+										<td class="center"></td>
 										<td class="center"><fmt:formatDate
 												value="${result1Day.money_stock_date}"
 												pattern="yyyy-MM-dd hh:mm" /></td>
