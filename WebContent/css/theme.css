@@ -901,14 +901,39 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	}
 }
 
+.bg-wrapper {
+	
+}
+
 .center-join {
-	height: 210px;
-	text-align: center;
+	height: 650px;
 	color: #eee;
-	font-weight: bold;
+	padding-top: 100px;
+	background-color: rgba(100, 100, 100, 0.7);
+}
+
+.center-join>span {
+	display: block;
+	width: 900px;
+	padding: 2%;
+	text-align: center;
+	margin: 0 auto;
 	font-size: 30px;
 	line-height: 50px;
-	padding-top: 190px;
+}
+
+.center-join>ul {
+	list-style: none;
+	text-align: center;
+}
+
+.center-join>li {
+	display: block;
+}
+
+.center-join2 {
+	height: 500px;
+	padding-top: 100px;
 }
 
 .index_img {
@@ -916,6 +941,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	background-attachment: fixed;
 	background-position: 0 center;
 	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
 .news_img {
@@ -923,6 +949,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	background-attachment: fixed;
 	background-position: 0 center;
 	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
 .wordtrend_img {
@@ -930,21 +957,14 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	background-attachment: fixed;
 	background-position: 0 center;
 	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
-.center-join>span {
-	display: block;
-	width: 290px;
-	padding: 2%;
-	margin: 0 auto;
-	background-color: rgba(100, 100, 100, 0.5);
-}
-
-.join-btn {
+/* .join-btn {
 	font-size: 20px;
 	font-weight: bold;
 	color: #29b7d3;;
-}
+} */
 
 /*이미지 아래 부분*/
 .content {

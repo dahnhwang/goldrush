@@ -38,7 +38,7 @@
 			<div class="span12"
 				style="margin: 0 auto; float: initial; clear: both;">
 
-				<div class="center-join news_img">
+				<div class="center-join2 news_img">
 					<span>내용 작성 내용 작성</span>
 				</div>
 				<div class="content">

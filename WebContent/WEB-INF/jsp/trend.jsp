@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoldRush</title>
+<title>GoldMine</title>
 <link type="text/css" href="bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css"
@@ -215,7 +215,7 @@
 			<!--/.span3-->
 			<div class="span12"
 				style="margin: 0 auto; float: initial; clear: both;">
-				<div class="center-join wordtrend_img">
+				<div class="center-join2 wordtrend_img">
 					<span>내용 작성 내용 작성</span>
 				</div>
 

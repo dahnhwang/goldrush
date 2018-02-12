@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoldRush</title>
+<title>GoldMine</title>
 <link rel="stylesheet" href="css/reset.css">
 <link type="text/css" href="bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -77,10 +77,18 @@
 			<!--/.span3-->
 			<div class="span12"
 				style="margin: 0 auto; float: initial; clear: both;">
-				<div class="center-join index_img">
-					<span>미래를 알고 <br> 현명하게 투자하세요.<br> <input
-						type="button" class="btn join-btn" value="가입하기">
-					</span>
+				<div class="bg-wrapper">
+					<div class="center-join index_img">
+						<span>골드마인은 빅데이터 분석, 머신러닝과 같은 최신 기술을 통해<br> 사람들에게 더 나은
+							투자 정보를 제공하고 싶습니다.
+						</span>
+						<ul>
+							<li>어쩌구</li>
+							<li>어쩌구</li>
+							<li>저쩌구</li>
+						</ul>
+
+					</div>
 				</div>
 				<div class="content">
 					<div class="btn-controls">
@@ -154,10 +162,14 @@
 								<option value="GM">11. 금채굴량</option>
 								<option value="UC">12. 불확실성</option>
 								<option value="MS">13. 통화량</option>
-							</select> <input type="button" value="1989년 이후 월별" class="select" id="monthly-1989">
-							<input type="button" value="최근 10년 월별" class="select" id="monthly-10">
-						<input type="button" value="최근 1년 일별 " class="select" id="daily-1"><input type="button" value="최근 일주일 시간별" class="select" id="week-daily-time"><input type="button" value="실시간 " class="select" id="daily-time">
-							
+							</select> <input type="button" value="1989년 이후 월별" class="select"
+								id="monthly-1989"> <input type="button"
+								value="최근 10년 월별" class="select" id="monthly-10"> <input
+								type="button" value="최근 1년 일별 " class="select" id="daily-1"><input
+								type="button" value="최근 일주일 시간별" class="select"
+								id="week-daily-time"><input type="button" value="실시간 "
+								class="select" id="daily-time">
+
 						</div>
 						<div class="module-body">
 							<div class="chart inline-legend grid">
