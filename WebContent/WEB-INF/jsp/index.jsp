@@ -182,6 +182,9 @@
 					<div class="module">
 						<div class="module-head">
 							<h3>변동 그래프</h3>
+
+						</div>
+						<div class="module-body">
 							<select class="factorsGragh" id="factorsSelect">
 								<option selected="selected" value="G">01. 금</option>
 								<option value="DJ">02. 다우존스산업지수</option>
@@ -196,16 +199,13 @@
 								<option value="GM">11. 금채굴량</option>
 								<option value="UC">12. 불확실성</option>
 								<option value="MS">13. 통화량</option>
-							</select> <input type="button" value="1989년 이후 월별" class="select"
+							</select> <input type="button" value="1989년 이후 월별" class="select btn btn-default btn-xs"
 								id="monthly-1989"> <input type="button"
-								value="최근 10년 월별" class="select" id="monthly-10"> <input
-								type="button" value="최근 1년 일별 " class="select" id="daily-1"><input
-								type="button" value="최근 일주일 시간별" class="select"
+								value="최근 10년 월별" class="select btn btn-default btn-xs" id="monthly-10"> <input
+								type="button" value="최근 1년 일별 " class="select btn btn-default btn-xs" id="daily-1"><input
+								type="button" value="최근 일주일 시간별" class="select btn btn-default btn-xs"
 								id="week-daily-time"><input type="button" value="실시간 "
-								class="select" id="daily-time">
-
-						</div>
-						<div class="module-body">
+								class="select btn btn-default btn-xs" id="daily-time">
 							<div class="chart inline-legend grid">
 								<div id="placeholder2" class="graph" style="height: 500px">
 								</div>
