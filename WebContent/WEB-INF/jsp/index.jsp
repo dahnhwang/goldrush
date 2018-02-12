@@ -84,19 +84,16 @@
 					</span>
 					<div class="center-desc">
 						<ul>
-							<li>금과 관련된 최신 정보를 한 눈에 확인하세요
-								<p>
-								<p>
+							<li>
+								<p class="center-p">금과 관련된 최신 정보를 한 눈에 확인하세요</p>
 								<div class="center-circle">asdf</div>
 							</li>
-							<li>금과 관련된 역사를 월별 키워드를 통해 확인하세요
-								<p>
-								<p>
+							<li>
+								<p class="center-p">금과 관련된 역사를 월별 키워드를 통해 확인하세요</p>
 								<div class="center-circle">asdf</div>
 							</li>
-							<li>금의 미래를 한 눈에 확인하세요
-								<p>
-								<p>
+							<li>
+								<p class="center-p">금의 미래를 한 눈에 확인하세요</p>
 								<div class="center-circle">asdf</div>
 							</li>
 						</ul>

@@ -933,11 +933,15 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	display: block;
 	text-align: center;
 	padding: 30px;
-	line-height: 25px;
+	line-height: 30px;
 	color: #eee;
-	font-size: 15px;
+	font-size: 20px;
 	text-decoration: none;
 	width: 250px;
+}
+
+.center-p {
+	margin-bottom: 20px;
 }
 
 .center-circle {
@@ -946,7 +950,6 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	margin: 0 auto;
 	background-color: rgba(0, 0, 0, 0.4);
 	border-radius: 100%;
-	
 }
 
 .center-join2 {
@@ -955,10 +958,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .index_img {
-	background: linear-gradient(
-                     rgba(20,20,20, .5), 
-                     rgba(20,20,20, .5)),
-                     url(../images/joseph-barrientos-93565.jpg);
+	background: linear-gradient(rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)),
+		url(../images/joseph-barrientos-93565.jpg);
 	background-attachment: fixed;
 	background-position: 0 center;
 	background-size: 100%;
