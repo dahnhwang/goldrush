@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div class="module" style="overflow:hidden">
-                        <div class="module-head"><h3>GoldPrice Forecast 일별 적중률 History</h3>
+                        <div class="module-head"><h3>우리 모델 금값 예측 그래프</h3>
                         </div>
                         <div class="module-body" style="padding:0;">
 
@@ -48,11 +48,11 @@
                         </div>
                     </div>
                     <div class="module" style="overflow:hidden">
-                        <div class="module-head"><h3>GoldPrice Forecast 타 예측기관과 비교</h3>
+                        <div class="module-head"><h3>타 예측기관 금값 예측 그래프</h3>
+                        <input type="button" value="일별 예측" class="daily-forecast btn btn-default btn-xs">
+						<input type="button" value="월별 예측" class="monthly-forecast btn btn-default btn-xs">
                         </div>
                         <div class="module-body" style="padding:0;">
-                        <input type="button" value="일별 예측~~" class="daily-forecast">
-						<input type="button" value="월별 예측~~" class="monthly-forecast">
                                <div id="container3" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
                         </div>

@@ -2926,7 +2926,7 @@ function(window, document, undefined) {
 					// nLength.innerHTML = '<label>'
 					// + oSettings.oLanguage.sLengthMenu.replace('_MENU_',
 					// sStdMenu) + '</label>';
-					nLength.innerHTML = '총 30년 간의 뉴욕타임즈 기사를 기반으로<br>금과 가장 연관있는 13가지 요인을 합리적으로 선정해보았습니다.<br><br>우선, 금과 관련된 기사를 기준으로 가장 많이 나온 단어를 추출 후<br>수치화 가능한 단어만 다시 정리했고, 그 결과를 13가지 변수로 요약할 수 있었습니다.<br><br>아래의 변수들은 저희 팀의 메인 프로젝트인 금가격을 정확하게 예측하는데 중요 변수로 작용할 것입니다.'
+					nLength.innerHTML = '총 30년 간의 뉴욕타임즈 기사를 기반으로<br>금과 가장 연관있는 13가지 요인을 합리적으로 선정했습니다.<br><br>우선, 금과 관련된 기사를 기준으로 가장 많이 나온 단어를 추출 후<br>수치화 가능한 단어만 다시 정리했고, 그 결과를 13가지 변수로 요약할 수 있었습니다.<br><br>아래의 변수들은 금가격을 신뢰도 높게 예측하는데 중요 변수로 작용할 것입니다.'
 
 					/* Set the length to the current display length */
 					$('select', nLength).val(oSettings._iDisplayLength);
