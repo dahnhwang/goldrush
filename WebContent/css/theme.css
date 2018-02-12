@@ -931,11 +931,21 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .center-join li {
 	float: left;
 	display: block;
-	color: black;
 	text-align: center;
-	padding: 10px;
+	padding: 30px;
+	line-height: 25px;
+	color: #eee;
+	font-size: 15px;
 	text-decoration: none;
 	width: 250px;
+}
+
+.center-circle {
+	width: 250px;
+	height: 250px;
+	margin: 0 auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 100%;
 }
 
 .center-join2 {

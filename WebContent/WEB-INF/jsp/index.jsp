@@ -84,9 +84,21 @@
 					</span>
 					<div class="center-desc">
 						<ul>
-							<li>어쩌구</li>
-							<li>어쩌구</li>
-							<li>저쩌구</li>
+							<li>금과 관련된 최신 정보를 한 눈에 확인하세요
+								<p>
+								<p>
+								<div class="center-circle">asdf</div>
+							</li>
+							<li>금과 관련된 역사를 월별 키워드를 통해 확인하세요
+								<p>
+								<p>
+								<div class="center-circle">asdf</div>
+							</li>
+							<li>금의 미래를 한 눈에 확인하세요
+								<p>
+								<p>
+								<div class="center-circle">asdf</div>
+							</li>
 						</ul>
 
 					</div>
