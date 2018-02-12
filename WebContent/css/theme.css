@@ -953,6 +953,39 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	border-radius: 100%;
 }
 
+a.button {
+	display: inline-block;
+	min-width: 65px;
+	padding: 0 15px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	line-height: 42px;
+	white-space: nowrap;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+	font-size: 13px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #ffffff;
+	background: rgba(212, 175, 55, 0.9);
+}
+
+a, a:link, a:visited, a:focus, a:active {
+	outline: none;
+	border: none;
+	cursor: pointer;
+	color: #595757;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a.button:hover {
+	background: rgba(212, 175, 55, 0.6);
+}
+
 .center-circle-wrapper {
 	width: 250px;
 	height: 250px;
