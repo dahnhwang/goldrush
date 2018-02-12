@@ -79,7 +79,7 @@
 				style="margin: 0 auto; float: initial; clear: both;">
 
 				<div class="center-join index_img">
-					<span>골드마인은 빅데이터 분석, 머신러닝과 같은 최신 기술을 통해<br> 사람들에게 더 나은
+					<span>골드마인은 빅데이터 분석, 머신러닝 등 최신 기술을 통해<br> 사람들에게 더 나은
 						투자 정보를 제공합니다.
 					</span>
 					<div class="center-desc">
