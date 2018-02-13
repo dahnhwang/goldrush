@@ -37,4 +37,11 @@ public class MemberController {
 		return map;
 	}
 
+	@RequestMapping("joinForm.do")
+	public String joinForm() {
+		return "joinForm";
+	}
+	
+	
+
 }

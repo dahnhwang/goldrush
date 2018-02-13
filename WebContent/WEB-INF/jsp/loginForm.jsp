@@ -20,6 +20,11 @@
 <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script>
 	$(document).ready(function() {
+
+		$('#join-btn').on('click', function() {
+			$(location).attr('href', 'joinForm.do');
+		});
+
 		$('#login').on('click', function() {
 			var pwd = SHA256($('#pwd').val());
 			var email = $('#email').val();
@@ -92,8 +97,8 @@
 						</div>
 						<div class="loginDiv">
 							<button type="button" class="btn btn-primary btn-lg" id="login">로그인</button>
-							<button type="button" class="btn btn-secondary btn-lg">회원가입
-							</button>
+							<button type="button" class="btn btn-secondary btn-lg"
+								id="join-btn">회원가입</button>
 						</div>
 					</div>
 				</form>
