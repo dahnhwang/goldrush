@@ -23,6 +23,55 @@
 
 
 	<jsp:include page="header.jsp"></jsp:include>
+
+
+	<!-- 대문이미지 -->
+	<div class="center-join index_img">
+		<span>골드마인은 빅데이터 분석, 머신러닝 등 최신 기술을 통해<br> 사람들에게 더 나은 투자
+			정보를 제공합니다.
+		</span>
+		<div class="center-desc">
+			<ul>
+				<li>
+					<p class="center-p">금과 관련된 최신 정보를 한 눈에 확인하세요</p>
+					<div class="center-circle">
+						<div class="center-circle-wrapper">
+							<p class="center-circle-p">
+								최신 금시세 정보, 최신 환율 <br>정보 외 주요 경제 지표 제공
+							</p>
+							<a href="#" class="button">바로가기</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<p class="center-p">금과 관련된 역사를 월별 키워드를 통해 확인하세요</p>
+					<div class="center-circle">
+						<div class="center-circle-wrapper">
+							<p class="center-circle-p">
+								30년간 금가격 및 뉴욕타임즈 <br>추출 키워드 월별 제공
+							</p>
+							<a href="#" class="button">바로가기</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<p class="center-p">금의 미래를 한 눈에 확인하세요</p>
+					<div class="center-circle">
+						<div class="center-circle-wrapper">
+							<p class="center-circle-p">
+								금가격 예측치, 신뢰도 및<br>예측모델 관련 정보 제공
+							</p>
+							<a href="#" class="button">바로가기</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+
+	</div>
+
+
 	<!-- /navbar -->
 	<div class="wrapper">
 		<div class="container">
@@ -74,54 +123,16 @@
 				</div>
 				<!--/.sidebar-->
 			</div>
+
+
+
+
+
 			<!--/.span3-->
 			<div class="span12"
 				style="margin: 0 auto; float: initial; clear: both;">
 
-				<div class="center-join index_img">
-					<span>골드마인은 빅데이터 분석, 머신러닝 등 최신 기술을 통해<br> 사람들에게 더 나은
-						투자 정보를 제공합니다.
-					</span>
-					<div class="center-desc">
-						<ul>
-							<li>
-								<p class="center-p">금과 관련된 최신 정보를 한 눈에 확인하세요</p>
-								<div class="center-circle">
-									<div class="center-circle-wrapper">
-										<p class="center-circle-p">
-											최신 금시세 정보, 최신 환율 <br>정보 외 주요 경제 지표 제공
-										</p>
-										<a href="#" class="button">바로가기</a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<p class="center-p">금과 관련된 역사를 월별 키워드를 통해 확인하세요</p>
-								<div class="center-circle">
-									<div class="center-circle-wrapper">
-										<p class="center-circle-p">
-											30년간 금가격 및 뉴욕타임즈 <br>추출 키워드 월별 제공
-										</p>
-										<a href="#" class="button">바로가기</a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<p class="center-p">금의 미래를 한 눈에 확인하세요</p>
-								<div class="center-circle">
-									<div class="center-circle-wrapper">
-										<p class="center-circle-p">
-											금가격 예측치, 신뢰도 및<br>예측모델 관련 정보 제공
-										</p>
-										<a href="#" class="button">바로가기</a>
-									</div>
-								</div>
-							</li>
-						</ul>
 
-					</div>
-
-				</div>
 				<div class="content">
 					<div class="btn-controls">
 						업데이트 일시
@@ -199,13 +210,16 @@
 								<option value="GM">11. 금채굴량</option>
 								<option value="UC">12. 불확실성</option>
 								<option value="MS">13. 통화량</option>
-							</select> <input type="button" value="1989년 이후 월별" class="select btn btn-default btn-xs"
-								id="monthly-1989"> <input type="button"
-								value="최근 10년 월별" class="select btn btn-default btn-xs" id="monthly-10"> <input
-								type="button" value="최근 1년 일별 " class="select btn btn-default btn-xs" id="daily-1"><input
-								type="button" value="최근 일주일 시간별" class="select btn btn-default btn-xs"
-								id="week-daily-time"><input type="button" value="실시간 "
-								class="select btn btn-default btn-xs" id="daily-time">
+							</select> <input type="button" value="1989년 이후 월별"
+								class="select btn btn-default btn-xs" id="monthly-1989">
+							<input type="button" value="최근 10년 월별"
+								class="select btn btn-default btn-xs" id="monthly-10"> <input
+								type="button" value="최근 1년 일별 "
+								class="select btn btn-default btn-xs" id="daily-1"><input
+								type="button" value="최근 일주일 시간별"
+								class="select btn btn-default btn-xs" id="week-daily-time"><input
+								type="button" value="실시간 " class="select btn btn-default btn-xs"
+								id="daily-time">
 							<div class="chart inline-legend grid">
 								<div id="placeholder2" class="graph" style="height: 500px">
 								</div>
