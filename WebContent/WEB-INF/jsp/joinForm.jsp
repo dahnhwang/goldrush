@@ -17,6 +17,42 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
+<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="scripts/member.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		/* var result = checkAll();
+		if (result == true) {
+			$('#join_btn').attr('disabled', false);
+		} else {
+			$('#join_btn').attr('disabled', true);
+		} */
+		$('#join_btn').on('click', function(e) {
+			e.preventDefault();
+			var pwd = SHA256($('#pwd').val());
+			var email = $('#email').val();
+			var name = $('#name').val();
+			$.ajax({
+				url : 'join.do',
+				type : 'POST',
+				dataType : 'json',
+				data : {
+					name : name,
+					email : email,
+					pwd : pwd
+				},
+				success : function(data) {
+					if (data.result == 1) {
+						alert("회원가입 성공! 로그인해주세요");
+						$(location).attr('href', 'loginForm.do');
+					} else {
+						alert("Error : Please retry");
+					}
+				}
+			}); /* ajax 끝 */
+		}); /* 회원가입 버튼 끝 */
+	});
+</script>
 <style>
 .wrapper-join {
 	margin-top: 80px;
