@@ -27,6 +27,7 @@
 .form-signin {
 	max-width: 100%;
 	margin: 0 auto;
+	margin-bottom: 400px;
 }
 
 .form-signin-heading {
@@ -35,6 +36,10 @@
 
 .loginDiv {
 	margin-bottom: 20px;
+}
+
+.form-control-lg {
+	width: 100%;
 }
 </style>
 </head>
