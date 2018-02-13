@@ -207,6 +207,11 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
+
+	<div class="center-join2 wordtrend_img">
+		<span>페이지 설명 들어가는 부분</span>
+	</div>
+
 	<!-- /navbar -->
 	<div class="wrapper">
 		<div class="container">
@@ -215,9 +220,7 @@
 			<!--/.span3-->
 			<div class="span12"
 				style="margin: 0 auto; float: initial; clear: both;">
-				<div class="center-join2 wordtrend_img">
-					<span>내용 작성 내용 작성</span>
-				</div>
+
 
 				<div class="content">
 					<!-- BubbleChart -->

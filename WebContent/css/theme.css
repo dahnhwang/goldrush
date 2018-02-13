@@ -911,6 +911,16 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	line-height: 50px;
 }
 
+.center-join2>span {
+	display: block;
+	padding: 2%;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 30px;
+	line-height: 50px;
+	color: white;
+}
+
 .center-desc {
 	text-align: center;
 }
@@ -2505,7 +2515,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2570,7 +2588,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2635,7 +2661,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2700,7 +2734,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2765,7 +2807,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
