@@ -20,4 +20,5 @@
 			<bean class="controller.LoggingInterceptor"></bean>
 		</mvc:interceptor>
 		</mvc:interceptors>
+		
 </beans>

@@ -16,7 +16,7 @@ public class LoggingInterceptor extends HandlerInterceptorAdapter{
 		
 		LOGGER.info(request.getRequestURI());
 		
-		return super.preHandle(request, response, handler);
+		return super.preHandle(request, response, handler); 
 	}
 	
 }
