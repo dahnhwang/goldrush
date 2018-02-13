@@ -25,8 +25,8 @@
 								최신뉴스</a></li>
 						<li><a class="brand" href="index.do" style="color: #FFCC00;">GoldMine
 						</a></li>
-						<li><a href="forecast.do" style="text-shadow: none;">금가격예측모델</a></li>
-						<li><a href="history.do" style="text-shadow: none;">금가격예측데이터</a></li>
+						<li><a href="history.do" style="text-shadow: none;">예측값 정확도측정</a></li>
+						<li><a href="forecast.do" style="text-shadow: none;">금가격예측데이터</a></li>
 					</ul>
 				</div>
 			</div>

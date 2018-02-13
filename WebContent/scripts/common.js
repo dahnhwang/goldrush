@@ -23,7 +23,7 @@
 
 				factor = []
 				factor.push(h);
-				h += 1 / 12;
+				h += 1 / 12; //x축 카테고리
 				factor.push(gold_price);
 				d1.push(factor)
 				label = "원/1돈"
