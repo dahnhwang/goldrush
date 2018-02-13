@@ -74,6 +74,10 @@
 #joinFormBtn {
 	margin-top: 30px;
 }
+
+#joinForm label {
+	display: inline;
+}
 </style>
 </head>
 <body>
