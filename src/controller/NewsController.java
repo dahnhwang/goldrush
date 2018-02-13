@@ -33,15 +33,15 @@ public class NewsController {
 			@RequestParam(defaultValue = "", required = false) String keyword) {
 		//System.out.println("hello from newslist.do");
 		List<News> list = null;
-		if (eng == 1) {
-			//System.out.println("영문");
-			// if request is for english news
-			list = newsService.getNewsListSearch(eng, keyword);
-		} else {
-			//System.out.println("국문");
-			// if request is for korean news
-			list = newsService.getNewsListSearch(eng, keyword);
-		}
+		// if (eng == 1) {
+		// //System.out.println("영문");
+		// // if request is for english news
+		// list = newsService.getNewsListSearch(eng, keyword);
+		// } else {
+		// //System.out.println("국문");
+		// // if request is for korean news
+		// list = newsService.getNewsListSearch(eng, keyword);
+		// }
 		return list;
 	}
 }
