@@ -1,22 +1,26 @@
+$("#searchBtn").keyup(function(e){if(e.keyCode == 13)  showPage(eng.value,Nkeyword.value); });
 
 function showPage(eng, Nkeyword) {
 	var params = "eng=" + eng + "&keyword=" + Nkeyword;
+	if(Nkeyword !=""){
+		$.ajax({
+			url : 'newslist.do',
+			type : 'get',
+			data : params,
+			dataType : 'json',
+			success : function(data) {
 	
-	$.ajax({
-		url : 'newslist.do',
-		type : 'get',
-		data : params,
-		dataType : 'json',
-		success : function(data) {
-
-			if (data) {
-				// alert(data) 들어온 리스트객체들 확인
-				$('#lists').empty();
-				listUpload(data);
-
+				if (data) {
+					// alert(data) 들어온 리스트객체들 확인
+					$('#lists').empty();
+					listUpload(data);
+	
+				}
 			}
-		}
-	})
+		})
+	}else{
+		alert("검색어를 입력해 주세요.")
+	}
 }
 
 function listUpload(list) {
@@ -34,13 +38,13 @@ function listUpload(list) {
 			var nContent = newsList[index].news_content;
 
 			 
-			var li = $('<li>').appendTo('#lists').attr('id',index);	//li 태그만들기
+			var li = $('<li>').appendTo('#lists').attr('id',index).attr('class','nlist scrolling').attr('data-news',nId);	//li 태그만들기
 			
 			var a = $("<a href='"+nUrl+"'target='_blank'></a>").appendTo(li);
 			
 			var div= $('<div>').appendTo(a).addClass('thum');
 			if(nImg != null){
-				$("<img src='"+nImg+"' style='width:80px;height:80px;'/>").appendTo(div);
+				$("<img src='"+nImg+"' onerror='this.style.display=\"none\"' style='width:80px;height:80px;'/>").appendTo(div);
 			}
 			var dl = $('<dl>').appendTo(a)
 			$('<dt>').text(nTitle).appendTo(dl);

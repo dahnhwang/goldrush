@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,7 +24,7 @@ public class NewsController {
 	public ModelAndView news() {
 
 		ModelAndView mav = new ModelAndView();
-//		mav.addObject("news", newsService.getNewsList());
+		mav.addObject("news", newsService.getNewsList());
 		mav.setViewName("news");
 		return mav;
 	}
@@ -31,17 +32,21 @@ public class NewsController {
 	@RequestMapping(value="newslist.do", method=RequestMethod.GET)
 	public @ResponseBody List<News> newsList(@RequestParam(defaultValue = "1", value = "eng") int eng,
 			@RequestParam(defaultValue = "", required = false) String keyword) {
-		//System.out.println("hello from newslist.do");
+	
 		List<News> list = null;
-		// if (eng == 1) {
-		// //System.out.println("영문");
-		// // if request is for english news
-		// list = newsService.getNewsListSearch(eng, keyword);
-		// } else {
-		// //System.out.println("국문");
-		// // if request is for korean news
-		// list = newsService.getNewsListSearch(eng, keyword);
-		// }
+		if (eng == 1) {
+			//System.out.println("영문");
+			list = newsService.getNewsListSearch(eng, keyword);
+		} else {
+			//System.out.println("국문");
+			list = newsService.getNewsListSearch(eng, keyword);
+		}
 		return list;
+	}
+	
+	@RequestMapping(value="infiniteScrollDown.do", method= RequestMethod.GET)
+	public @ResponseBody List<News> infiniteScrollDown(@RequestParam(defaultValue = "", value ="news_id") int news_id){
+		news_id--;
+		return newsService.infiniteScrollDown(news_id);		
 	}
 }

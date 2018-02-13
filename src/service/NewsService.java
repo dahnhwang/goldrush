@@ -38,7 +38,6 @@ public class NewsService implements INewsService {
 			param1.put("eng", eng);
 		} else if (eng != 1) {
 			param1.put("NKeyword", Nkeyword);
-//			System.out.println("eng:"+eng);
 			param1.put("eng", eng);
 		}
 
@@ -46,6 +45,13 @@ public class NewsService implements INewsService {
 		List<News> newsList = newsDao.selectSearchList(param1);
 		System.out.println(newsList);
 
+		return newsList;
+	}
+
+	@Override
+	public List<News> infiniteScrollDown(Integer newsToStart) {
+		// TODO Auto-generated method stub
+		List<News> newsList = newsDao.infiniteScrollDown(newsToStart);
 		return newsList;
 	}
 

@@ -11,6 +11,8 @@ public interface INewsService {
 	public List<News> getNewsList();
 	
 	public List<News> getNewsListSearch(int eng, String Nkeyword);
+
+	public List<News> infiniteScrollDown(Integer newsToStart);
 	
 	
 	

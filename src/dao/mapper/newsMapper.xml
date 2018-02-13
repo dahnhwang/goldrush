@@ -13,7 +13,6 @@
 
 	<select id="selectSearchList" parameterType="java.util.HashMap"
 		resultMap="newsMap">
-		<!-- <bind name="Nkeyword" value="'%'+Nkeyword+'%'"/> -->
 		<choose>
 			<when test="eng == 1">
 				SELECT * FROM news WHERE eng = 1
@@ -24,6 +23,7 @@
 						)
 					</if>
 				ORDER BY news_id DESC
+				
 			</when>
 			<otherwise>
 				SELECT * FROM news WHERE eng is null  
@@ -34,6 +34,7 @@
 						)
 					</if>
 				ORDER BY news_id DESC
+				
 			</otherwise>
 		</choose>
 	</select>
@@ -42,25 +43,25 @@
 		SELECT COUNT(*) FROM news
 	</select>
 
-	<select id="selectNews" parameterType="int" resultMap="newsMap">
-		SELECT *
-		FROM news WHERE news_id=#{news_id}
-	</select>
-	<select id="selectAllNews" resultMap="newsMap">
-		SELECT *
-		FROM news 
+	<select id="infiniteScrollDown" parameterType="int" resultMap="newsMap">
+
+		<![CDATA[
+		SELECT * FROM news
+		WHERE news_id <= #{news_id}
+		AND news_id > #{news_id}-10
+		ORDER BY news_id DESC
+		]]>
+			
 	</select>
 	
-	<select id="getSearchListCount" parameterType="java.util.HashMap"
-		resultType="int">
-		SELECT COUNT(*) FROM (SELECT * FROM news
-		WHERE 1=0
-		<if test="news_title != null">
-			OR news_title LIKE '%${news_title}%'
-		</if>
-		<if test="news_content != null">
-			OR news_content LIKE '%${news_content}%'
-		</if>
-		) search
+	<select id="selectAllNews" resultMap="newsMap">
+	<![CDATA[
+		SELECT *
+		FROM news WHERE eng=1
+		AND news_id > 0
+		order by news_id desc
+		limit 0, 20;
+	]]>
 	</select>
+	
 </mapper>

@@ -15,4 +15,5 @@ public interface INewsDao {
 	public int getSearchListCount(HashMap<String, Object> params);
 	// 전체 뉴스 보여주기 및 동시에 특정검색어로 가져온 뉴스를 보여주기도 할 것
 	public List<News> selectSearchList(HashMap<String, Object> param);
+	public List<News> infiniteScrollDown(Integer newsToStart);
 }
