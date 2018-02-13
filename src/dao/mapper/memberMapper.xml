@@ -34,4 +34,9 @@
 	<select id="checkPassword" parameterType="String" resultType="String">
 		SELECT pwd FROM member WHERE email=#{email}
 	</select>
+
+	<select id="selectMemberFromEmail" parameterType="String"
+		resultMap="memberMap">
+		SELECT * FROM member WHERE email=#{email}
+	</select>
 </mapper>
