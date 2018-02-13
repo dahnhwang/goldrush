@@ -265,7 +265,7 @@
 										<td><a href="#" class="factors" id="DJ">다우산업지수</a></td>
 										<td><fmt:formatNumber value="${result1Day.dow_jones}"
 												pattern="#,###.##" /></td>
-										<td>달러(USD)</td>
+										<td>달러</td>
 										<td class="center">대표적인 주가지수로, 투자자들의 심리를 대변한다는 점에서 경제상황의
 											변동을 알 수 있다.</td>
 										<td class="center">23:30~06:00</td>
@@ -278,7 +278,7 @@
 										<td>3</td>
 										<td><a href="#" class="factors" id="SP">S&P 500</a></td>
 										<td>${result1Day.sp_500}</td>
-										<td>달러(USD)</td>
+										<td>달러</td>
 										<td class="center">대표적인 주가지수로, 투자자들의 심리를 대변한다는 점에서 경제상황의
 											변동을 알 수 있다.</td>
 										<td class="center">23:30~06:00</td>
