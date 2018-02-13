@@ -37,11 +37,34 @@ public class MemberController {
 		return map;
 	}
 
+	@RequestMapping("loginCheck.do")
+	public @ResponseBody Map<String, Object> loginCheck(HttpSession session) {
+		Map<String, Object> map = new HashMap<>();
+		int result = 0;
+		if (session.getAttribute("loginUser") != null) {
+			result = 1;
+		} else {
+			result = 0;
+		}
+		map.put("result", result);
+		return map;
+	}
+
 	@RequestMapping("joinForm.do")
 	public String joinForm() {
 		return "joinForm";
 	}
-	
-	
+
+	@RequestMapping("join.do")
+	public @ResponseBody Map<String, Object> join(String email, String name, String pwd) {
+		Member member = new Member();
+		member.setEmail(email);
+		member.setName(name);
+		member.setPwd(pwd);
+		int result = memberService.addMember(member);
+		Map<String, Object> map = new HashMap<>();
+		map.put("result", result);
+		return map;
+	}
 
 }
