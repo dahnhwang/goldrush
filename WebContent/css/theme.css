@@ -248,11 +248,13 @@ body [class^="icon-"], body [class*=" icon-"] {
 	margin: 0;
 	position: relative;
 	left: 50%;
-	margin-left: -456.469px;
+	margin-left: -584.469px;
+	width: 1174px;
 }
 
 .navbar .nav>li {
 	float: left;
+	width: 234px;
 }
 
 .navbar .navbar-inner {
@@ -2493,7 +2495,19 @@ background-color
 
 
 
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
 
 
 
@@ -2538,7 +2552,19 @@ background-color
 
 
 
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
 
 
 
@@ -2583,7 +2609,19 @@ background-color
 
 
 
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
 
 
 
@@ -2628,7 +2666,19 @@ background-color
 
 
 
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
 
 
 
@@ -2673,7 +2723,19 @@ background-color
 
 
 
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
 
 
 
