@@ -91,11 +91,11 @@
 								name="pwd" id="pwd" placeholder="Password" required="" />
 						</div>
 						<div class="loginDiv">
-							<button class="btn btn-lg btn-primary btn-block" type="button"
-								id="login">Login</button>
+							<button type="button" class="btn btn-primary btn-lg" id="login">로그인</button>
+							<button type="button" class="btn btn-secondary btn-lg">회원가입
+							</button>
 						</div>
 					</div>
-
 				</form>
 			</div>
 

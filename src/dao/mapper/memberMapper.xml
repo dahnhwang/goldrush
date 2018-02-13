@@ -4,38 +4,33 @@
 <mapper namespace="dao.IMemberDao">
 
 	<resultMap type="member" id="memberMap">
-		<id column="m_id" property="m_id"/>
-		<result column="name" property="name"/>
-		<result column="pwd" property="pwd" />	
-		<result column="email" property="email" />
-		<result column="purpose" property="purpose" />
-		<result column="age" property="age" />
-		<result column="gold_amount" property="gold_amount" />
-		
 	</resultMap>
 
 	<insert id="insertMember" keyProperty="mId" useGeneratedKeys="true"
 		parameterType="member">
-		INSERT INTO member VALUES (0, #{email}, #{pwd}, #{name}, #{purpose}, #{age}, #{gold_amount}, sysdate())
+		INSERT INTO member VALUES (0, #{email}, #{pwd}, #{name},
+		#{purpose}, #{age}, #{gold_amount}, sysdate())
 	</insert>
-	
+
 	<delete id="deleteMember" parameterType="int">
-		DELETE FROM member WHERE m_id=#{m_id}
+		DELETE FROM member WHERE
+		m_id=#{m_id}
 	</delete>
-	
+
 	<select id="selectAllMember" resultMap="memberMap">
 		SELECT * FROM member
 	</select>
-	
+
 	<select id="selectMember" parameterType="int" resultMap="memberMap">
-		SELECT * FROM member WHERE m_id=#{m_id}
+		SELECT *
+		FROM member WHERE m_id=#{m_id}
 	</select>
-	
+
 	<select id="checkMember" parameterType="String" resultType="int">
 		SELECT COUNT(email) FROM member WHERE email=#{email}
 		<!-- 리턴값이 0이면 사용가능한 이메일, 1이면 사용불가 이메일(회원있음) -->
 	</select>
-	
+
 	<select id="checkPassword" parameterType="String" resultType="String">
 		SELECT pwd FROM member WHERE email=#{email}
 	</select>
