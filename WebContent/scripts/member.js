@@ -15,7 +15,6 @@ function loginCheck(bId) {
 			}
 		}
 	}); /* ajax끝 */
-
 }
 
 // CHECK ALL
