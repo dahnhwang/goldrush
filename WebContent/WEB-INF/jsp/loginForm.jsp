@@ -17,6 +17,38 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
+<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function() {
+		alert("%")
+		$('#login').on('click', function() {
+			var pwd = SHA256($('#pwd').val());
+			var email = $('#email').val();
+			$.ajax({
+				url : 'login.do',
+				type : 'POST',
+				dataType : 'json',
+				data : {
+					email : email,
+					pwd : pwd
+				},
+				success : function(data) {
+					/* 패스워드 체크해서 맞으면 1을 리턴(세션에 정보넣기), 틀리면 -1을 리턴, 정보가 없으면 0을 리턴 */
+					if (data.result == 1) {
+						alert("로그인 성공!");
+						$(location).attr('href', 'main.do');
+					} else if (data.result == -1) {
+						alert("비밀번호가 틀렸습니다. 다시 시도해주세요");
+					} else {
+						alert("가입된 회원 정보가 없습니다. 회원가입해주세요");
+						$(location).attr('href', 'joinForm.do');
+					}
+				}
+			}); /* ajax 끝 */
+		}); /* 로그인 버튼 끝 */
+	})/* 다큐먼트 레디 펑션 끝 */
+</script>
+
 <style type="text/css">
 .wrapper-login {
 	margin-top: 80px;
@@ -76,5 +108,7 @@
 			<b class="copyright">&copy; 2018 GoldMine </b>All rights reserved.
 		</div>
 	</div>
+
+	<script src="scripts/sha256.js" type="text/javascript"></script>
 </body>
 </html>
