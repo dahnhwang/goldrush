@@ -16,6 +16,7 @@
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="%d %p [%C{10}] %m [%X{userId}]%n" />
 		</layout>
+		
 	</appender>
 	<appender name="db" class="org.apache.log4j.jdbc.JDBCAppender">
 		<param name="URL" value="jdbc:mariadb://70.12.111.30:3306/goldrush_db" />
