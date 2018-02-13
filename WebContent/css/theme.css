@@ -961,7 +961,7 @@ a.button {
 	font-size: 13px;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: #ffffff;
+	color: black;
 	background: rgba(212, 175, 55, 0.9);
 }
 
@@ -969,7 +969,7 @@ a, a:link, a:visited, a:focus, a:active {
 	outline: none;
 	border: none;
 	cursor: pointer;
-	color: #595757;
+	color: black;
 }
 
 a:hover {
@@ -2501,7 +2501,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2558,7 +2566,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2615,7 +2631,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2672,7 +2696,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2729,7 +2761,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
