@@ -23,7 +23,7 @@ public class NewsController {
 	public ModelAndView news() {
 
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("news", newsService.getNewsList());
+//		mav.addObject("news", newsService.getNewsList());
 		mav.setViewName("news");
 		return mav;
 	}
