@@ -67,4 +67,12 @@ public class MemberController {
 		return map;
 	}
 
+	@RequestMapping("emailCheck.do")
+	public @ResponseBody Map<String, Object> emailCheck(String email) {
+		int check = memberService.checkMember(email);
+		Map<String, Object> result = new HashMap<>();
+		result.put("result", check);
+		return result;
+	}
+
 }

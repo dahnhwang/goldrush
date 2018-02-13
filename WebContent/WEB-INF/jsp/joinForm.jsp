@@ -22,12 +22,7 @@
 <script src="scripts/sha256.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-		/* var result = checkAll();
-		if (result == true) {
-			$('#join_btn').attr('disabled', false);
-		} else {
-			$('#join_btn').attr('disabled', true);
-		} */
+		checkAll()
 		$('#join_btn').on('click', function(e) {
 			e.preventDefault();
 			var pwd = SHA256($('#pwd').val());
