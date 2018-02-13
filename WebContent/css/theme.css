@@ -265,7 +265,6 @@ body [class^="icon-"], body [class*=" icon-"] {
 
 .navbar .brand {
 	color: #333;
-	font-weight: bold;
 	font-size: 20px;
 	margin-right: 20px;
 	padding: 20px
@@ -277,7 +276,6 @@ body [class^="icon-"], body [class*=" icon-"] {
 	-moz-box-shadow: none;
 	box-shadow: none;
 	color: #fff;
-	font-weight: bold;
 	padding: 5px;
 	margin: 15px 35px
 }
@@ -288,17 +286,18 @@ body [class^="icon-"], body [class*=" icon-"] {
 
 .navbar .nav>li>a {
 	padding: 20px 15px;
-	font-weight: bold;
+	/* font-weight: bold; */
 	color: #333
 }
 
+/* 여기 */
 .navbar .nav>li.active, .navbar .nav>li.active, .navbar .nav>li.active,
 	.navbar .nav>li:hover {
-	background: #f9f9f9;
+	background: rgba(212, 175, 55, 0.6);
 }
 
 .navbar .nav>li:hover a {
-	color: #222;
+	color: #fff;
 }
 
 .navbar .nav>li.dropdown.open>.dropdown-toggle, .navbar .nav>li.dropdown.active>.dropdown-toggle,
@@ -998,7 +997,7 @@ a.button:hover {
 }
 
 .center-join2 {
-	height: 500px;
+	height: 300px;
 	padding-top: 100px;
 }
 
@@ -1022,7 +1021,7 @@ a.button:hover {
 .wordtrend_img {
 	background: url(../images/j-zamora-267753.jpg);
 	background-attachment: fixed;
-	background-position: 0 center;
+	background-position: center 121%;
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
@@ -2478,7 +2477,39 @@ keyframes f_fadeG { 0%{
 
 100%{
 background-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (255
 ,
 255,255);
@@ -2491,7 +2522,39 @@ background-color
 
 100%{
 background-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (255
 ,
 255,255);
@@ -2504,7 +2567,39 @@ background-color
 
 100%{
 background-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (255
 ,
 255,255);
@@ -2517,7 +2612,39 @@ background-color
 
 100%{
 background-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (255
 ,
 255,255);
@@ -2530,7 +2657,39 @@ background-color
 
 100%{
 background-color
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (255
 ,
 255,255);
