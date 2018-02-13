@@ -20,7 +20,6 @@
 <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script>
 	$(document).ready(function() {
-		alert("%")
 		$('#login').on('click', function() {
 			var pwd = SHA256($('#pwd').val());
 			var email = $('#email').val();
