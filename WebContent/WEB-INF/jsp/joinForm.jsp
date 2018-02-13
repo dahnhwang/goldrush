@@ -19,6 +19,7 @@
 	rel='stylesheet'>
 <script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="scripts/member.js"></script>
+<script src="scripts/sha256.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 		/* var result = checkAll();
@@ -65,13 +66,25 @@
 	margin: 0 auto;
 	margin-bottom: 100px;
 }
+
+.form-control {
+	width: 100%;
+	border: 1px solid #cccccc
+}
+
+.form-signin-heading {
+	margin-bottom: 30px;
+}
+
+#joinFormBtn {
+	margin-top: 30px;
+}
 </style>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class="wrapper">
 		<div class="container">
-
 
 			<div class="wrapper-join">
 
@@ -107,9 +120,9 @@
 					</div>
 
 					<div id="joinFormBtn">
-						<button type="submit" class="btn btn-primary" id="join_btn"
+						<button type="submit" class="btn btn-primary btn-lg" id="join_btn"
 							onclick="return checkAll()">회원가입</button>
-						<button type="reset" class="btn btn-danger">취소</button>
+						<button type="reset" class="btn btn-danger btn-lg">취소</button>
 					</div>
 				</form>
 			</div>
