@@ -2,22 +2,9 @@
  * 
  */
 
-function loginCheck(bId) {
-	$.ajax({
-		url : 'loginCheck.do',
-		type : 'get',
-		success : function(data) {
-			if (data.result == 1) {
-				location.href = 'selectboard.do?bId=' + bId;
-			} else {
-				alert('Please login')
-				location.href = 'loginForm.do';
-			}
-		}
-	}); /* ajax끝 */
-}
 
 // CHECK ALL
+
 function checkAll() {
 
 	/* 이메일검사 */
@@ -62,14 +49,12 @@ function emailCheck1() {
 		$('#email_msg').text("이메일 형식에 맞지 않습니다").css('color', 'red');
 		joinForm.email.focus();
 		$('#join_btn').attr('disabled', true)
-		return false;
 	}
 
 	if (document.joinForm.email.value.length == 0) {
 		$('#email_msg').text("이메일을 입력해주세요").css('color', 'red');
 		joinForm.email.focus();
 		$('#join_btn').attr('disabled', true)
-		return false;
 	}
 	return true;
 }
