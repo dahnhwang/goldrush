@@ -26,7 +26,7 @@
 						<li><a class="brand" href="index.do" style="color: #FFCC00;">GoldMine
 						</a></li>
 						<li><a href="history.do" style="text-shadow: none;">예측정확도 확인하기</a></li>
-						<li><a href="forecast.do" style="text-shadow: none;">금가격예측서비스</a></li>
+						<li><a href="aboutForecast.do" style="text-shadow: none;">금가격예측서비스</a></li>
 					</ul>
 				</div>
 			</div>

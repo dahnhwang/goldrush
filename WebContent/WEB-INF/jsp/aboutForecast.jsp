@@ -5,24 +5,24 @@
 <head>
 <style type="text/css">
 </style>
+<link rel="stylesheet" href="css/reset.css">
 <link type="text/css" href="css/theme.css" rel="stylesheet">
 <link type="text/css" href="images/icons/css/font-awesome.css"
 	rel="stylesheet">
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-	crossorigin="anonymous"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-	crossorigin="anonymous"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-	crossorigin="anonymous"></script>
+	crossorigin="anonymous"> -->
+	<link type="text/css" href="bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link type="text/css" href="bootstrap/css/bootstrap-responsive.min.css"
+	rel="stylesheet">
+	<link type="text/css" href="images/icons/css/font-awesome.css"
+	rel="stylesheet">
+	<link type="text/css"
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
+	rel='stylesheet'>
+
 
 <script>
 	window.onload = function() {
@@ -157,7 +157,6 @@
 			} ]
 		});
 		chart2.render();
-
 		function toogleDataSeries(e) {
 			if (typeof (e.dataSeries.visible) === "undefined"
 					|| e.dataSeries.visible) {
@@ -167,9 +166,7 @@
 			}
 			chart2.render();
 		}
-
 		/* 일 별 예측 금값  */
-
 		var chart1 = new CanvasJS.Chart("chartContainer1", {
 			animationEnabled : true,
 			theme : "light1",
@@ -300,7 +297,6 @@
 			} ]
 		});
 		chart1.render();
-
 		function toogleDataSeries(e) {
 			if (typeof (e.dataSeries.visible) === "undefined"
 					|| e.dataSeries.visible) {
@@ -310,16 +306,16 @@
 			}
 			chart1.render();
 		}
-
 		/* 금값에 미치는 영향 요인들의 정도를 대략 적으로 % 로 나타낸 수치  */
-
+		 $.ajax({
+		url : 'influence_ajax.do',
+		type : 'get',
+		dataType : 'json',
+		success : function(data) { 
 		var chart = new CanvasJS.Chart("chartContainer", {
 			theme : "light2", // "light1", "light2", "dark1", "dark2"
 			exportEnabled : true,
 			animationEnabled : true,
-			title : {
-				text : "딥러닝을 통한 골드 마이닝의 금 값 예측 영향 요인 "
-			},
 			data : [ {
 				type : "pie",
 				startAngle : 25,
@@ -350,31 +346,26 @@
 					y : 0.44,
 					label : "무역지수"
 				}
-
 				]
 			} ]
 		});
 		chart.render();
-
+		}})
 	}
 </script>
 </head>
 
 
 <body>
-	<br>
 	<jsp:include page="header.jsp"></jsp:include>
 	<!-- /navbar -->
 	
-	<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<div class="wrapper">
 		<div class="container">
 			<!--/.span3-->
 			<div class="span12" style="margin: 0 auto; float: initial;">
 				<div class="content">
 					<!-- Forecast -->
-					<h2>Gold Price Forecast</h2>
 					<div class="module">
 						<div class="module-head">
 							<h3>Today's Weather Forecast for Gold</h3>
@@ -414,14 +405,15 @@
 						</div>
 					</div>
 					<!--/.content-->
+				<div class="module-head">
+							<h3>딥러닝을 통한 금 예측 영향 요인</h3>
+						</div>
+				<div id="chartContainer" style="height: 300px; width: 100%;">
+				</div>
+				<br>
 				</div>
 				<!--/.span9-->
 			</div>
-		</div>
-		<!--/.container-->
-	</div>
-
-
 	<button type="button" class="btn btn-warning">Daily</button>
 	<button type="button" class="btn btn-dark">Monthly</button>
 	<!--월별 예측 값   -->
@@ -460,6 +452,7 @@
 			</tr>
 		</tbody>
 	</table>
+	<br>
 	<!--일별 예측 값   -->
 	<table class="table table-striped bg-warning">
 		<thead>
@@ -502,11 +495,41 @@
 			</tr>
 		</tbody>
 	</table>
+	<br>
 	<!-- 일별 예측 그래프 -->
 	<div id="chartContainer1" style="height: 300px; width: 100%;"></div>
-	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<br>
 	<!--월별 예측 그래프  -->
 	<div id="chartContainer2" style="height: 300px; width: 100%;"></div>
+		</div>
+		<!--/.container-->
+		<br>
+	</div>
+	
+	<!--/.wrapper-->
+     <div class="footer">
+         <div class="container">
+             <b class="copyright">&copy; 2018 GoldMine </b>All rights reserved.
+         </div>
+     </div>
+
+
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script> -->
+	<!--  <script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	 <script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script> -->
+	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
+	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="scripts/jquery-ui-1.10.1.custom.min.js"
+		type="text/javascript"></script>
+		
 </body>
 </html>
