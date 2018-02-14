@@ -10,7 +10,7 @@ public class Influence {
 	private double wti;
 	private double interest_rate;
 	private double gdp;
-	private double influence;
+	private double inflation;
 	private double balance_trade;
 	private double cpi;
 	private double gold_mine;
@@ -65,11 +65,11 @@ public class Influence {
 	public void setGdp(double gdp) {
 		this.gdp = gdp;
 	}
-	public double getInfluence() {
-		return influence;
+	public double getInflation() {
+		return inflation;
 	}
-	public void setInfluence(double influence) {
-		this.influence = influence;
+	public void setInflation(double inflation) {
+		this.inflation = inflation;
 	}
 	public double getBalance_trade() {
 		return balance_trade;
@@ -106,7 +106,7 @@ public class Influence {
 	public String toString() {
 		return "Influence [i_id=" + i_id + ", r_n=" + r_n + ", dow_jones=" + dow_jones + ", sp_500=" + sp_500
 				+ ", dollar_index=" + dollar_index + ", wti=" + wti + ", interest_rate=" + interest_rate + ", gdp="
-				+ gdp + ", influence=" + influence + ", balance_trade=" + balance_trade + ", cpi=" + cpi
+				+ gdp + ", inflation=" + inflation + ", balance_trade=" + balance_trade + ", cpi=" + cpi
 				+ ", gold_mine=" + gold_mine + ", uncertainty=" + uncertainty + ", money_stock=" + money_stock + "]";
 	}
 

@@ -29,10 +29,7 @@
 		/* 월별 예측 금 값  */
 		var chart2 = new CanvasJS.Chart("chartContainer2", {
 			animationEnabled : true,
-			theme : "light1",
-			title : {
-				text : "월별 예측 값"
-			},
+			theme : "light2",
 			axisX : {
 				valueFormatString : "DD MMM",
 				crosshair : {
@@ -169,10 +166,7 @@
 		/* 일 별 예측 금값  */
 		var chart1 = new CanvasJS.Chart("chartContainer1", {
 			animationEnabled : true,
-			theme : "light1",
-			title : {
-				text : "일 별 예측값"
-			},
+			theme : "light2",
 			axisX : {
 				valueFormatString : "DD MMM",
 				crosshair : {
@@ -322,29 +316,44 @@
 				toolTipContent : "<b>{label}</b>: {y}%",
 				showInLegend : "true",
 				legendText : "{label}",
-				indexLabelFontSize : 16,
-				indexLabel : "{label} - {y}%",
+				indexLabelFontSize : 12,
+				indexLabel : "{label} {y}%",
 				dataPoints : [ {
-					y : 51.08,
+					y : data.relative.dow_jones,
+					label : "다우존스 산업지수"
+				}, {
+					y : data.relative.sp_500,
+					label : "S&P 500 지수"
+				}, {
+					y : data.relative.dollar_index,
+					label : "달러 인덱스"
+				}, {
+					y : data.relative.wti,
+					label : "원유"
+				}, {
+					y : data.relative.interest_rate,
 					label : "금리"
 				}, {
-					y : 27.34,
-					label : "WTI"
-				}, {
-					y : 10.62,
-					label : "달러지수"
-				}, {
-					y : 5.02,
-					label : "인플레이션"
-				}, {
-					y : 4.07,
-					label : "다우존스지수"
-				}, {
-					y : 1.22,
+					y : data.relative.gdp,
 					label : "GDP"
 				}, {
-					y : 0.44,
-					label : "무역지수"
+					y : data.relative.inflation,
+					label : "인플레이션"
+				}, {
+					y : data.relative.balance_trade,
+					label : "무역수지"
+				}, {
+					y : data.relative.cpi,
+					label : "소비자 물가 지수"
+				}, {
+					y : data.relative.gold_mine,
+					label : "금 채굴량"
+				}, {
+					y : data.relative.uncertainty,
+					label : "불확실성"
+				}, {
+					y : data.relative.money_stock,
+					label : "통화량"
 				}
 				]
 			} ]
@@ -414,8 +423,11 @@
 				</div>
 				<!--/.span9-->
 			</div>
+			<div class="module-head">
+							<h3>금값 예측
 	<button type="button" class="btn btn-warning">Daily</button>
-	<button type="button" class="btn btn-dark">Monthly</button>
+	<button type="button" class="btn btn-dark">Monthly</button></h3>
+						</div>
 	<!--월별 예측 값   -->
 	<table class="table table-striped table-dark">
 		<thead>
@@ -450,21 +462,6 @@
 				<td>@twitter</td>
 				<td>@mdo</td>
 			</tr>
-		</tbody>
-	</table>
-	<br>
-	<!--일별 예측 값   -->
-	<table class="table table-striped bg-warning">
-		<thead>
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">날짜</th>
-				<th scope="col">예측값</th>
-				<th scope="col">최소값</th>
-				<th scope="col">최대값</th>
-			</tr>
-		</thead>
-		<tbody>
 			<tr>
 				<th scope="row">1</th>
 				<td>Mark</td>
@@ -496,9 +493,15 @@
 		</tbody>
 	</table>
 	<br>
+	<div class="module-head">
+							<h3>일별 예측값</h3>
+						</div>
 	<!-- 일별 예측 그래프 -->
 	<div id="chartContainer1" style="height: 300px; width: 100%;"></div>
 	<br>
+	<div class="module-head">
+							<h3>월별 예측값</h3>
+						</div>
 	<!--월별 예측 그래프  -->
 	<div id="chartContainer2" style="height: 300px; width: 100%;"></div>
 		</div>
