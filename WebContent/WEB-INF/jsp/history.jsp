@@ -40,6 +40,9 @@
                     </div>
                     <div class="module" style="overflow:hidden">
                         <div class="module-head"><h3>우리 모델 금값 예측 그래프</h3>
+                        <input type="button" value="전체기간" class="select-session btn btn-default btn-xs" id="all">
+						<input type="button" value="최근 10년" class="select-session btn btn-default btn-xs" id="10years">
+						<input type="button" value="최근 1년" class="select-session btn btn-default btn-xs" id="1year">
                         </div>
                         <div class="module-body" style="padding:0;">
 
