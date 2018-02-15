@@ -25,11 +25,15 @@ import model.FactorsMonth;
 import model.FactorsRecent;
 import model.Forecast;
 import model.ForecastOthers;
+import model.Forecast_Factors_d;
+import model.Forecast_Factors_m;
 import model.Price;
 import model.News;
 import service.IFactorsRecentService;
 import service.IForecastOthersService;
 import service.IForecastService;
+import service.IForecast_Factors_dService;
+import service.IForecast_Factors_mService;
 import service.IPriceService;
 import service.INewsService;
 import service.NewsService;
@@ -48,6 +52,12 @@ public class MainController {
 	
 	@Autowired
 	private IForecastService fService;
+	
+	@Autowired
+	private IForecast_Factors_dService fdService;
+	
+	@Autowired
+	private IForecast_Factors_mService fmService;
 	
 
 	@RequestMapping("index.do")
@@ -130,6 +140,16 @@ public class MainController {
 		int sizeForecast = forecast.size();
 
 		Map<String, Object> data = new HashMap<>();	
+		
+		List<Forecast_Factors_d> forecast_d = fdService.selectByLatestDate();
+		List<Forecast_Factors_m> forecast_m = fmService.selectByLatestDate();
+		int size_d =forecast_d.size();
+		int size_m =forecast_m.size();
+		
+		data.put("forecast_d", forecast_d);
+		data.put("forecast_m", forecast_m);
+		data.put("size_d", size_d);
+		data.put("size_m", size_m);
 		
 		data.put("forecastOthersToday", forecastOthersToday);
 		data.put("sizeToday", sizeToday);

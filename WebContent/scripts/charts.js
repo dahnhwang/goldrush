@@ -367,6 +367,7 @@ $(function() {
 					}
 					
 					
+					
 					// default options
 					var options = {
 							chart : {
@@ -436,11 +437,43 @@ $(function() {
 					var todaySiteDate_1 = []
 					var todaySiteDate_2 = []
 					var todaySiteDate_3 = []
+					var forecastOurPrice_d=[]
+					var forecastOurDate_d=[]
+					var forecastOurPrice_m=[]
+					var forecastOurDate_m=[]
 
 					var today = data.sizeToday
 					var exRate = data.exrate
+					
+					for(var i=0; i<data.size_d;i++){
+						
+						var ourGold_d =data.forecast_d[i].gold_price
+						ourGold_d = ourGold_d/ 28.35 * 3.75 * exRate;
+						ourGold_d = Math.floor(ourGold_d,0)
+						var ourDate_d =data.forecast_d[i].k_month
+						ourDate_d = moment(ourDate_d).format('YYYY-MM-DD');
+						
+						forecastOurPrice_d.push(ourGold_d)
+						forecastOurDate_d.push(ourDate_d)
+						
+					}
 
+					for(var i=0; i<10;i++){
+						
+						var ourGold_m =data.forecast_m[i].gold_price
+						ourGold_m = ourGold_m/ 28.35 * 3.75 * exRate;
+						ourGold_m = Math.floor(ourGold_m,0)
+						var ourDate_m =data.forecast_m[i].k_month
+						ourDate_m = moment(ourDate_m).format('YYYY-MM-DD');
+						
+						forecastOurPrice_m.push(ourGold_m)
+						forecastOurDate_m.push(ourDate_m)
+						
+					}
+					
+					
 					for (var i = 0; i < today; i++) {
+						
 						
 
 						var priceToday = data.forecastOthersToday[i].f_others_price
@@ -488,12 +521,12 @@ $(function() {
 						// text: 'Source: WorldClimate.com'
 						},
 						xAxis : [ {
-							categories : todaySiteDate_1,
+							categories : todaySiteDate_1.slice(1),
 							crosshair : true
 						} ],
 						yAxis : [ { // Primary yAxis
-							min : 189000,
-							max : 222000,
+							min : 170000,
+							max : 220000,
 							labels : {
 								format : '￦ {value}',
 								style : {
@@ -508,8 +541,8 @@ $(function() {
 								}
 							}
 						}, { // Secondary yAxis
-							min : 189000,
-							max : 222000,
+							min : 170000,
+							max : 220000,
 							title : {
 								text : 'Won',
 								style : {
@@ -541,7 +574,7 @@ $(function() {
 							name : 'The Economy Forest Agency',
 							type : 'spline',
 							yAxis : 1,
-							data : todaySitePrice_1,
+							data : todaySitePrice_1.slice(1),
 							tooltip : {
 								valuePrefix : '￦ '
 							}
@@ -549,7 +582,14 @@ $(function() {
 						}, {
 							name : 'Financial Forecast Center',
 							type : 'spline',
-							data : todaySitePrice_3,
+							data : todaySitePrice_3.slice(1),
+							tooltip : {
+								valuePrefix : '￦ '
+							}
+						}, {
+							name : '우리 모델 예측값',
+							type : 'spline',
+							data : forecastOurPrice_m,
 							tooltip : {
 								valuePrefix : '￦ '
 							}
@@ -675,6 +715,7 @@ $('.daily-forecast').click(function(){
 				var sizeByDaily= data.sizeByDaily
 				var sizeByMonth=data.sizeByMonth
 				var sizeForecast =data.sizeForecast
+				var exRate = data.exrate
 				
 				for (var i = 0; i < sizeByDaily; i++) {
 					
@@ -691,6 +732,7 @@ $('.daily-forecast').click(function(){
 					myGoldPrice2 = Math.floor(myGoldPrice2,2)
 					myData2.push(myGoldPrice2)
 				}
+				
 				
 				
 				// default options
@@ -724,8 +766,9 @@ $('.daily-forecast').click(function(){
 								pointInterval : 1000*60*60*32.75
 						} ]
 				};
-					chart1Options = jQuery.extend(true, {}, options, chart1Options);
-					var chart1 = new Highcharts.Chart(chart1Options);
+				chart1Options = jQuery.extend(true, {}, options, chart1Options);
+				
+				var chart1 = new Highcharts.Chart(chart1Options);
 					// //////////차트 구분선///////////////
 					/*
 					 * var chart2Options = { chart: { renderTo: 'container3', zoomType: 'xy' },
@@ -761,11 +804,43 @@ $('.daily-forecast').click(function(){
 					var todaySiteDate_1 = []
 					var todaySiteDate_2 = []
 					var todaySiteDate_3 = []
+					var forecastOurPrice_d=[]
+					var forecastOurDate_d=[]
+					var forecastOurPrice_m=[]
+					var forecastOurDate_m=[]
 
 					var today = data.sizeToday
 					var exRate = data.exrate
+					
+					for(var i=0; i<data.size_d;i++){
+						
+						var ourGold_d =data.forecast_d[i].gold_price
+						ourGold_d = ourGold_d/ 28.35 * 3.75 * exRate;
+						ourGold_d = Math.floor(ourGold_d,0)
+						var ourDate_d =data.forecast_d[i].k_month
+						ourDate_d = moment(ourDate_d).format('YYYY-MM-DD');
+						
+						forecastOurPrice_d.push(ourGold_d)
+						forecastOurDate_d.push(ourDate_d)
+						
+					}
 
+					for(var i=0; i<10;i++){
+						
+						var ourGold_m =data.forecast_m[i].gold_price
+						ourGold_m = ourGold_m/ 28.35 * 3.75 * exRate;
+						ourGold_m = Math.floor(ourGold_m,0)
+						var ourDate_m =data.forecast_m[i].k_month
+						ourDate_m = moment(ourDate_m).format('YYYY-MM-DD');
+						
+						forecastOurPrice_m.push(ourGold_m)
+						forecastOurDate_m.push(ourDate_m)
+						
+					}
+					
+					
 					for (var i = 0; i < today; i++) {
+						
 						
 
 						var priceToday = data.forecastOthersToday[i].f_others_price
@@ -871,6 +946,13 @@ $('.daily-forecast').click(function(){
 								valuePrefix : '￦ '
 							}
 
+						}, {
+							name : '우리 모델 예측값',
+							type : 'spline',
+							data : forecastOurPrice_d,
+							tooltip : {
+								valuePrefix : '￦ '
+							}
 						}]
 					};
 					chart2Options = jQuery.extend(true, {}, options,
@@ -994,6 +1076,7 @@ $('.monthly-forecast').click(function(){
 					var sizeByDaily= data.sizeByDaily
 					var sizeByMonth=data.sizeByMonth
 					var sizeForecast =data.sizeForecast
+					var exRate = data.exrate
 					
 					for (var i = 0; i < sizeByDaily; i++) {
 						
@@ -1010,6 +1093,7 @@ $('.monthly-forecast').click(function(){
 						myGoldPrice2 = Math.floor(myGoldPrice2,2)
 						myData2.push(myGoldPrice2)
 					}
+					
 					
 					
 					// default options
@@ -1044,6 +1128,7 @@ $('.monthly-forecast').click(function(){
 							} ]
 					};
 					chart1Options = jQuery.extend(true, {}, options, chart1Options);
+					
 					var chart1 = new Highcharts.Chart(chart1Options);
 					// //////////차트 구분선///////////////
 					/*
@@ -1080,19 +1165,43 @@ $('.monthly-forecast').click(function(){
 					var todaySiteDate_1 = []
 					var todaySiteDate_2 = []
 					var todaySiteDate_3 = []
-
-					var yesterdaySitePrice_1 = []
-					var yesterdaySitePrice_2 = []
-					var yesterdaySitePrice_3 = []
-					var yesterdaySiteDate_1 = []
-					var yesterdaySiteDate_2 = []
-					var yesterdaySiteDate_3 = []
+					var forecastOurPrice_d=[]
+					var forecastOurDate_d=[]
+					var forecastOurPrice_m=[]
+					var forecastOurDate_m=[]
 
 					var today = data.sizeToday
-					var yesterday = data.sizeYesterday
 					var exRate = data.exrate
+					
+					for(var i=0; i<data.size_d;i++){
+						
+						var ourGold_d =data.forecast_d[i].gold_price
+						ourGold_d = ourGold_d/ 28.35 * 3.75 * exRate;
+						ourGold_d = Math.floor(ourGold_d,0)
+						var ourDate_d =data.forecast_d[i].k_month
+						ourDate_d = moment(ourDate_d).format('YYYY-MM-DD');
+						
+						forecastOurPrice_d.push(ourGold_d)
+						forecastOurDate_d.push(ourDate_d)
+						
+					}
 
+					for(var i=0; i<10;i++){
+						
+						var ourGold_m =data.forecast_m[i].gold_price
+						ourGold_m = ourGold_m/ 28.35 * 3.75 * exRate;
+						ourGold_m = Math.floor(ourGold_m,0)
+						var ourDate_m =data.forecast_m[i].k_month
+						ourDate_m = moment(ourDate_m).format('YYYY-MM-DD');
+						
+						forecastOurPrice_m.push(ourGold_m)
+						forecastOurDate_m.push(ourDate_m)
+						
+					}
+					
+					
 					for (var i = 0; i < today; i++) {
+						
 						
 
 						var priceToday = data.forecastOthersToday[i].f_others_price
@@ -1111,28 +1220,6 @@ $('.monthly-forecast').click(function(){
 						} else if (checkToday == 3) {
 							todaySitePrice_3.push(priceToday)
 							todaySiteDate_3.push(dateToday)
-						}
-					}			
-
-					for (var i = 0; i < yesterday; i++) {
-
-						var priceYesterday = data.forecastOthersYesterday[i].f_others_price
-						priceYesterday = priceYesterday/ 28.35 * 3.75 * exRate;
-						priceYesterday = Math.floor(priceToday,0);
-						var dateYesterday = data.forecastOthersYesterday[i].f_others_date
-						dateYesterday = moment(dateYesterday).format(
-								'YYYY-MM-DD');
-						var checkYesterday = data.forecastOthersYesterday[i].f_others_site
-
-						if (checkYesterday == 1) {
-							yesterdaySitePrice_1.push(priceYesterday)
-							yesterdaySiteDate_1.push(dateYesterday)
-						} else if (checkYesterday == 2) {
-							yesterdaySitePrice_2.push(priceYesterday)
-							yesterdaySiteDate_2.push(dateYesterday)
-						} else if (checkYesterday == 3) {
-							yesterdaySitePrice_2.push(priceYesterday)
-							yesterdaySiteDate_2.push(dateYesterday)
 						}
 					}
 
@@ -1165,8 +1252,8 @@ $('.monthly-forecast').click(function(){
 							crosshair : true
 						} ],
 						yAxis : [ { // Primary yAxis
-							min : 189000,
-							max : 222000,
+							min : 170000,
+							max : 220000,
 							labels : {
 								format : '￦ {value}',
 								style : {
@@ -1181,8 +1268,8 @@ $('.monthly-forecast').click(function(){
 								}
 							}
 						}, { // Secondary yAxis
-							min : 189000,
-							max : 222000,
+							min : 170000,
+							max : 220000,
 							title : {
 								text : 'Won',
 								style : {
@@ -1214,7 +1301,7 @@ $('.monthly-forecast').click(function(){
 							name : 'The Economy Forest Agency',
 							type : 'spline',
 							yAxis : 1,
-							data : todaySitePrice_1,
+							data : todaySitePrice_1.slice(1),
 							tooltip : {
 								valuePrefix : '￦ '
 							}
@@ -1222,7 +1309,14 @@ $('.monthly-forecast').click(function(){
 						}, {
 							name : 'Financial Forecast Center',
 							type : 'spline',
-							data : todaySitePrice_3,
+							data : todaySitePrice_3.slice(1),
+							tooltip : {
+								valuePrefix : '￦ '
+							}
+						}, {
+							name : '우리 모델 예측값',
+							type : 'spline',
+							data : forecastOurPrice_m,
 							tooltip : {
 								valuePrefix : '￦ '
 							}
