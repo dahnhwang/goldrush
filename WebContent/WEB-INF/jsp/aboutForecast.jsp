@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%><%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,7 +32,34 @@
 			type : 'get',
 			dataType : 'json',
 			success : function(data) {
+				
+				
+				$('#table tr').filter(function(index) {
+					return index != 0;
+				}).remove();
+				
+				$.each(data.forecast_m, function(index,item){
+					
+					var exRate=data.exrate;
+					var gold_price =item.gold_price;
+					gold_price = gold_price/ 28.35 * 3.75 * exRate;
+					gold_price = Number(gold_price).toLocaleString('en').split(".")[0]+"원";
+					var k_month=item.k_month;
+					
+					var tr = $('<tr>');
+					$('<td>').text(index+1).appendTo(tr);
+					$('<td>').text(k_month).appendTo(tr);
+					$('<td>').text(gold_price).appendTo(tr);
+					$('<td>').text(gold_price).appendTo(tr);
+					$('<td>').text(gold_price).appendTo(tr);
+					var td = $('<td>');
+					td.appendTo(tr);
+					tr.appendTo('#table');
+
+				})
 		/* 월별 예측 금 값  */
+		
+		var exRate=data.exrate;
 		
 		var daily = new Array() ;
 		
@@ -47,7 +74,10 @@
 	            var day=data.forecast_d[i].k_month.substring( 8, 10 );
 	            
 	            dataD.x = new Date(year, month, day);
-	            dataD.y = data.forecast_d[i].gold_price;
+	            
+	            gold_price = data.forecast_d[i].gold_price;
+	            gold_price= gold_price/ 28.35 * 3.75 * exRate;
+	            dataD.y = Math.floor(gold_price,2)
 	       
 	            // 리스트에 생성된 객체 삽입
 	           daily.push(dataD) ;
@@ -66,7 +96,10 @@
 	            var day=data.forecast_m[i].k_month.substring( 8, 10 );
 	            
 	            dataM.x = new Date(year, month, day);
-	            dataM.y = data.forecast_m[i].gold_price;
+ 				gold_price = data.forecast_m[i].gold_price;
+	            
+ 				gold_price= gold_price/ 28.35 * 3.75 * exRate;
+	            dataM.y = Math.floor(gold_price,2)
 	             
 	            // 리스트에 생성된 객체 삽입
 	           monthly.push(dataM) ;
@@ -228,7 +261,81 @@
 			} ]
 		});
 		chart.render();
+		 					
+			
+		
 		}})
+		
+		 
+	$(".forecast_select").on('click', function() {
+
+			var forecastId = $(this).attr('id')
+
+			$.ajax({
+				url : 'forecast_ajax.do',
+				type : 'get',
+				dataType : 'json',
+				success : function(data) {
+					
+					if(forecastId=="daily"){
+						
+						$('#table tr').filter(function(index) {
+							return index != 0;
+						}).remove();
+						
+						$.each(data.forecast_d, function(index,item){
+							
+							var exRate=data.exrate;
+							var gold_price =item.gold_price;
+							gold_price = gold_price/ 28.35 * 3.75 * exRate;
+							gold_price = Number(gold_price).toLocaleString('en').split(".")[0]+"원";
+							var k_month=item.k_month;
+							
+							var tr = $('<tr>');
+							$('<td>').text(index+1).appendTo(tr);
+							$('<td>').text(k_month).appendTo(tr);
+							$('<td>').text(gold_price).appendTo(tr);
+							$('<td>').text(gold_price).appendTo(tr);
+							$('<td>').text(gold_price).appendTo(tr);
+							var td = $('<td>');
+							td.appendTo(tr);
+							tr.appendTo('#table');
+
+						})
+						
+					}else if(forecastId=="monthly"){
+						
+						
+						$('#table tr').filter(function(index) {
+							return index != 0;
+						}).remove();
+						
+						$.each(data.forecast_m, function(index,item){
+							
+							var exRate=data.exrate;
+							var gold_price =item.gold_price;
+							gold_price = gold_price/ 28.35 * 3.75 * exRate;
+							gold_price = Number(gold_price).toLocaleString('en').split(".")[0]+"원";
+							var k_month=item.k_month;
+							
+							var tr = $('<tr>');
+							$('<td>').text(index+1).appendTo(tr);
+							$('<td>').text(k_month).appendTo(tr);
+							$('<td>').text(gold_price).appendTo(tr);
+							$('<td>').text(gold_price).appendTo(tr);
+							$('<td>').text(gold_price).appendTo(tr);
+							var td = $('<td>');
+							td.appendTo(tr);
+							tr.appendTo('#table');
+
+						})
+						
+					}
+				}
+
+			})
+		})
+
 	}
 </script>
 </head>
@@ -294,72 +401,20 @@
 			</div>
 			<div class="module-head">
 							<h3>금값 예측
-	<button type="button" class="btn btn-warning">Daily</button>
-	<button type="button" class="btn btn-dark">Monthly</button></h3>
+	<button type="button" class="forecast_select btn btn-warning" id="daily">Daily</button>
+	<button type="button" class="forecast_select btn btn-dark" id="monthly">Monthly</button></h3>
 						</div>
 	<!--월별 예측 값   -->
-	<table class="table table-striped table-dark">
-		<thead>
+	<table id="table" class="table table-striped table-dark">
+	<thead>
 			<tr>
-				<th scope="col">#</th>
-				<th scope="col">날짜</th>
-				<th scope="col">예측값</th>
-				<th scope="col">최소값</th>
-				<th scope="col">최대값</th>
-
+				<th scope="col" align="center">#</th>
+				<th scope="col" align="center">날짜</th>
+				<th scope="col" align="center">예측값</th>
+				<th scope="col" align="center">최소값</th>
+				<th scope="col" align="center">최대값</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-				<td>@mdo</td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Jacob</td>
-				<td>Thornton</td>
-				<td>@fat</td>
-				<td>@mdo</td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				<td>@mdo</td>
-			</tr>
-			<tr>
-				<th scope="row">1</th>
-				<td>Mark</td>
-				<td>Otto</td>
-				<td>@mdo</td>
-				<td>gggg</td>
-			</tr>
-			<tr>
-				<th scope="row">2</th>
-				<td>Jacob</td>
-				<td>Thornton</td>
-				<td>@fat</td>
-				<td>gggg</td>
-			</tr>
-			<tr>
-				<th scope="row">3</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				<td>gggg</td>
-			</tr>
-			<tr>
-				<th scope="row">4</th>
-				<td>Larry</td>
-				<td>the Bird</td>
-				<td>@twitter</td>
-				<td>gggg</td>
-			</tr>
-		</tbody>
 	</table>
 	<br>
 	<div class="module-head">

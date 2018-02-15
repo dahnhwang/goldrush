@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import model.Forecast_Factors_d;
 import model.Forecast_Factors_m;
 import model.Influence;
+import service.IForecastOthersService;
 import service.IForecast_Factors_dService;
 import service.IForecast_Factors_mService;
 import service.IInfluenceService;
@@ -29,9 +30,22 @@ public class ForecastController {
 	@Autowired
 	private IForecast_Factors_mService fmService;
 	
+	@Autowired
+	private IForecastOthersService foService;
+	
 	@RequestMapping("aboutForecast.do")
 	public ModelAndView forecast() {
 		ModelAndView mav = new ModelAndView();
+	
+		List<Forecast_Factors_d> forecast_d = fdService.selectByLatestDate();
+		List<Forecast_Factors_m> forecast_m = fmService.selectByLatestDate();
+		int size_d =forecast_d.size();
+		int size_m =forecast_m.size();
+		
+		mav.addObject("forecast_d", forecast_d);
+		mav.addObject("forecast_m", forecast_m);
+		mav.addObject("size_d", size_d);
+		mav.addObject("size_m", size_m);
 		return mav;
 	}
 	
@@ -57,10 +71,13 @@ public class ForecastController {
 		int size_d =forecast_d.size();
 		int size_m =forecast_m.size();
 		
+		double exrate = foService.exrate();
+		
 		data.put("forecast_d", forecast_d);
 		data.put("forecast_m", forecast_m);
 		data.put("size_d", size_d);
 		data.put("size_m", size_m);
+		data.put("exrate", exrate);
 		
 		return data;
 	}
