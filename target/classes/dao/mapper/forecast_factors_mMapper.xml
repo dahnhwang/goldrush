@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.IForecast_Factors_mDao">
+	<resultMap type="forecast_factors_m" id="forecast_factors_mMap">
+		<id column="ffd_id" property="ffd_id" />
+		<result column="f_date" property="f_date" />
+		<result column="k_month" property="k_month" />
+		<result column="dow_jones" property="dow_jones" />
+		<result column="sp_500" property="sp_500" />
+		<result column="dollar_index" property="dollar_index" />
+		<result column="wti" property="wti" />
+		<result column="interest_rate" property="interest_rate" />
+		<result column="gdp" property="gdp" />
+		<result column="inflation" property="inflation" />
+		<result column="balance_trade" property="balance_trade" />
+		<result column="cpi" property="cpi" />
+		<result column="gold_mine" property="gold_mine" />
+		<result column="uncertainty" property="uncertainty" />
+		<result column="money_stock" property="money_stock" />
+		<result column="gold_price" property="gold_price" />
+
+	</resultMap>
+	<select id="selectAllForecast_Factors_m" resultMap="forecast_factors_mMap">
+		select * from
+		forecast_factors_m
+	</select>
+	<select id="selectForecast_Factors_m" parameterType="int"
+		resultMap="forecast_factors_mMap">
+		select * from forecast_factors_m where ffm_id=#{ffm_id}
+	</select>
+</mapper>
