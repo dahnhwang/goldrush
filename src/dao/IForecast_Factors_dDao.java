@@ -8,5 +8,7 @@ public interface IForecast_Factors_dDao {
 	public Forecast_Factors_d selectForecast(int ffd_id);
 	
 	public List<Forecast_Factors_d> selectAllForecast();
+	
+	public List<Forecast_Factors_d> selectForecastByDate(String f_date);
 
 }

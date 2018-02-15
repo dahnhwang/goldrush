@@ -9,7 +9,7 @@ public class Forecast_Factors_m {
 	private double dow_jones;
 	private double sp_500;
 	private double dollar_index;
-	private double wit;
+	private double wti;
 	private double interest_rate;
 	private double gdp;
 	private double inflation;
@@ -68,12 +68,12 @@ public class Forecast_Factors_m {
 		this.dollar_index = dollar_index;
 	}
 
-	public double getWit() {
-		return wit;
+	public double getWti() {
+		return wti;
 	}
 
-	public void setWit(double wit) {
-		this.wit = wit;
+	public void setWti(double wti) {
+		this.wti = wti;
 	}
 
 	public double getInterest_rate() {

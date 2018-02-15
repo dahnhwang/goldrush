@@ -26,7 +26,54 @@
 
 <script>
 	window.onload = function() {
+		
+		$.ajax({
+			url : 'forecast_ajax.do',
+			type : 'get',
+			dataType : 'json',
+			success : function(data) {
 		/* 월별 예측 금 값  */
+		
+		var daily = new Array() ;
+		
+		 for(var i=0; i<data.size_d; i++){
+             
+	            // 객체 생성
+	            var dataD = new Object() ; 
+	             
+	            var date =  data.forecast_d[i].k_month;
+	            var year =data.forecast_d[i].k_month.substring( 0, 4 );
+	            var month=data.forecast_d[i].k_month.substring( 5, 7 );
+	            var day=data.forecast_d[i].k_month.substring( 8, 10 );
+	            
+	            dataD.x = new Date(year, month, day);
+	            dataD.y = data.forecast_d[i].gold_price;
+	       
+	            // 리스트에 생성된 객체 삽입
+	           daily.push(dataD) ;
+	        }
+		 
+		 var monthly = new Array() ;
+			
+		 for(var i=0; i<data.size_m; i++){
+             
+	            // 객체 생성
+	            var dataM = new Object() ;
+	            
+	            var date =  data.forecast_m[i].k_month;
+	            var year =data.forecast_m[i].k_month.substring( 0, 4 );
+	            var month=data.forecast_m[i].k_month.substring( 5, 7 );
+	            var day=data.forecast_m[i].k_month.substring( 8, 10 );
+	            
+	            dataM.x = new Date(year, month, day);
+	            dataM.y = data.forecast_m[i].gold_price;
+	             
+	            // 리스트에 생성된 객체 삽입
+	           monthly.push(dataM) ;
+	        }
+		 
+	         
+		
 		var chart2 = new CanvasJS.Chart("chartContainer2", {
 			animationEnabled : true,
 			theme : "light2",
@@ -60,100 +107,11 @@
 				markerType : "square",
 				xValueFormatString : "DD MMM, YYYY",
 				color : "#F08080",
-				dataPoints : [ {
-					x : new Date(2017, 0, 3),
-					y : 650
-				}, {
-					x : new Date(2017, 0, 4),
-					y : 700
-				}, {
-					x : new Date(2017, 0, 5),
-					y : 710
-				}, {
-					x : new Date(2017, 0, 6),
-					y : 658
-				}, {
-					x : new Date(2017, 0, 7),
-					y : 734
-				}, {
-					x : new Date(2017, 0, 8),
-					y : 963
-				}, {
-					x : new Date(2017, 0, 9),
-					y : 847
-				}, {
-					x : new Date(2017, 0, 10),
-					y : 853
-				}, {
-					x : new Date(2017, 0, 11),
-					y : 869
-				}, {
-					x : new Date(2017, 0, 12),
-					y : 943
-				}, {
-					x : new Date(2017, 0, 13),
-					y : 970
-				}, {
-					x : new Date(2017, 0, 14),
-					y : 869
-				}, {
-					x : new Date(2017, 0, 15),
-					y : 890
-				}, {
-					x : new Date(2017, 0, 16),
-					y : 930
-				} ]
-			}, {
-				type : "line",
-				showInLegend : true,
-				name : "Unique Visit",
-				lineDashType : "dash",
-				dataPoints : [ {
-					x : new Date(2017, 0, 3),
-					y : 510
-				}, {
-					x : new Date(2017, 0, 4),
-					y : 560
-				}, {
-					x : new Date(2017, 0, 5),
-					y : 540
-				}, {
-					x : new Date(2017, 0, 6),
-					y : 558
-				}, {
-					x : new Date(2017, 0, 7),
-					y : 544
-				}, {
-					x : new Date(2017, 0, 8),
-					y : 693
-				}, {
-					x : new Date(2017, 0, 9),
-					y : 657
-				}, {
-					x : new Date(2017, 0, 10),
-					y : 663
-				}, {
-					x : new Date(2017, 0, 11),
-					y : 639
-				}, {
-					x : new Date(2017, 0, 12),
-					y : 673
-				}, {
-					x : new Date(2017, 0, 13),
-					y : 660
-				}, {
-					x : new Date(2017, 0, 14),
-					y : 562
-				}, {
-					x : new Date(2017, 0, 15),
-					y : 643
-				}, {
-					x : new Date(2017, 0, 16),
-					y : 570
-				} ]
+				dataPoints :monthly
 			} ]
 		});
 		chart2.render();
+		
 		function toogleDataSeries(e) {
 			if (typeof (e.dataSeries.visible) === "undefined"
 					|| e.dataSeries.visible) {
@@ -197,98 +155,8 @@
 				markerType : "square",
 				xValueFormatString : "DD MMM, YYYY",
 				color : "#F08080",
-				dataPoints : [ {
-					x : new Date(2017, 0, 3),
-					y : 650
-				}, {
-					x : new Date(2017, 0, 4),
-					y : 700
-				}, {
-					x : new Date(2017, 0, 5),
-					y : 710
-				}, {
-					x : new Date(2017, 0, 6),
-					y : 658
-				}, {
-					x : new Date(2017, 0, 7),
-					y : 734
-				}, {
-					x : new Date(2017, 0, 8),
-					y : 963
-				}, {
-					x : new Date(2017, 0, 9),
-					y : 847
-				}, {
-					x : new Date(2017, 0, 10),
-					y : 853
-				}, {
-					x : new Date(2017, 0, 11),
-					y : 869
-				}, {
-					x : new Date(2017, 0, 12),
-					y : 943
-				}, {
-					x : new Date(2017, 0, 13),
-					y : 970
-				}, {
-					x : new Date(2017, 0, 14),
-					y : 869
-				}, {
-					x : new Date(2017, 0, 15),
-					y : 890
-				}, {
-					x : new Date(2017, 0, 16),
-					y : 930
-				} ]
-			}, {
-				type : "line",
-				showInLegend : true,
-				name : "Unique Visit",
-				lineDashType : "dash",
-				dataPoints : [ {
-					x : new Date(2017, 0, 3),
-					y : 510
-				}, {
-					x : new Date(2017, 0, 4),
-					y : 560
-				}, {
-					x : new Date(2017, 0, 5),
-					y : 540
-				}, {
-					x : new Date(2017, 0, 6),
-					y : 558
-				}, {
-					x : new Date(2017, 0, 7),
-					y : 544
-				}, {
-					x : new Date(2017, 0, 8),
-					y : 693
-				}, {
-					x : new Date(2017, 0, 9),
-					y : 657
-				}, {
-					x : new Date(2017, 0, 10),
-					y : 663
-				}, {
-					x : new Date(2017, 0, 11),
-					y : 639
-				}, {
-					x : new Date(2017, 0, 12),
-					y : 673
-				}, {
-					x : new Date(2017, 0, 13),
-					y : 660
-				}, {
-					x : new Date(2017, 0, 14),
-					y : 562
-				}, {
-					x : new Date(2017, 0, 15),
-					y : 643
-				}, {
-					x : new Date(2017, 0, 16),
-					y : 570
-				} ]
-			} ]
+				dataPoints : daily
+			}]
 		});
 		chart1.render();
 		function toogleDataSeries(e) {
@@ -300,6 +168,7 @@
 			}
 			chart1.render();
 		}
+			}})
 		/* 금값에 미치는 영향 요인들의 정도를 대략 적으로 % 로 나타낸 수치  */
 		 $.ajax({
 		url : 'influence_ajax.do',
@@ -533,6 +402,7 @@
 	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="scripts/jquery-ui-1.10.1.custom.min.js"
 		type="text/javascript"></script>
+		<script src="scripts/moment.js" type="text/javascript"></script>
 		
 </body>
 </html>

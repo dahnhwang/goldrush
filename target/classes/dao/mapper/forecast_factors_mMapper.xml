@@ -21,12 +21,15 @@
 		<result column="gold_price" property="gold_price" />
 
 	</resultMap>
-	<select id="selectAllForecast_Factors_m" resultMap="forecast_factors_mMap">
+	<select id="selectAllForecast" resultMap="forecast_factors_mMap">
 		select * from
 		forecast_factors_m
 	</select>
-	<select id="selectForecast_Factors_m" parameterType="int"
+	<select id="selectForecast" parameterType="int"
 		resultMap="forecast_factors_mMap">
 		select * from forecast_factors_m where ffm_id=#{ffm_id}
+	</select>
+	<select id="selectForecastByDate" parameterType="String" resultMap="forecast_factors_mMap">
+	select * from forecast_factors_m where f_date=#{f_date}
 	</select>
 </mapper>

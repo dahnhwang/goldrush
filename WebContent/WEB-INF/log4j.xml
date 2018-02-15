@@ -19,10 +19,14 @@
 		
 	</appender>
 	<appender name="db" class="org.apache.log4j.jdbc.JDBCAppender">
-		<param name="URL" value="jdbc:mariadb://70.12.111.30:3306/goldrush_db" />
+		<!-- <param name="URL" value="jdbc:mariadb://70.12.111.30:3306/goldrush_db" />
 		<param name="driver" value="org.mariadb.jdbc.Driver" />
 		<param name="user" value="root" />
-		<param name="password" value="bigdata" />
+		<param name="password" value="bigdata" /> -->
+		<param name="URL" value="jdbc:mysql://localhost:3306/goldrush_db" />
+		<param name="driver" value="org.mariadb.jdbc.Driver" />
+		<param name="user" value="root" />
+		<param name="password" value="mysql" />
 		<param name="sql" value="INSERT INTO logs VALUES('%d','%C','%p','%m')" />
 		
 <!-- 		<param name="org.apache.log4j.PatternLayout" /> -->

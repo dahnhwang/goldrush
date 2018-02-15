@@ -18,12 +18,17 @@
 		<result column="uncertainty" property="uncertainty" />
 		<result column="gold_price" property="gold_price" />
 	</resultMap>
-	<select id="selectAllForecast_Factors_d" resultMap="forecast_factors_dMap">
+	<select id="selectAllForecast" resultMap="forecast_factors_dMap">
 		select * from
 		forecast_factors_d
 	</select>
-	<select id="selectForecast_Factors_d" parameterType="int"
+	<select id="selectForecast" parameterType="int"
 		resultMap="forecast_factors_dMap">
 		select * from forecast_factors_d where ffd_id=#{ffd_id}
 	</select>
+	
+	<select id="selectForecastByDate" parameterType="String" resultMap="forecast_factors_dMap">
+	select * from forecast_factors_d where f_date=#{f_date}
+	</select>
+	
 </mapper>
