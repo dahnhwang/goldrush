@@ -18,7 +18,12 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
-
+<style>
+.gray {
+	color: gray;
+	font-size: 15px;
+}
+</style>
 </head>
 <body>
 
@@ -138,7 +143,12 @@
 				<div class="content">
 					<div class="module-head">
 
-						<h3>금 연관 요인 기간별 변동 그래프</h3>
+						<h3>
+							실시간 금시세 (최근 업데이트 :
+							<fmt:formatDate value="${goldPrice.gold_date }"
+								pattern="yyyy-MM-dd hh:mm" />
+							)
+						</h3>
 					</div>
 
 					<div class="btn-controls">
@@ -150,12 +160,14 @@
 							<div class="btn-box big span4 ">
 								<div class="card-container ">
 									<div class="card">
-										<span class="side"> Gold24K<b
-											style="display: inline-block; float: right; margin: 0 35px 0 0;">Buy</b>
+										<span class="side"> 금(24K) <span class="gray">/3.75g</span><b
+											style="display: inline-block; float: right; margin: 0 35px 0 0;">살
+												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[0]}원</p>
-										</span> <span class="side back">Gold24K<b
-											style="display: inline-block; float: right; margin: 0 35px 0 0;">Sell</b>
+										</span> <span class="side back">금(24K) <span class="gray">/3.75g</span><b
+											style="display: inline-block; float: right; margin: 0 35px 0 0;">팔
+												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[1]}원</p>
 										</span>
@@ -166,12 +178,14 @@
 							<div class="btn-box big span4 ">
 								<div class="card-container ">
 									<div class="card">
-										<span class="side"> Gold18K<b
-											style="display: inline-block; float: right; margin: 0 35px 0 0;">Buy</b>
+										<span class="side"> 금(18K) <span class="gray">/3.75g</span><b
+											style="display: inline-block; float: right; margin: 0 35px 0 0;">살
+												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[2]}원</p>
-										</span> <span class="side back">Gold18K<b
-											style="display: inline-block; float: right; margin: 0 35px 0 0;">Sell</b>
+										</span> <span class="side back">금(18K) <span class="gray">/3.75g</span><b
+											style="display: inline-block; float: right; margin: 0 35px 0 0;">팔
+												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[3]}원</p>
 										</span>
@@ -182,12 +196,14 @@
 							<div class="btn-box big span4 ">
 								<div class="card-container ">
 									<div class="card">
-										<span class="side"> Gold14K<b
-											style="display: inline-block; float: right; margin: 0 35px 0 0;">Buy</b>
+										<span class="side"> 금(14K) <span class="gray">/3.75g</span><b
+											style="display: inline-block; float: right; margin: 0 35px 0 0;">살
+												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[4]}원</p>
-										</span> <span class="side back">Gold14K<b
-											style="display: inline-block; float: right; margin: 0 35px 0 0;">Sell</b>
+										</span> <span class="side back">금(14K) <span class="gray">/3.75g</span><b
+											style="display: inline-block; float: right; margin: 0 35px 0 0;">팔
+												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[5]}원</p>
 										</span>
