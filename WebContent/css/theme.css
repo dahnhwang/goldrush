@@ -260,6 +260,7 @@ body [class^="icon-"], body [class*=" icon-"] {
 
 .navbar .navbar-inner {
 	background: #fff;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.7);
 	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15)
@@ -2505,7 +2506,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2550,7 +2559,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2595,7 +2612,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2640,7 +2665,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2685,7 +2718,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
