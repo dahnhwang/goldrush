@@ -66,14 +66,47 @@ public class PriceService implements IPriceService {
 		String gold14Buy1 = df.format(gold14Buy);
 		String gold14Sell1 = df.format(gold14Sell);
 
-		String gold24BuyChangeStr = df.format(gold24BuyChange); // 6
-		String gold24SellChangeStr = df.format(gold24SellChange);
+		String gold24BuyChangeStr = null;
+		if (gold24BuyChange < 0) {
+			gold24BuyChangeStr = df.format(gold24BuyChange); // 6
+		} else {
+			gold24BuyChangeStr = "+" + df.format(gold24BuyChange);
+		}
 
-		String gold18BuyChangeStr = df.format(gold18BuyChange); // 8
-		String gold18SellChangeStr = df.format(gold18SellChange);
+		String gold24SellChangeStr = null;
+		if (gold24SellChange < 0) {
+			gold24SellChangeStr = df.format(gold24SellChange);
+		} else {
+			gold24SellChangeStr = "+" + df.format(gold24SellChange);
+		}
 
-		String gold14BuyChangeStr = df.format(gold14BuyChange); // 10
-		String gold14SellChangeStr = df.format(gold14SellChange);
+		String gold18BuyChangeStr = null;
+		if (gold18BuyChange < 0) {
+			gold18BuyChangeStr = df.format(gold18BuyChange); // 8
+		} else {
+			gold18BuyChangeStr = "+" + df.format(gold18BuyChange);
+		}
+
+		String gold18SellChangeStr = null;
+		if (gold18SellChange < 0) {
+			gold18SellChangeStr = df.format(gold18SellChange);
+		} else {
+			gold18SellChangeStr = "+" + df.format(gold18SellChange);
+		}
+
+		String gold14BuyChangeStr = null;
+		if (gold14BuyChange < 0) {
+			gold14BuyChangeStr = df.format(gold14BuyChange); // 10
+		} else {
+			gold14BuyChangeStr = "+" + df.format(gold14BuyChange);
+		}
+
+		String gold14SellChangeStr = null;
+		if (gold14SellChange < 0) {
+			gold14SellChangeStr = df.format(gold14SellChange);
+		} else {
+			gold14SellChangeStr = "+" + df.format(gold14SellChange);
+		}
 
 		List<String> goldPriceResult = new ArrayList<>();
 		goldPriceResult.add(gold24Buy1);
