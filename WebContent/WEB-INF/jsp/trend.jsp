@@ -104,15 +104,15 @@
 						var keyword4 = item.keyword4
 						var keyword5 = item.keyword5
 
-						$('.bb-texts-연관키워드1 > .bb-text-' + index)
+						$('.bb-texts-이슈키워드1 > .bb-text-' + index)
 								.text(keyword1)
-						$('.bb-texts-연관키워드2 > .bb-text-' + index)
+						$('.bb-texts-이슈키워드2 > .bb-text-' + index)
 								.text(keyword2)
-						$('.bb-texts-연관키워드3 > .bb-text-' + index)
+						$('.bb-texts-이슈키워드3 > .bb-text-' + index)
 								.text(keyword3)
-						$('.bb-texts-연관키워드4 > .bb-text-' + index)
+						$('.bb-texts-이슈키워드4 > .bb-text-' + index)
 								.text(keyword4)
-						$('.bb-texts-연관키워드5 > .bb-text-' + index)
+						$('.bb-texts-이슈키워드5 > .bb-text-' + index)
 								.text(keyword5)
 					})
 
@@ -123,11 +123,11 @@
 					var keywordFreqMax = data.keywordFreqMax
 					var goldPriceList = data.goldPriceList
 					var k_month_array = [ "x" ]
-					var keyword1_freq_array = [ "연관키워드1" ]
-					var keyword2_freq_array = [ "연관키워드2" ]
-					var keyword3_freq_array = [ "연관키워드3" ]
-					var keyword4_freq_array = [ "연관키워드4" ]
-					var keyword5_freq_array = [ "연관키워드5" ]
+					var keyword1_freq_array = [ "이슈키워드1" ]
+					var keyword2_freq_array = [ "이슈키워드2" ]
+					var keyword3_freq_array = [ "이슈키워드3" ]
+					var keyword4_freq_array = [ "이슈키워드4" ]
+					var keyword5_freq_array = [ "이슈키워드5" ]
 					var goldPrice_array = [ "금가격" ]
 					$.each(keywordList, function(index, item) {
 						var k_month = item.k_month
@@ -203,7 +203,22 @@
 
 			});
 </script>
+<style>
+#space {
+	width: 1px;
+	height: 50px;
+}
 
+#priceLabel>b {
+	height: 20px;
+	color: black;
+}
+
+#yearSelect {
+	margin-bottom: -1px;
+	margin-left: 418px;
+}
+</style>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -224,51 +239,55 @@
 
 				<div class="content">
 					<!-- BubbleChart -->
-
+					<div id="space"></div>
 					<div class="module">
 						<div class="module-head">
-							<h3>Top 5 Gold-related Keywords Frequency (Monthly)</h3>
-							<br>
-							<div class="form-row align-items-center">
-								<div class="col-auto my-1">
-									<select class="custom-select mr-sm-2" id="yearSelect">
-										<option selected>연도를 선택하세요...</option>
-										<option value="1987">1987</option>
-										<option value="1988">1988</option>
-										<option value="1989">1989</option>
-										<option value="1990">1990</option>
-										<option value="1991">1991</option>
-										<option value="1992">1992</option>
-										<option value="1993">1993</option>
-										<option value="1994">1994</option>
-										<option value="1995">1995</option>
-										<option value="1996">1996</option>
-										<option value="1997">1997</option>
-										<option value="1998">1998</option>
-										<option value="1999">1999</option>
-										<option value="2000">2000</option>
-										<option value="2001">2001</option>
-										<option value="2002">2002</option>
-										<option value="2003">2003</option>
-										<option value="2004">2004</option>
-										<option value="2005">2005</option>
-										<option value="2006">2006</option>
-										<option value="2007">2007</option>
-										<option value="2008">2008</option>
-										<option value="2009">2009</option>
-										<option value="2010">2010</option>
-										<option value="2011">2011</option>
-										<option value="2012">2012</option>
-										<option value="2013">2013</option>
-										<option value="2014">2014</option>
-										<option value="2015">2015</option>
-										<option value="2016">2016</option>
-										<option value="2017">2017</option>
+							<!-- 여기부터 가져온 코드 -->
+							<div class="input-group">
+								<span class="input-group-addon" id="priceLabel"><b>금
+										가격 변동과 함께 보는 월별 금 관련 이슈 키워드 (1987년 01월 ~ ${lastMonth })</b> &nbsp;</span>
+								<!-- insert this line -->
+								<span class="input-group-addon"
+									style="width: 0px; padding-left: 0px; padding-right: 0px; border: none;"></span>
+								<select class="custom-select mr-sm-2" id="yearSelect">
+									<option selected>연도를 선택하세요...</option>
+									<option value="1987">1987</option>
+									<option value="1988">1988</option>
+									<option value="1989">1989</option>
+									<option value="1990">1990</option>
+									<option value="1991">1991</option>
+									<option value="1992">1992</option>
+									<option value="1993">1993</option>
+									<option value="1994">1994</option>
+									<option value="1995">1995</option>
+									<option value="1996">1996</option>
+									<option value="1997">1997</option>
+									<option value="1998">1998</option>
+									<option value="1999">1999</option>
+									<option value="2000">2000</option>
+									<option value="2001">2001</option>
+									<option value="2002">2002</option>
+									<option value="2003">2003</option>
+									<option value="2004">2004</option>
+									<option value="2005">2005</option>
+									<option value="2006">2006</option>
+									<option value="2007">2007</option>
+									<option value="2008">2008</option>
+									<option value="2009">2009</option>
+									<option value="2010">2010</option>
+									<option value="2011">2011</option>
+									<option value="2012">2012</option>
+									<option value="2013">2013</option>
+									<option value="2014">2014</option>
+									<option value="2015">2015</option>
+									<option value="2016">2016</option>
+									<option value="2017">2017</option>
 
-									</select>
-									<button type="button" class="btn btn-primary" id="btn-year">검색</button>
-								</div>
+								</select> <span class="input-group-addon"
+									style="width: 0px; padding-left: 0px; padding-right: 0px; border: none;"></span>
+								<button type="button" class="btn btn-primary" id="btn-year">검색</button>
 							</div>
+							<!-- 여기까지 -->
 						</div>
 						<div class="module-body">
 							<div class="chart inline-legend grid">
@@ -291,6 +310,7 @@
 							<div class="slider-range"></div>
 						</div>
 					</div>
+					<div id="space"></div>
 					<div class="module">
 						<div class="module-head">
 							<h3>Top 5 Gold-related Keywords (Monthly)</h3>
@@ -323,8 +343,8 @@
 	<!--/.wrapper-->
 	<div class="footer">
 		<div class="container">
-			<b class="copyright">&copy; 2018 GoldMine </b>All rights reserved.
-			<br>Team Project by 신진주, 임진리, 한왕석, 황다현
+			<b class="copyright">&copy; 2018 GoldMine </b>All rights reserved. <br>Team
+			Project by 신진주, 임진리, 한왕석, 황다현
 		</div>
 	</div>
 
