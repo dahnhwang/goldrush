@@ -18,6 +18,7 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
+
 </head>
 <body>
 
@@ -39,7 +40,7 @@
 							<p class="center-circle-p">
 								최신 금시세 정보, 최신 환율 <br>정보 외 주요 경제 지표 제공
 							</p>
-							<a href="#" class="button">바로가기</a>
+							<a href="#factors" class="button">바로가기</a>
 						</div>
 					</div>
 				</li>
@@ -244,6 +245,7 @@
 					<div class="module">
 						<div class="module-head">
 							<h3>금 연관 요인들</h3>
+							<a name="factors"></a>
 						</div>
 						<div class="module-body table">
 							<table cellpadding="0" cellspacing="0" border="0"
@@ -442,6 +444,27 @@
 	<script src="scripts/datatables/jquery.dataTables.js"
 		type="text/javascript"></script>
 	<script src="scripts/common.js" type="text/javascript"></script>
-
+	<script>
+		$(function() {
+			$('a[href*="#"]:not([href="#"])')
+					.click(
+							function() {
+								if (location.pathname.replace(/^\//, '') == this.pathname
+										.replace(/^\//, '')
+										&& location.hostname == this.hostname) {
+									var target = $(this.hash);
+									target = target.length ? target
+											: $('[name=' + this.hash.slice(1)
+													+ ']');
+									if (target.length) {
+										$('html, body').animate({
+											scrollTop : target.offset().top
+										}, 1000);
+										return false;
+									}
+								}
+							});
+		});
+	</script>
 </body>
 </html>
