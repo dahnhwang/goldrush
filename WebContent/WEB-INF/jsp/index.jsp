@@ -134,11 +134,18 @@
 				style="margin: 0 auto; float: initial; clear: both;">
 
 
+				<a name="factors"></a>
 				<div class="content">
+					<div class="module-head">
+
+						<h3>금 연관 요인 기간별 변동 그래프</h3>
+					</div>
+
 					<div class="btn-controls">
-						업데이트 일시
+						<br>
+						<%-- 업데이트 일시
 						<fmt:formatDate value="${goldPrice.gold_date }"
-							pattern="yyyy-MM-dd hh:mm" />
+							pattern="yyyy-MM-dd hh:mm" /> --%>
 						<div class="btn-box-row row-fluid ">
 							<div class="btn-box big span4 ">
 								<div class="card-container ">
@@ -193,8 +200,7 @@
 					<!--/#btn-controls-->
 					<div class="module">
 						<div class="module-head">
-							<h3>변동 그래프</h3>
-
+							<h3>금 연관 요인 기간별 변동 그래프</h3>
 						</div>
 						<div class="module-body">
 							<select class="factorsGragh" id="factorsSelect">
@@ -244,8 +250,8 @@
 					</div>
 					<div class="module">
 						<div class="module-head">
-							<h3>금 연관 요인들</h3>
-							<a name="factors"></a>
+							<h3>금 연관 요인 최신지표 (업데이트 주기는 지표에 따라 상이)</h3>
+
 						</div>
 						<div class="module-body table">
 							<table cellpadding="0" cellspacing="0" border="0"
@@ -254,7 +260,7 @@
 								<thead>
 									<tr>
 										<th>No.</th>
-										<th>영향 요인</th>
+										<th>연관 요인</th>
 										<th>현재 가격</th>
 										<th>단위</th>
 										<th>요인 선정 이유</th>
