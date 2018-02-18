@@ -23,6 +23,18 @@
 	color: gray;
 	font-size: 15px;
 }
+
+.symbol-target {
+	padding-top: 200px;
+	margin-top: -150px;
+	width: 1px; /* '0' will not work for Opera */
+	display: inline-block;
+}
+
+#space {
+	width: 1px;
+	height: 50px;
+}
 </style>
 </head>
 <body>
@@ -56,7 +68,7 @@
 							<p class="center-circle-p">
 								30년간 금가격 및 뉴욕타임즈 <br>추출 키워드 월별 제공
 							</p>
-							<a href="#" class="button">바로가기</a>
+							<a href="trend.do" class="button">바로가기</a>
 						</div>
 					</div>
 				</li>
@@ -67,7 +79,7 @@
 							<p class="center-circle-p">
 								금가격 예측치, 신뢰도 및<br>예측모델 관련 정보 제공
 							</p>
-							<a href="#" class="button">바로가기</a>
+							<a href="aboutForecast.do" class="button">바로가기</a>
 						</div>
 					</div>
 				</li>
@@ -138,8 +150,8 @@
 			<div class="span12"
 				style="margin: 0 auto; float: initial; clear: both;">
 
-
-				<a name="factors"></a>
+				<span class="symbol-target" id="myTarget">&nbsp;</span> <a
+					name="factors" style="margin-top: 50px;"></a>
 				<div class="content">
 					<div class="module-head">
 
@@ -153,9 +165,6 @@
 
 					<div class="btn-controls">
 						<br>
-						<%-- 업데이트 일시
-						<fmt:formatDate value="${goldPrice.gold_date }"
-							pattern="yyyy-MM-dd hh:mm" /> --%>
 						<div class="btn-box-row row-fluid ">
 							<div class="btn-box big span4 ">
 								<div class="card-container ">
@@ -226,6 +235,7 @@
 						</div>
 					</div>
 					<!--/#btn-controls-->
+					<div id="space"></div>
 					<div class="module">
 						<div class="module-head">
 							<h3>금 연관 요인 기간별 변동 그래프</h3>
@@ -276,6 +286,7 @@
 							<div class="slider-range"></div>
 						</div>
 					</div>
+					<div id="space"></div>
 					<div class="module">
 						<div class="module-head">
 							<h3>금 연관 요인 최신지표 (업데이트 주기는 지표에 따라 상이)</h3>
