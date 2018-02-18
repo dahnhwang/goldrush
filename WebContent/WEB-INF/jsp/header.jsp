@@ -9,7 +9,7 @@
 <body>
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner"
-			style="min-height: 60px; background-color: #333; text-align: center;">
+			style="min-height: 60px; background-color: rgba(0, 0, 0, 0.7); text-align: center;">
 			<div class="container">
 				<a class="logo" href="index.do">GoldMine </a>
 			</div>
@@ -25,7 +25,8 @@
 								최신뉴스</a></li>
 						<li><a class="brand" href="index.do" style="color: #FFCC00;">GoldMine
 						</a></li>
-						<li><a href="history.do" style="text-shadow: none;">예측정확도 확인하기</a></li>
+						<li><a href="history.do" style="text-shadow: none;">예측정확도
+								확인하기</a></li>
 						<li><a href="aboutForecast.do" style="text-shadow: none;">금가격예측서비스</a></li>
 					</ul>
 				</div>
