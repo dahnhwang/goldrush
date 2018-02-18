@@ -164,12 +164,16 @@
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">살
 												때</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[0]}원</p>
+											<p class="text-muted">${goldPriceResult[0]}
+												<span class="gray">원</span>
+											</p>
 										</span> <span class="side back">금(24K) <span class="gray">/3.75g</span><b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">팔
 												때</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[1]}원</p>
+											<p class="text-muted">${goldPriceResult[1]}
+												<span class="gray">원</span>
+											</p>
 										</span>
 									</div>
 								</div>
@@ -182,12 +186,16 @@
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">살
 												때</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[2]}원</p>
+											<p class="text-muted">${goldPriceResult[2]}
+												<span class="gray">원</span>
+											</p>
 										</span> <span class="side back">금(18K) <span class="gray">/3.75g</span><b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">팔
 												때</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[3]}원</p>
+											<p class="text-muted">${goldPriceResult[3]}
+												<span class="gray">원</span>
+											</p>
 										</span>
 									</div>
 								</div>
@@ -200,12 +208,16 @@
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">살
 												때</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[4]}원</p>
+											<p class="text-muted">${goldPriceResult[4]}
+												<span class="gray">원</span>
+											</p>
 										</span> <span class="side back">금(14K) <span class="gray">/3.75g</span><b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">팔
 												때</b>
 											<hr>
-											<p class="text-muted">${goldPriceResult[5]}원</p>
+											<p class="text-muted">${goldPriceResult[5]}
+												<span class="gray">원</span>
+											</p>
 										</span>
 									</div>
 								</div>
