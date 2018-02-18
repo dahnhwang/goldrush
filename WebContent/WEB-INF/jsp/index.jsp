@@ -477,6 +477,8 @@
 	<div class="footer">
 		<div class="container">
 			<b class="copyright">&copy; 2018 GoldMine </b>All rights reserved.
+			<br>Team Project by 신진주, 임진리, 한왕석, 황다현
+			
 		</div>
 	</div>
 	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
