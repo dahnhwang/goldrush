@@ -165,14 +165,14 @@
 												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[0]}
-												<span class="gray">원</span>
+												<span class="gray">원 (전일대비 ${goldPriceResult[6]}원) </span>
 											</p>
 										</span> <span class="side back">금(24K) <span class="gray">/3.75g</span><b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">팔
 												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[1]}
-												<span class="gray">원</span>
+												<span class="gray">원 (전일대비 ${goldPriceResult[7]}원)</span>
 											</p>
 										</span>
 									</div>
@@ -187,14 +187,14 @@
 												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[2]}
-												<span class="gray">원</span>
+												<span class="gray">원 (전일대비 ${goldPriceResult[8]}원)</span>
 											</p>
 										</span> <span class="side back">금(18K) <span class="gray">/3.75g</span><b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">팔
 												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[3]}
-												<span class="gray">원</span>
+												<span class="gray">원 (전일대비 ${goldPriceResult[9]}원)</span>
 											</p>
 										</span>
 									</div>
@@ -209,14 +209,14 @@
 												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[4]}
-												<span class="gray">원</span>
+												<span class="gray">원 (전일대비 ${goldPriceResult[10]}원)</span>
 											</p>
 										</span> <span class="side back">금(14K) <span class="gray">/3.75g</span><b
 											style="display: inline-block; float: right; margin: 0 35px 0 0;">팔
 												때</b>
 											<hr>
 											<p class="text-muted">${goldPriceResult[5]}
-												<span class="gray">원</span>
+												<span class="gray">원 (전일대비 ${goldPriceResult[11]}원)</span>
 											</p>
 										</span>
 									</div>
