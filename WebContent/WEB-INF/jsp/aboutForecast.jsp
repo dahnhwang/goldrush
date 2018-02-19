@@ -88,7 +88,8 @@ body {
 					// 리스트에 생성된 객체 삽입
 					daily.push(dataD);
 				}
-				var daily_min = new Array();
+				/*그래프 상에서 깔끔하게 보이는게 가독성이 있을것같아 주석처리할게요  */
+				/* var daily_min = new Array();
 				for (var i = 0; i < data.size_d; i++) {
 					// 객체 생성
 					var dataD = new Object();
@@ -123,7 +124,7 @@ body {
 					dataD.y = Math.floor(gold_price, 2)
 					// 리스트에 생성된 객체 삽입
 					daily_max.push(dataD);
-				}
+				} */
 				var monthly = new Array();
 				for (var i = 0; i < data.size_m; i++) {
 					// 객체 생성
@@ -142,7 +143,7 @@ body {
 					// 리스트에 생성된 객체 삽입
 					monthly.push(dataM);
 				}
-				var monthly_min = new Array();
+				/* var monthly_min = new Array();
 				for (var i = 0; i < data.size_m; i++) {
 					// 객체 생성
 					var dataM = new Object();
@@ -177,7 +178,7 @@ body {
 					dataM.y = Math.floor(gold_price, 2)
 					// 리스트에 생성된 객체 삽입
 					monthly_max.push(dataM);
-				}
+				} */
 				var chart2 = new CanvasJS.Chart("chartContainer2", {
 					animationEnabled : true,
 					theme : "light2",
