@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.IForecast_20daysDao">
+<resultMap type="forecast20Days" id="Forecast20DaysMap">
+	<id column="f_id" property="f_id"/>
+	<result column="forecast_price" property="forecast_price"/>
+	<result column="forecast_max" property="forecast_max"/>
+	<result column="forecast_min" property="forecast_min"/>
+	<result column="f_date" property="f_date"/>
+	<result column="forecastD_date" property="forecastD_date"/>
+</resultMap>
+
+	<select id="selectGoldPriceForecast" resultMap="Forecast20DaysMap">
+		SELECT *
+		FROM 20days_forecast WHERE forecastD_date > CURRENT_TIMESTAMP 
+		ORDER BY forecastD_date limit 1
+	</select>
+</mapper>

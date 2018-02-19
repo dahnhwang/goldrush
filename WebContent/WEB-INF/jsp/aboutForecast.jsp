@@ -646,8 +646,7 @@ body {
 							</div>
 							<div class="fl" style="display: inline-block; vertical-align: top; padding-left: 20px;">
 								<h5>
-									<fmt:formatDate value="${goldPriceForecast[4]}"
-										pattern="yyyy-MM-dd" />미래
+									${goldPriceForecast[4]} 미래
 								</h5>
 								
 								<p>
