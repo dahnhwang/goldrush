@@ -42,12 +42,9 @@
 		<span>30년 간 금 관련 뉴스에서 추출한 <br>월별 주요 키워드와 금값 변동추이를 한 눈에
 			살펴보세요.
 		</span>
-		<div class="center-square">뉴스에서 추출한 키워드와 금 가격과의 인과관계를 밝혀내는 것이 본
-			프로젝트의 목표였으나, 금 가격에 영향을 미치는 요인이 시대와 상황에 따라 너무 다양하고 다변적이기 때문에 금가격의 상승
-			또는 하락과의 상관계수가 높은 시대를 관통하는 요인을 단순한 단어카운트로 밝혀내는데는 한계가 있었다. (회귀트리모형으로 분석
-			시, 상관도가 높은 단어의 상관계수가 0.001642876정도) 따라서, 시대별로 금과 관련된 이슈 키워드들을 독자가 스스로
-			찾아보고 금 가격과의 연관관계를 유추할 수 있도록 하였다. 30년치 뉴스에서 추출한 월별 주요 키워드와 금값 변동추이를 한
-			눈에 살펴볼 수 있게 하였다.</div>
+		<div class="center-square">금과 관련된 13가지 요인을 기반으로 자체 모델을 적용해
+			분석하였습니다. 1989년부터 진행한 자체 금값의 예측 정확성을 하단의 그래프에 보여줌으로써 높은 신뢰도를 보장할 수
+			있습니다. 뿐만 아니라 저명한 타 기관의 예측 그래프를 함께 보며 보다 객관적인 지표를 확인할 수 있습니다.</div>
 	</div>
 	<div class="wrapper">
 		<div class="container">
@@ -69,8 +66,8 @@
 					<!-- 위 부분 누적 적중률 보여주는 파이그래프인데 데이터가 비어있어 임시 주석처리했음. - 다현 -->
 					<div class="module" style="overflow: hidden">
 						<div class="module-head">
-							<span><b style="color: black">우리 모델 금값 예측 그래프 &nbsp;</b></span> <input
-								type="button" value="전체기간"
+							<span><b style="color: black">GoldMine 예측모델을 통한 산출된 값과
+									실제 금 가격 비교 &nbsp;</b></span> <input type="button" value="전체기간"
 								class="select-session btn btn-default btn-xs" id="all">
 							<input type="button" value="최근 10년"
 								class="select-session btn btn-default btn-xs" id="10years">
@@ -83,8 +80,11 @@
 								style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 						</div>
+
 					</div>
+					<div id="space"></div>
 					<div class="module" style="overflow: hidden">
+
 						<div class="module-head">
 							<h3>타 예측기관 금값 예측 그래프</h3>
 							<input type="button" value="일별 예측"
@@ -105,6 +105,7 @@
 		</div>
 		<!--/.container-->
 	</div>
+	<div id="space"></div>
 	<!--/.wrapper-->
 	<div class="footer">
 		<div class="container">
