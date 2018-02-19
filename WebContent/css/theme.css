@@ -1071,6 +1071,14 @@ a.button:hover {
 	background-repeat: no-repeat;
 }
 
+.accuracy_img {
+	background: url(../images/accuracy.jpg);
+	background-attachment: fixed;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center 100%;
+}
+
 /*이미지 아래 부분*/
 .content {
 	margin-top: 25px;
@@ -2562,7 +2570,23 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
 
 
 
@@ -2655,7 +2679,23 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
 
 
 
@@ -2748,7 +2788,23 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
 
 
 
@@ -2841,7 +2897,23 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
 
 
 
@@ -2934,7 +3006,23 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
 
 
 
