@@ -401,6 +401,26 @@ body {
 																			.split(
 																					".")[0]
 																			+ "원";
+																	gold_min=gold_min/ 28.35
+																	* 3.75
+																	* exRate;
+																	gold_max=gold_max/28.35
+																	*3.75
+																	*exRate;
+																	gold_min=Number(
+																			gold_min)
+																			.toLocaleString(
+																					'en')
+																			.split(
+																					".")[0]
+																			+ "원";
+																	gold_max=Number(
+																			gold_max)
+																			.toLocaleString(
+																					'en')
+																			.split(
+																					".")[0]
+																			+ "원";
 																	var k_month = item.forecastD_date;
 																	var tr = $('<tr>');
 																	$('<td>')
