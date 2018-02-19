@@ -33,7 +33,7 @@
 
 #space {
 	width: 1px;
-	height: 50px;
+	height: 30px;
 }
 </style>
 </head>
