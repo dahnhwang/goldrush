@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%><%@ taglib prefix="fmt"
-	uri="http://java.sun.com/jsp/jstl/fmt"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -574,21 +575,107 @@ body {
 						<div class="module-head">
 							<h3>Today's Weather Forecast for Gold</h3>
 						</div>
-						<div class="module-body">
-							<div class="weather" style="float: left;">
-								<i class="fa icon-cloud" aria-hidden="true"
-									style="line-height: 100px; font-size: 100px; , color: blue;"></i>
+						<div class="module-body" style="text-align: center;">
+							<div class="weather" style="display: inline-block;  vertical-align: top;">
+								<c:choose>
+									<c:when test="${goldPriceForecast[2] eq 'minus'}">
+										<i class="fa icon-umbrella" aria-hidden="true"
+											style="line-height: 100px; font-size: 100px;"></i>
+									</c:when>
+									<c:when test="${goldPriceForecast[2] eq 'plus'}">
+										<i class="fa icon-certificate" aria-hidden="true"
+											style="line-height: 100px; font-size: 100px; color: yellow;"></i>
+									</c:when>
+									<c:otherwise>
+										<i class="fa icon-cloud" aria-hidden="true"
+											style="line-height: 100px; font-size: 100px; color: blue;"></i>
+									</c:otherwise>
+								</c:choose>
 							</div>
-							<div class="fl" style="overflow: hidden; padding-left: 20px;">
+							<div class="fl" style="display: inline-block;  overflow: hidden;  padding-left: 20px;  margin-right: 40px;">
 								<h5>
-									<span>13</span>시 현재
+									<!-- <span>13</span>시 -->
+									<fmt:formatDate value="${goldprice.gold_date }"
+										pattern="yyyy-MM-dd hh" />
+									시 현재
 								</h5>
-								<em>-7<span>％</span><strong>맑음</strong>
-								</em>
+
 								<p>
-									어제보다<span class="temp"><strong>-13</strong>％</span><span
-										class="bar2">|</span> 감소확률 <strong>0</strong>% <br>
-									10,232.2won
+									어제보다 <span class="temp">
+									
+										<strong> 
+								 			<c:choose>
+												<c:when test="${goldPriceForecast[2] eq 'minus'}">
+													감소 
+													<i class="fa icon-sort-down" aria-hidden="true"
+														style="line-height: 20px; font-size: 20px; color: red;"></i>
+												</c:when>
+												<c:when test="${goldPriceForecast[2] eq 'plus'}">
+													증가 
+													<i class="fa icon-sort-up" aria-hidden="true"
+														style="line-height: 20px; font-size: 20px; vertical-align: -webkit-baseline-middle; color: blue;"></i>
+												</c:when>
+												<c:otherwise>
+													동등 
+													<i class="fa icon-sort" aria-hidden="true"
+														style="line-height: 20px; font-size: 15px; "></i>
+												</c:otherwise>
+											</c:choose> ${goldPriceForecast[3]}<span>％</span>
+										</strong>
+									
+									</span>  <br>
+									${goldPriceForecast[0]}dollar(살때)
+									
+								</p>
+							</div>
+							<div class="weather" style="display: inline-block;  overflow: hidden;  vertical-align: top;">
+								<c:choose>
+									<c:when test="${goldPriceForecast[5] eq 'minus'}">
+										<i class="fa icon-umbrella" aria-hidden="true"
+											style="line-height: 100px; font-size: 100px;"></i>
+									</c:when>
+									<c:when test="${goldPriceForecast[5] eq 'plus'}">
+										<i class="fa icon-certificate" aria-hidden="true"
+											style="line-height: 100px; font-size: 100px; color: yellow;"></i>
+									</c:when>
+									<c:otherwise>
+										<i class="fa icon-cloud" aria-hidden="true"
+											style="line-height: 100px; font-size: 100px; color: blue;"></i>
+									</c:otherwise>
+								</c:choose>
+							</div>
+							<div class="fl" style="display: inline-block; vertical-align: top; padding-left: 20px;">
+								<h5>
+									<fmt:formatDate value="${goldPriceForecast[4]}"
+										pattern="yyyy-MM-dd" />미래
+								</h5>
+								
+								<p>
+									<fmt:formatDate value="${goldprice.gold_date }"
+										pattern="yyyy-MM-dd hh" />
+									시<br>보다 
+									<span class="temp">
+										<strong> 
+								 			<c:choose>
+												<c:when test="${goldPriceForecast[5] eq 'minus'}">
+													감소 
+													<i class="fa icon-sort-down" aria-hidden="true"
+														style="line-height: 20px; font-size: 20px; color: red;"></i>
+												</c:when>
+												<c:when test="${goldPriceForecast[5] eq 'plus'}">
+													증가 
+													<i class="fa icon-sort-up" aria-hidden="true"
+														style="line-height: 20px; font-size: 20px; vertical-align: -webkit-baseline-middle; color: blue;"></i>
+												</c:when>
+												<c:otherwise>
+													동등 
+													<i class="fa icon-sort" aria-hidden="true"
+														style="line-height: 20px; font-size: 15px; "></i>
+												</c:otherwise>
+											</c:choose> ${goldPriceForecast[6]}<span>％</span>
+										</strong>
+									</span> <br>
+									${goldPriceForecast[7]}dollar(살때)
 								</p>
 
 							</div>
