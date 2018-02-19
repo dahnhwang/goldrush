@@ -302,11 +302,14 @@
 }
 
 #yearSelect {
-	/* 	margin-bottom: -1px;
-	margin-left: 385px; */
-	float: right
+	margin-bottom: -1px;
+	margin-left: 385px;
+	/* float: right */
 }
 
+/* #btn-year {
+	float: right
+} */
 .table {
 	margin-left: 10px;
 	margin-right: 10px;

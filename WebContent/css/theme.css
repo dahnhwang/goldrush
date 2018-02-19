@@ -899,7 +899,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .center-join {
 	height: 650px;
 	color: #eee;
-	padding-top: 165px;
+	padding-top: 100px;
 	background-color: rgba(100, 100, 100, 0.7);
 }
 
@@ -1027,7 +1027,7 @@ a.button:hover {
 
 .center-join2 {
 	height: 500px;
-	padding-top: 100px;
+	padding-top: 80px;
 }
 
 .index_img {
@@ -1043,13 +1043,15 @@ a.button:hover {
 	background: url(../images/markus-spiske-484245.jpg);
 	background-attachment: fixed;
 	background-position: 0 center;
+	background-size: 100%;
 	background-repeat: no-repeat;
 }
 
 .wordtrend_img {
 	background: url(../images/j-zamora-267753.jpg);
 	background-attachment: fixed;
-	background-position: center 121%
+	background-position: center 121%;
+	background-size: 100%;
 	background-repeat: no-repeat;
 }
 
@@ -2536,11 +2538,7 @@ background-color
 
 
 
-
-
 :rgb
-
-
 
 
 
@@ -2617,11 +2615,7 @@ background-color
 
 
 
-
-
 :rgb
-
-
 
 
 
@@ -2698,11 +2692,7 @@ background-color
 
 
 
-
-
 :rgb
-
-
 
 
 
@@ -2779,11 +2769,7 @@ background-color
 
 
 
-
-
 :rgb
-
-
 
 
 
@@ -2860,11 +2846,7 @@ background-color
 
 
 
-
-
 :rgb
-
-
 
 
 
