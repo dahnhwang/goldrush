@@ -16,31 +16,32 @@
 		<choose>
 			<when test="eng == 1">
 				SELECT * FROM news WHERE eng = 1
-					<if test='NKeyword != ""'>
-						and (
-						news_title LIKE '%${NKeyword}%' <!-- 여기서 $는 ''을 빼고 순수 문자열을 말함 -->
-						or news_content LIKE '%${NKeyword}%'
-						)
-					</if>
-				ORDER BY news_id DESC
-				
+				<if test='NKeyword != ""'>
+					and (
+					news_title LIKE '%${NKeyword}%' <!-- 여기서 $는 ''을 빼고 순수 문자열을 말함 -->
+					or news_content LIKE '%${NKeyword}%'
+					)
+				</if>
+				ORDER BY news_date DESC
+
 			</when>
 			<otherwise>
-				SELECT * FROM news WHERE eng is null  
-					<if test='NKeyword != ""'>
-						and (
-						news_title LIKE '%${NKeyword}%' <!-- 여기서 $는 ''을 빼고 순수 문자열을 말함 -->
-						OR news_content LIKE '%${NKeyword}%'
-						)
-					</if>
-				ORDER BY news_id DESC
-				
+				SELECT * FROM news WHERE eng is null
+				<if test='NKeyword != ""'>
+					and (
+					news_title LIKE '%${NKeyword}%' <!-- 여기서 $는 ''을 빼고 순수 문자열을 말함 -->
+					OR news_content LIKE '%${NKeyword}%'
+					)
+				</if>
+				ORDER BY news_date DESC
+
 			</otherwise>
 		</choose>
 	</select>
 
 	<select id="getNewsCount" resultType="int">
 		SELECT COUNT(*) FROM news
+		ORDER BY news_date DESC
 	</select>
 
 	<select id="infiniteScrollDown" parameterType="int" resultMap="newsMap">
@@ -49,19 +50,19 @@
 		SELECT * FROM news
 		WHERE news_id <= #{news_id}
 		AND news_id > #{news_id}-10
-		ORDER BY news_id DESC
+		ORDER BY news_date DESC
 		]]>
-			
+
 	</select>
-	
+
 	<select id="selectAllNews" resultMap="newsMap">
 	<![CDATA[
 		SELECT *
 		FROM news WHERE eng=1
 		AND news_id > 0
-		order by news_id desc
+		order by news_date desc
 		limit 0, 20;
 	]]>
 	</select>
-	
+
 </mapper>

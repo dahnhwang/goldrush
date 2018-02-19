@@ -363,7 +363,8 @@
 							<!-- 여기부터 가져온 코드 -->
 							<div class="input-group">
 								<span class="input-group-addon" id="priceLabel"><b>금
-										가격 변동과 함께 보는 월별 금 관련 이슈 키워드 (1987년 01월 ~ ${lastMonth })</b> &nbsp;</span>
+										가격 변동과 함께 보는 월별 금 관련 이슈 키워드 ( 1987년 01월 ~ ${lastMonth } )</b>
+									&nbsp;</span>
 								<!-- insert this line -->
 								<span class="input-group-addon"
 									style="width: 0px; padding-left: 0px; padding-right: 0px; border: none;"></span>

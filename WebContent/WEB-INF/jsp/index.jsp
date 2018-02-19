@@ -156,7 +156,7 @@
 					<div class="module-head">
 
 						<h3>
-							실시간 금시세 (최근 업데이트 :
+							실시간 금시세 ( 최근 업데이트 :
 							<fmt:formatDate value="${goldPrice.gold_date }"
 								pattern="yyyy-MM-dd hh:mm" />
 							)
@@ -289,7 +289,7 @@
 					<div id="space"></div>
 					<div class="module">
 						<div class="module-head">
-							<h3>금 연관 요인 최신지표 (업데이트 주기는 지표에 따라 상이)</h3>
+							<h3>금 연관 요인 최신지표 ( 업데이트 주기는 지표에 따라 상이 )</h3>
 
 						</div>
 						<div class="module-body table">

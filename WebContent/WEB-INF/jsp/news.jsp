@@ -57,7 +57,7 @@
 					<!-- News -->
 					<div class="module">
 						<div class="module-head">
-							<h3>Weekly News (출처 : Naver 등 gold 관련 기사)</h3>
+							<h3>금 관련 주요 뉴스 (출처 : Naver 등 gold 관련 기사)</h3>
 							<div class="navbar-search pull-right input-append">
 								<select id="eng" name="eng" style="max-width: 120px;">
 									<option value="1">해외 뉴스</option>
