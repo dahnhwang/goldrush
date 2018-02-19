@@ -433,7 +433,7 @@
 					<div id="logo">
 						<a href="http://developer.nytimes.com"> <img
 							src='images/poweredby_nytimes.png' />
-						</a> 본 페이지는 뉴욕타임즈 기사를 수집 및 분석한 데이터를 이용하였습니다 / 업데이트 주기 : 매월 2일
+						</a> 본 페이지는 뉴욕타임즈에서 제공하는 기사를 수집 및 분석하여 만들어졌습니다 / 업데이트 주기 : 매월 2일
 						<div id="space"></div>
 					</div>
 
