@@ -91,8 +91,8 @@
 					<div class="module" style="overflow: hidden">
 
 						<div class="module-head">
-							<span><b style="color: black">타 예측기관 금값 예측 그래프 &nbsp;</b></span>
-							<input type="button" value="일별 예측"
+							<span><b style="color: black">GoldMine 예측모델을 통한 산출된 값과
+									타 예측기관 예측값 비교 &nbsp;</b></span> <input type="button" value="일별 예측"
 								class="daily-forecast btn btn-default btn-xs"> <input
 								type="button" value="월별 예측"
 								class="monthly-forecast btn btn-default btn-xs">
