@@ -10,13 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+
 import model.DaysForecast20;
 import model.Influence;
 import model.MonthlyForecast20;
+import model.Price;
 import service.IDaysForecast20Service;
 import service.IForecastOthersService;
+import service.IForecast_20daysService;
 import service.IInfluenceService;
 import service.IMonthlyForecast20Service;
+import service.IPriceService;
 
 @Controller
 public class ForecastController {
@@ -33,6 +37,12 @@ public class ForecastController {
 	@Autowired
 	private IForecastOthersService foService;
 	
+	@Autowired
+	private IPriceService pService;
+	
+	@Autowired
+	private IForecast_20daysService f20Service;
+	
 	@RequestMapping("aboutForecast.do")
 	public ModelAndView forecast() {
 		ModelAndView mav = new ModelAndView();
@@ -46,6 +56,12 @@ public class ForecastController {
 		mav.addObject("forecast_m", forecast_m);
 		mav.addObject("size_d", size_d);
 		mav.addObject("size_m", size_m);
+		
+		//날씨
+		Price goldprice = pService.goldPrice();
+		List<String> goldPriceForecast = f20Service.goldPriceForecast();
+		mav.addObject("goldprice",goldprice);
+		mav.addObject("goldPriceForecast",goldPriceForecast);
 		return mav;
 	}
 	
