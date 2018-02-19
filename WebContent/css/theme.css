@@ -974,6 +974,18 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	line-height: 28px;
 }
 
+.center-square-history {
+	width: 700px;
+	height: 155px;
+	text-align: left;
+	margin: 20px auto;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: black;
+	padding: 30px;
+	font-size: 17px;
+	line-height: 28px;
+}
+
 .center-square-news {
 	width: 600px;
 	height: 95px;
@@ -2637,7 +2649,11 @@ background-color
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -2826,7 +2842,11 @@ background-color
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -3015,7 +3035,11 @@ background-color
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -3204,7 +3228,11 @@ background-color
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -3393,7 +3421,11 @@ background-color
 
 
 
+
+
 :rgb
+
+
 
 
 
