@@ -29,6 +29,10 @@
 .highcharts-container {
 	margin: 0 auto;
 }
+
+.highcharts-title {
+	display: none;
+}
 </style>
 
 </head>
@@ -74,8 +78,9 @@
 							<input type="button" value="최근 1년"
 								class="select-session btn btn-default btn-xs" id="1year">
 						</div>
-						<div class="module-body" style="padding: 0;">
 
+						<div class="module-body" style="padding: 0;">
+							<div id="space"></div>
 							<div id="container2"
 								style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
