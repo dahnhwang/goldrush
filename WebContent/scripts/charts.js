@@ -563,13 +563,13 @@ $(function() {
 							align : 'left',
 							x : 120,
 							verticalAlign : 'top',
-							y : 100,
+							y : 20,
 							floating : true,
 							backgroundColor : (Highcharts.theme && Highcharts.theme.legendBackgroundColor)
 									|| '#FFFFFF'
 						},
 						series : [ {
-							name : 'The Economy Forest Agency',
+							name : 'longforecast.com',
 							type : 'spline',
 							yAxis : 1,
 							data : todaySitePrice_1.slice(1),
@@ -578,14 +578,14 @@ $(function() {
 							}
 
 						}, {
-							name : 'Financial Forecast Center',
+							name : 'forecasts.org',
 							type : 'spline',
 							data : todaySitePrice_3.slice(1),
 							tooltip : {
 								valuePrefix : '￦ '
 							}
 						}, {
-							name : '우리 모델 예측값',
+							name : 'GoldMine 예측모델을 사용한 기간별 예측값',
 							type : 'spline',
 							data : forecastOurPrice_m,
 							tooltip : {
@@ -885,14 +885,14 @@ $('.select-session')
 												align : 'left',
 												x : 120,
 												verticalAlign : 'top',
-												y : 100,
+												y : 20,
 												floating : true,
 												backgroundColor : (Highcharts.theme && Highcharts.theme.legendBackgroundColor)
 														|| '#FFFFFF'
 											},
 											series : [
 													{
-														name : 'The Economy Forest Agency',
+														name : 'longforecast.com',
 														type : 'spline',
 														yAxis : 1,
 														data : todaySitePrice_1
@@ -903,7 +903,7 @@ $('.select-session')
 
 													},
 													{
-														name : 'Financial Forecast Center',
+														name : 'forecasts.org',
 														type : 'spline',
 														data : todaySitePrice_3
 																.slice(1),
@@ -912,7 +912,7 @@ $('.select-session')
 														}
 													},
 													{
-														name : '우리 모델 예측값',
+														name : 'GoldMine 예측모델을 사용한 기간별 예측값',
 														type : 'spline',
 														data : forecastOurPrice_m,
 														tooltip : {
@@ -1207,14 +1207,14 @@ $('.select-session')
 												align : 'left',
 												x : 120,
 												verticalAlign : 'top',
-												y : 100,
+												y : 20,
 												floating : true,
 												backgroundColor : (Highcharts.theme && Highcharts.theme.legendBackgroundColor)
 														|| '#FFFFFF'
 											},
 											series : [
 													{
-														name : 'The Economy Forest Agency',
+														name : 'longforecast.com',
 														type : 'spline',
 														yAxis : 1,
 														data : todaySitePrice_1
@@ -1225,7 +1225,7 @@ $('.select-session')
 
 													},
 													{
-														name : 'Financial Forecast Center',
+														name : 'forecasts.org',
 														type : 'spline',
 														data : todaySitePrice_3
 																.slice(1),
@@ -1234,7 +1234,7 @@ $('.select-session')
 														}
 													},
 													{
-														name : '우리 모델 예측값',
+														name : 'GoldMine 예측모델을 사용한 기간별 예측값',
 														type : 'spline',
 														data : forecastOurPrice_m,
 														tooltip : {
@@ -1528,14 +1528,14 @@ $('.select-session')
 												align : 'left',
 												x : 120,
 												verticalAlign : 'top',
-												y : 100,
+												y : 20,
 												floating : true,
 												backgroundColor : (Highcharts.theme && Highcharts.theme.legendBackgroundColor)
 														|| '#FFFFFF'
 											},
 											series : [
 													{
-														name : 'The Economy Forest Agency',
+														name : 'longforecast.com',
 														type : 'spline',
 														yAxis : 1,
 														data : todaySitePrice_1
@@ -1546,7 +1546,7 @@ $('.select-session')
 
 													},
 													{
-														name : 'Financial Forecast Center',
+														name : 'forecasts.org',
 														type : 'spline',
 														data : todaySitePrice_3
 																.slice(1),
@@ -1555,7 +1555,7 @@ $('.select-session')
 														}
 													},
 													{
-														name : '우리 모델 예측값',
+														name : 'GoldMine 예측모델을 사용한 기간별 예측값',
 														type : 'spline',
 														data : forecastOurPrice_m,
 														tooltip : {
@@ -1937,7 +1937,7 @@ $('.daily-forecast')
 											align : 'left',
 											x : 120,
 											verticalAlign : 'top',
-											y : 100,
+											y : 20,
 											floating : true,
 											backgroundColor : (Highcharts.theme && Highcharts.theme.legendBackgroundColor)
 													|| '#FFFFFF'
@@ -2334,35 +2334,40 @@ $('.monthly-forecast')
 											align : 'left',
 											x : 120,
 											verticalAlign : 'top',
-											y : 100,
+											y : 20,
 											floating : true,
 											backgroundColor : (Highcharts.theme && Highcharts.theme.legendBackgroundColor)
 													|| '#FFFFFF'
 										},
-										series : [ {
-											name : 'The Economy Forest Agency',
-											type : 'spline',
-											yAxis : 1,
-											data : todaySitePrice_1.slice(1),
-											tooltip : {
-												valuePrefix : '￦ '
-											}
+										series : [
+												{
+													name : 'longforecast.com',
+													type : 'spline',
+													yAxis : 1,
+													data : todaySitePrice_1
+															.slice(1),
+													tooltip : {
+														valuePrefix : '￦ '
+													}
 
-										}, {
-											name : 'Financial Forecast Center',
-											type : 'spline',
-											data : todaySitePrice_3.slice(1),
-											tooltip : {
-												valuePrefix : '￦ '
-											}
-										}, {
-											name : '우리 모델 예측값',
-											type : 'spline',
-											data : forecastOurPrice_m,
-											tooltip : {
-												valuePrefix : '￦ '
-											}
-										} ]
+												},
+												{
+													name : 'forecasts.org',
+													type : 'spline',
+													data : todaySitePrice_3
+															.slice(1),
+													tooltip : {
+														valuePrefix : '￦ '
+													}
+												},
+												{
+													name : 'GoldMine 예측모델을 사용한 기간별 예측값',
+													type : 'spline',
+													data : forecastOurPrice_m,
+													tooltip : {
+														valuePrefix : '￦ '
+													}
+												} ]
 									};
 									chart2Options = jQuery.extend(true, {},
 											options, chart2Options);
