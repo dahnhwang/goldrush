@@ -93,6 +93,7 @@
 								class="monthly-forecast btn btn-default btn-xs">
 						</div>
 						<div class="module-body" style="padding: 0;">
+							<div id="space"></div>
 							<div id="container3"
 								style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
@@ -104,8 +105,9 @@
 			</div>
 		</div>
 		<!--/.container-->
+		<div id="space"></div>
 	</div>
-	<div id="space"></div>
+
 	<!--/.wrapper-->
 	<div class="footer">
 		<div class="container">
