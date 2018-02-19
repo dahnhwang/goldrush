@@ -264,8 +264,8 @@ body [class^="icon-"], body [class*=" icon-"] {
 	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-	margin:0px;
-	padding:0px;
+	margin: 0px;
+	padding: 0px;
 }
 
 .navbar .brand {
@@ -901,7 +901,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .center-join {
 	height: 650px;
 	color: #eee;
-	padding-top: 100px;
+	padding-top: 170px;
 	background-color: rgba(100, 100, 100, 0.7);
 }
 
@@ -912,8 +912,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	margin: 0 auto;
 	font-size: 30px;
 	line-height: 50px;
-		margin:0px;
-	padding:0px;
+	margin: 0px;
+	padding: 0px;
 }
 
 .center-join2>span {
@@ -1029,9 +1029,13 @@ a.button:hover {
 	position: relative;
 }
 
+#space {
+	width: 1px;
+	height: 30px;
+}
+
 .center-join2 {
 	height: 500px;
-	padding-top: 60px;
 }
 
 .index_img {
@@ -2544,7 +2548,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2625,7 +2637,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2706,7 +2726,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2787,7 +2815,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2868,7 +2904,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 

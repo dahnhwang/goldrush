@@ -30,6 +30,9 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<div class="center-join2 news_img">
+		<div id="space"></div>
+		<div id="space"></div>
+		<div id="space"></div>
 		<span>30년 간 금 관련 뉴스에서 추출한 <br>월별 주요 키워드와 금값 변동추이를 한 눈에
 			살펴보세요.
 		</span>
