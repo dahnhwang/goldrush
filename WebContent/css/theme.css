@@ -974,6 +974,18 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	line-height: 28px;
 }
 
+.center-square-news {
+	width: 600px;
+	height: 95px;
+	text-align: left;
+	margin: 47px auto;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: black;
+	padding: 30px;
+	font-size: 17px;
+	line-height: 28px;
+}
+
 a.button {
 	display: inline-block;
 	min-width: 65px;
@@ -2617,7 +2629,23 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
 
 
 
@@ -2790,7 +2818,23 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
 
 
 
@@ -2963,7 +3007,23 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
 
 
 
@@ -3136,7 +3196,23 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
 
 
 
@@ -3309,7 +3385,23 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
 
 
 
