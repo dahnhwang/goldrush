@@ -958,7 +958,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	height: 250px;
 	text-align: center;
 	margin: 0 auto;
-	background-color: rgba(255, 255, 255, 0.6);
+	background-color: rgba(255, 255, 255, 0.8);
 	border-radius: 100%;
 }
 
@@ -1056,7 +1056,7 @@ a.button:hover {
 	background: url(../images/markus-spiske-484245.jpg);
 	background-attachment: fixed;
 	background-position: 0 center;
-	background-size: 100%;
+	background-size: 120%;
 	background-repeat: no-repeat;
 }
 
@@ -2605,7 +2605,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2758,7 +2766,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2911,7 +2927,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -3064,7 +3088,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -3217,7 +3249,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 

@@ -58,11 +58,10 @@
 					<div class="module">
 						<div class="module-head">
 							<h3>Weekly News (출처 : Naver 등 gold 관련 기사)</h3>
-
 							<div class="navbar-search pull-right input-append">
 								<select id="eng" name="eng" style="max-width: 120px;">
-									<option value="1">EnglishNews</option>
-									<option value="0">KoreaNews</option>
+									<option value="1">해외 뉴스</option>
+									<option value="0">국내 뉴스</option>
 								</select> <input type="text" class="span3" id="Nkeyword" name="Nkeyword">
 								<button id="searchBtn" class="btn" type="button"
 									onclick="showPage(eng.value,Nkeyword.value)">
