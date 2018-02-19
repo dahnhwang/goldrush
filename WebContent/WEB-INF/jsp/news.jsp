@@ -50,7 +50,7 @@
 			<!--/.span3-->
 			<div class="span12"
 				style="margin: 0 auto; float: initial; clear: both;">
-
+				<div id="space"></div>
 
 				<div class="content">
 					<!-- News -->

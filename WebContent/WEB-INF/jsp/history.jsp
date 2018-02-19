@@ -53,10 +53,10 @@
 		<div class="container">
 			<!--/.span3-->
 			<div class="span12" style="margin: 0 auto; float: initial;">
+				<div id="space"></div>
 				<div class="content">
 					<!-- Forecast -->
-					<h2>Gold Price History</h2>
-					<div class="module">
+					<!-- <div class="module">
 						<div class="module-head">
 							<h3>Goldprice Forecast 누적 적중률</h3>
 						</div>
@@ -65,11 +65,12 @@
 								style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
 
 						</div>
-					</div>
+					</div> -->
+					<!-- 위 부분 누적 적중률 보여주는 파이그래프인데 데이터가 비어있어 임시 주석처리했음. - 다현 -->
 					<div class="module" style="overflow: hidden">
 						<div class="module-head">
-							<h3>우리 모델 금값 예측 그래프</h3>
-							<input type="button" value="전체기간"
+							<span><b style="color: black">우리 모델 금값 예측 그래프 &nbsp;</b></span> <input
+								type="button" value="전체기간"
 								class="select-session btn btn-default btn-xs" id="all">
 							<input type="button" value="최근 10년"
 								class="select-session btn btn-default btn-xs" id="10years">
