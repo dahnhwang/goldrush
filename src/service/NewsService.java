@@ -14,7 +14,7 @@ public class NewsService implements INewsService {
 
 	@Autowired
 	private INewsDao newsDao;
-	
+
 	@Override
 	public News getNews(int news_id) {
 		// TODO Auto-generated method stub
@@ -26,13 +26,13 @@ public class NewsService implements INewsService {
 		// TODO Auto-generated method stub
 		return newsDao.selectAllNews();
 	}
-	
+
 	@Override
 	public List<News> getNewsListSearch(int eng, String Nkeyword) {
 		// TODO Auto-generated method stub
 
 		HashMap<String, Object> param1 = new HashMap<>();
-		
+
 		if (eng == 1) {
 			param1.put("NKeyword", Nkeyword);
 			param1.put("eng", eng);
@@ -40,7 +40,6 @@ public class NewsService implements INewsService {
 			param1.put("NKeyword", Nkeyword);
 			param1.put("eng", eng);
 		}
-
 
 		List<News> newsList = newsDao.selectSearchList(param1);
 		System.out.println(newsList);
@@ -53,6 +52,12 @@ public class NewsService implements INewsService {
 		// TODO Auto-generated method stub
 		List<News> newsList = newsDao.infiniteScrollDown(newsToStart);
 		return newsList;
+	}
+
+	@Override
+	public String getRecentUpdateTime() {
+		String updateTime = newsDao.selectLastUpdateTime();
+		return updateTime;
 	}
 
 }

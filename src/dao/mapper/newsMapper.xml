@@ -65,4 +65,10 @@
 	]]>
 	</select>
 
+	<select id="selectLastUpdateTime" resultType="String">
+		select
+		max(news_date) from news;
+	</select>
+
+
 </mapper>

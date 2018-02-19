@@ -57,12 +57,13 @@
 					<!-- News -->
 					<div class="module">
 						<div class="module-head">
-							<h3>금 관련 주요 뉴스 (출처 : Naver 등 gold 관련 기사)</h3>
+							<h3>금 관련 주요 국내외 뉴스 ( 최근 업데이트 : ${updateTime } )</h3>
 							<div class="navbar-search pull-right input-append">
 								<select id="eng" name="eng" style="max-width: 120px;">
 									<option value="1">해외 뉴스</option>
 									<option value="0">국내 뉴스</option>
-								</select> <input type="text" class="span3" id="Nkeyword" name="Nkeyword">
+								</select> <input type="text" class="span3" id="Nkeyword" name="Nkeyword"
+									placeholder="검색할 단어를 여기에 입력해주세요">
 								<button id="searchBtn" class="btn" type="button"
 									onclick="showPage(eng.value,Nkeyword.value)">
 									<!-- 다시 돌아오게됨 -->

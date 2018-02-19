@@ -7,14 +7,13 @@ import model.News;
 public interface INewsService {
 
 	public News getNews(int news_id);
-	
+
 	public List<News> getNewsList();
-	
+
 	public List<News> getNewsListSearch(int eng, String Nkeyword);
 
 	public List<News> infiniteScrollDown(Integer newsToStart);
-	
-	
-	
-	
+
+	public String getRecentUpdateTime();
+
 }
