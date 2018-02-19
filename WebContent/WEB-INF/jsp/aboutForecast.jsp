@@ -39,34 +39,35 @@ body {
 				$('#table tr').filter(function(index) {
 					return index != 0;
 				}).remove();
-				$.each(data.forecast_m, function(index, item) {
-					var exRate = data.exrate;
-					var gold_price = item.forecast_price;
-					var gold_min = item.forecast_min;
-					var gold_max = item.forecast_max;
-					gold_price = gold_price / 28.35 * 3.75 * exRate;
-					gold_price = Number(gold_price).toLocaleString('en').split(
-							".")[0]
-							+ "원";
-					gold_min = gold_min / 28.35 * 3.75 * exRate;
-					gold_min = Number(gold_min).toLocaleString('en').split(
-							".")[0]
-							+ "원";
-					gold_max = gold_max / 28.35 * 3.75 * exRate;
-					gold_max = Number(gold_max).toLocaleString('en').split(
-							".")[0]
-							+ "원";
-					var k_month = item.forecastM_date;
-					var tr = $('<tr>');
-					$('<td>').text(index + 1).appendTo(tr);
-					$('<td>').text(k_month).appendTo(tr);
-					$('<td>').text(gold_price).appendTo(tr);
-					$('<td>').text(gold_min).appendTo(tr);
-					$('<td>').text(gold_max).appendTo(tr);
-					var td = $('<td>');
-					td.appendTo(tr);
-					tr.appendTo('#table');
-				})
+				$.each(data.forecast_m,
+						function(index, item) {
+							var exRate = data.exrate;
+							var gold_price = item.forecast_price;
+							var gold_min = item.forecast_min;
+							var gold_max = item.forecast_max;
+							gold_price = gold_price / 28.35 * 3.75 * exRate;
+							gold_price = Number(gold_price)
+									.toLocaleString('en').split(".")[0]
+									+ "원";
+							gold_min = gold_min / 28.35 * 3.75 * exRate;
+							gold_min = Number(gold_min).toLocaleString('en')
+									.split(".")[0]
+									+ "원";
+							gold_max = gold_max / 28.35 * 3.75 * exRate;
+							gold_max = Number(gold_max).toLocaleString('en')
+									.split(".")[0]
+									+ "원";
+							var k_month = item.forecastM_date;
+							var tr = $('<tr>');
+							$('<td>').text(index + 1).appendTo(tr);
+							$('<td>').text(k_month).appendTo(tr);
+							$('<td>').text(gold_price).appendTo(tr);
+							$('<td>').text(gold_min).appendTo(tr);
+							$('<td>').text(gold_max).appendTo(tr);
+							var td = $('<td>');
+							td.appendTo(tr);
+							tr.appendTo('#table');
+						})
 				/* 월별 예측 금 값  */
 				var exRate = data.exrate;
 				var daily = new Array();
@@ -74,9 +75,12 @@ body {
 					// 객체 생성
 					var dataD = new Object();
 					var date = data.forecast_d[i].forecastD_date;
-					var year = data.forecast_d[i].forecastD_date.substring(0, 4);
-					var month = data.forecast_d[i].forecastD_date.substring(5, 7);
-					var day = data.forecast_d[i].forecastD_date.substring(8, 10);
+					var year = data.forecast_d[i].forecastD_date
+							.substring(0, 4);
+					var month = data.forecast_d[i].forecastD_date.substring(5,
+							7);
+					var day = data.forecast_d[i].forecastD_date
+							.substring(8, 10);
 					dataD.x = new Date(year, month, day);
 					gold_price = data.forecast_d[i].forecast_price;
 					gold_price = gold_price / 28.35 * 3.75 * exRate;
@@ -89,9 +93,12 @@ body {
 					// 객체 생성
 					var dataD = new Object();
 					var date = data.forecast_d[i].forecastD_date;
-					var year = data.forecast_d[i].forecastD_date.substring(0, 4);
-					var month = data.forecast_d[i].forecastD_date.substring(5, 7);
-					var day = data.forecast_d[i].forecastD_date.substring(8, 10);
+					var year = data.forecast_d[i].forecastD_date
+							.substring(0, 4);
+					var month = data.forecast_d[i].forecastD_date.substring(5,
+							7);
+					var day = data.forecast_d[i].forecastD_date
+							.substring(8, 10);
 					dataD.x = new Date(year, month, day);
 					gold_price = data.forecast_d[i].forecast_min;
 					gold_price = gold_price / 28.35 * 3.75 * exRate;
@@ -104,9 +111,12 @@ body {
 					// 객체 생성
 					var dataD = new Object();
 					var date = data.forecast_d[i].forecastD_date;
-					var year = data.forecast_d[i].forecastD_date.substring(0, 4);
-					var month = data.forecast_d[i].forecastD_date.substring(5, 7);
-					var day = data.forecast_d[i].forecastD_date.substring(8, 10);
+					var year = data.forecast_d[i].forecastD_date
+							.substring(0, 4);
+					var month = data.forecast_d[i].forecastD_date.substring(5,
+							7);
+					var day = data.forecast_d[i].forecastD_date
+							.substring(8, 10);
 					dataD.x = new Date(year, month, day);
 					gold_price = data.forecast_d[i].forecast_max;
 					gold_price = gold_price / 28.35 * 3.75 * exRate;
@@ -119,9 +129,12 @@ body {
 					// 객체 생성
 					var dataM = new Object();
 					var date = data.forecast_m[i].forecastM_date;
-					var year = data.forecast_m[i].forecastM_date.substring(0, 4);
-					var month = data.forecast_m[i].forecastM_date.substring(5, 7);
-					var day = data.forecast_m[i].forecastM_date.substring(8, 10);
+					var year = data.forecast_m[i].forecastM_date
+							.substring(0, 4);
+					var month = data.forecast_m[i].forecastM_date.substring(5,
+							7);
+					var day = data.forecast_m[i].forecastM_date
+							.substring(8, 10);
 					dataM.x = new Date(year, month, day);
 					gold_price = data.forecast_m[i].forecast_price;
 					gold_price = gold_price / 28.35 * 3.75 * exRate;
@@ -134,9 +147,12 @@ body {
 					// 객체 생성
 					var dataM = new Object();
 					var date = data.forecast_m[i].forecastM_date;
-					var year = data.forecast_m[i].forecastM_date.substring(0, 4);
-					var month = data.forecast_m[i].forecastM_date.substring(5, 7);
-					var day = data.forecast_m[i].forecastM_date.substring(8, 10);
+					var year = data.forecast_m[i].forecastM_date
+							.substring(0, 4);
+					var month = data.forecast_m[i].forecastM_date.substring(5,
+							7);
+					var day = data.forecast_m[i].forecastM_date
+							.substring(8, 10);
 					dataM.x = new Date(year, month, day);
 					gold_price = data.forecast_m[i].forecast_min;
 					gold_price = gold_price / 28.35 * 3.75 * exRate;
@@ -149,9 +165,12 @@ body {
 					// 객체 생성
 					var dataM = new Object();
 					var date = data.forecast_m[i].forecastM_date;
-					var year = data.forecast_m[i].forecastM_date.substring(0, 4);
-					var month = data.forecast_m[i].forecastM_date.substring(5, 7);
-					var day = data.forecast_m[i].forecastM_date.substring(8, 10);
+					var year = data.forecast_m[i].forecastM_date
+							.substring(0, 4);
+					var month = data.forecast_m[i].forecastM_date.substring(5,
+							7);
+					var day = data.forecast_m[i].forecastM_date
+							.substring(8, 10);
 					dataM.x = new Date(year, month, day);
 					gold_price = data.forecast_m[i].forecast_max;
 					gold_price = gold_price / 28.35 * 3.75 * exRate;
@@ -193,7 +212,7 @@ body {
 						xValueFormatString : "DD MMM, YYYY",
 						color : "#F08080",
 						dataPoints : monthly
-					},{
+					}, {
 						type : "line",
 						showInLegend : true,
 						name : "Total Visit",
@@ -201,7 +220,7 @@ body {
 						xValueFormatString : "DD MMM, YYYY",
 						color : "#F08080",
 						dataPoints : monthly_min
-					} ,{
+					}, {
 						type : "line",
 						showInLegend : true,
 						name : "Total Visit",
@@ -209,7 +228,7 @@ body {
 						xValueFormatString : "DD MMM, YYYY",
 						color : "#F08080",
 						dataPoints : monthly_max
-					}  ]
+					} ]
 				});
 				chart2.render();
 				function toogleDataSeries(e) {
@@ -256,7 +275,7 @@ body {
 						xValueFormatString : "DD MMM, YYYY",
 						color : "#F08080",
 						dataPoints : daily
-					},{
+					}, {
 						type : "line",
 						showInLegend : true,
 						name : "Total Visit",
@@ -264,7 +283,7 @@ body {
 						xValueFormatString : "DD MMM, YYYY",
 						color : "#F08080",
 						dataPoints : daily_min
-					},{
+					}, {
 						type : "line",
 						showInLegend : true,
 						name : "Total Visit",
@@ -346,75 +365,159 @@ body {
 				chart.render();
 			}
 		})
-		$(".forecast_select").on(
-				'click',
-				function() {
-					var forecastId = $(this).attr('id')
-					$.ajax({
-						url : 'forecast_ajax.do',
-						type : 'get',
-						dataType : 'json',
-						success : function(data) {
-							if (forecastId == "daily") {
-								$('#table tr').filter(function(index) {
-									return index != 0;
-								}).remove();
-								$.each(data.forecast_d, function(index, item) {
-									var exRate = data.exrate;
-									var gold_price = item.forecast_price;
-									var gold_min = item.forecast_min;
-									var gold_max = item.forecast_max;
-									gold_price = gold_price / 28.35 * 3.75 * exRate;
-									gold_price = Number(gold_price).toLocaleString('en').split(
-											".")[0]
-											+ "원";
-									var k_month = item.forecastD_date;
-									var tr = $('<tr>');
-									$('<td>').text(index + 1).appendTo(tr);
-									$('<td>').text(k_month).appendTo(tr);
-									$('<td>').text(gold_price).appendTo(tr);
-									$('<td>').text(gold_min).appendTo(tr);
-									$('<td>').text(gold_max).appendTo(tr);
-									var td = $('<td>');
-									td.appendTo(tr);
-									tr.appendTo('#table');
-								})
-							} else if (forecastId == "monthly") {
-								$('#table tr').filter(function(index) {
-									return index != 0;
-								}).remove();
-								$.each(data.forecast_m, function(index, item) {
-									var exRate = data.exrate;
-									var gold_price = item.forecast_price;
-									var gold_min = item.forecast_min;
-									var gold_max = item.forecast_max;
-									gold_price = gold_price / 28.35 * 3.75 * exRate;
-									gold_price = Number(gold_price).toLocaleString('en').split(
-											".")[0]
-											+ "원";
-									gold_min = gold_min / 28.35 * 3.75 * exRate;
-									gold_min = Number(gold_min).toLocaleString('en').split(
-											".")[0]
-											+ "원";
-									gold_max = gold_max / 28.35 * 3.75 * exRate;
-									gold_max = Number(gold_max).toLocaleString('en').split(
-											".")[0]
-											+ "원";
-									var k_month = item.forecastM_date;
-									var tr = $('<tr>');
-									$('<td>').text(index + 1).appendTo(tr);
-									$('<td>').text(k_month).appendTo(tr);
-									$('<td>').text(gold_price).appendTo(tr);
-									$('<td>').text(gold_min).appendTo(tr);
-									$('<td>').text(gold_max).appendTo(tr);
-									var td = $('<td>');
-									td.appendTo(tr);
-									tr.appendTo('#table');
-								})
-							}
-						}
-					})
-				})
+		$(".forecast_select")
+				.on(
+						'click',
+						function() {
+							var forecastId = $(this).attr('id')
+							$
+									.ajax({
+										url : 'forecast_ajax.do',
+										type : 'get',
+										dataType : 'json',
+										success : function(data) {
+											if (forecastId == "daily") {
+												$('#table tr').filter(
+														function(index) {
+															return index != 0;
+														}).remove();
+												$
+														.each(
+																data.forecast_d,
+																function(index,
+																		item) {
+																	var exRate = data.exrate;
+																	var gold_price = item.forecast_price;
+																	var gold_min = item.forecast_min;
+																	var gold_max = item.forecast_max;
+																	gold_price = gold_price
+																			/ 28.35
+																			* 3.75
+																			* exRate;
+																	gold_price = Number(
+																			gold_price)
+																			.toLocaleString(
+																					'en')
+																			.split(
+																					".")[0]
+																			+ "원";
+																	var k_month = item.forecastD_date;
+																	var tr = $('<tr>');
+																	$('<td>')
+																			.text(
+																					index + 1)
+																			.appendTo(
+																					tr);
+																	$('<td>')
+																			.text(
+																					k_month)
+																			.appendTo(
+																					tr);
+																	$('<td>')
+																			.text(
+																					gold_price)
+																			.appendTo(
+																					tr);
+																	$('<td>')
+																			.text(
+																					gold_min)
+																			.appendTo(
+																					tr);
+																	$('<td>')
+																			.text(
+																					gold_max)
+																			.appendTo(
+																					tr);
+																	var td = $('<td>');
+																	td
+																			.appendTo(tr);
+																	tr
+																			.appendTo('#table');
+																})
+											} else if (forecastId == "monthly") {
+												$('#table tr').filter(
+														function(index) {
+															return index != 0;
+														}).remove();
+												$
+														.each(
+																data.forecast_m,
+																function(index,
+																		item) {
+																	var exRate = data.exrate;
+																	var gold_price = item.forecast_price;
+																	var gold_min = item.forecast_min;
+																	var gold_max = item.forecast_max;
+																	gold_price = gold_price
+																			/ 28.35
+																			* 3.75
+																			* exRate;
+																	gold_price = Number(
+																			gold_price)
+																			.toLocaleString(
+																					'en')
+																			.split(
+																					".")[0]
+																			+ "원";
+																	gold_min = gold_min
+																			/ 28.35
+																			* 3.75
+																			* exRate;
+																	gold_min = Number(
+																			gold_min)
+																			.toLocaleString(
+																					'en')
+																			.split(
+																					".")[0]
+																			+ "원";
+																	gold_max = gold_max
+																			/ 28.35
+																			* 3.75
+																			* exRate;
+																	gold_max = Number(
+																			gold_max)
+																			.toLocaleString(
+																					'en')
+																			.split(
+																					".")[0]
+																			+ "원";
+																	var k_month = item.forecastM_date;
+																	var tr = $('<tr>');
+																	$('<td>')
+																			.text(
+																					index + 1)
+																			.appendTo(
+																					tr);
+																	$('<td>')
+																			.text(
+																					k_month)
+																			.appendTo(
+																					tr);
+																	$('<td>')
+																			.text(
+																					gold_price)
+																			.appendTo(
+																					tr);
+																	$('<td>')
+																			.text(
+																					gold_min)
+																			.appendTo(
+																					tr);
+																	$('<td>')
+																			.text(
+																					gold_max)
+																			.appendTo(
+																					tr);
+																	var td = $('<td>');
+																	td
+																			.appendTo(tr);
+																	tr
+																			.appendTo('#table');
+																})
+											}
+										}
+									})
+						})
 	}
 </script>
 </head>
@@ -423,19 +526,22 @@ body {
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<!-- /navbar -->
-	<div class="center-join2 forecast_img">
+	<div class="center-join3 forecast_img">
 		<div id="space"></div>
 		<div id="space"></div>
 		<div id="space"></div>
-		<span>30년 간 금 관련 뉴스에서 추출한 <br>월별 주요 키워드와 금값 변동추이를 한 눈에
-			살펴보세요.
+		<span>시대불문 부의 축적수단이자 안전자산의 상징인 금.<br> 이젠 오늘의 시세만 확인하지 말고,
+			미래를 참고하여 거래하세요.
 		</span>
-		<div class="center-square">뉴스에서 추출한 키워드와 금 가격과의 인과관계를 밝혀내는 것이 본
-			프로젝트의 목표였으나, 금 가격에 영향을 미치는 요인이 시대와 상황에 따라 너무 다양하고 다변적이기 때문에 금가격의 상승
-			또는 하락과의 상관계수가 높은 시대를 관통하는 요인을 단순한 단어카운트로 밝혀내는데는 한계가 있었다. (회귀트리모형으로 분석
-			시, 상관도가 높은 단어의 상관계수가 0.001642876정도) 따라서, 시대별로 금과 관련된 이슈 키워드들을 독자가 스스로
-			찾아보고 금 가격과의 연관관계를 유추할 수 있도록 하였다. 30년치 뉴스에서 추출한 월별 주요 키워드와 금값 변동추이를 한
-			눈에 살펴볼 수 있게 하였다.</div>
+		<div class="center-square-forecast">
+			본 프로젝트는 금 가격을 예측하기 위해 첫번째로 R을 활용해 단계적회귀분석을 진행하였습니다. 이로 도출된 통계모델의 설명력이
+			86.83% 전후로 산출되어 다음으로 파이썬의 TensorFlow를 이용한 머신러닝을 진행하였습니다. 머신러닝을 통한
+			다중회귀식의 경우 학습률(learning rate)의 값을 수동 입력해야 했고 그 결과 최적의 학습률을 찾는데 어려움을
+			겪었습니다.
+			<p></p>
+			마지막으로 MATLAB의 인공신경망(딥러닝)을 통해 도출된 예측모델의 경우, 20%의 테스트셋이 80%의 학습데이터로
+			만들어진 수식에 99.885%의 정확도로 부합하여 GoldMine의 최종 예측모델로 선택되었습니다.
+		</div>
 	</div>
 	<div class="wrapper">
 		<div class="container">
