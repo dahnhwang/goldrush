@@ -963,12 +963,15 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 }
 
 .center-square {
-	width: 500px;
-	height: 250px;
-	text-align: center;
+	width: 700px;
+	height: 175px;
+	text-align: left;
 	margin: 0 auto;
-	background-color: rgba(255, 255, 255, 0.6);
+	background-color: rgba(255, 255, 255, 0.8);
 	color: black;
+	padding: 30px;
+	font-size: 17px;
+	line-height: 28px;
 }
 
 a.button {
@@ -1016,6 +1019,8 @@ a.button:hover {
 	height: 250px;
 	text-align: center;
 	position: absolute;
+	font-size: 17px;
+	line-height: 17px;
 }
 
 .center-circle-p {
@@ -1035,7 +1040,7 @@ a.button:hover {
 }
 
 .center-join2 {
-	height: 500px;
+	height: 550px;
 }
 
 .index_img {
@@ -1059,7 +1064,7 @@ a.button:hover {
 	background: url(../images/j-zamora-267753.jpg);
 	background-attachment: fixed;
 	background-position: center 121%;
-	background-size: 100%;
+	background-size: 120%;
 	background-repeat: no-repeat;
 }
 
@@ -2578,7 +2583,51 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2687,7 +2736,51 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2796,7 +2889,51 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2905,7 +3042,51 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -3014,7 +3195,51 @@ background-color
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 :rgb
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

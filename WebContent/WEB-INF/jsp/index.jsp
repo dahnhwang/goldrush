@@ -25,7 +25,7 @@
 }
 
 .symbol-target {
-	padding-top: 200px;
+	padding-top: 160px;
 	margin-top: -150px;
 	width: 1px; /* '0' will not work for Opera */
 	display: inline-block;
