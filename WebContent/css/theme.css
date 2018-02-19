@@ -1070,7 +1070,8 @@ a.button:hover {
 }
 
 .forecast_img {
-	background: url(../images/william-bout-264826.jpg);
+	background: linear-gradient(rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)),
+		url(../images/william-bout-264826.jpg);
 	background-attachment: fixed;
 	background-position: 0 center;
 	background-size: 100%;
@@ -2612,7 +2613,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2777,7 +2786,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2942,7 +2959,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -3107,7 +3132,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -3272,7 +3305,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
