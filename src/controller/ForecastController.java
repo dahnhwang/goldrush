@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import model.Forecast_Factors_d;
-import model.Forecast_Factors_m;
+import model.DaysForecast20;
 import model.Influence;
+import model.MonthlyForecast20;
+import service.IDaysForecast20Service;
 import service.IForecastOthersService;
-import service.IForecast_Factors_dService;
-import service.IForecast_Factors_mService;
 import service.IInfluenceService;
+import service.IMonthlyForecast20Service;
 
 @Controller
 public class ForecastController {
@@ -25,10 +25,10 @@ public class ForecastController {
 	private IInfluenceService iService;
 	
 	@Autowired
-	private IForecast_Factors_dService fdService;
+	private IDaysForecast20Service fdService;
 	
 	@Autowired
-	private IForecast_Factors_mService fmService;
+	private IMonthlyForecast20Service fmService;
 	
 	@Autowired
 	private IForecastOthersService foService;
@@ -37,8 +37,8 @@ public class ForecastController {
 	public ModelAndView forecast() {
 		ModelAndView mav = new ModelAndView();
 	
-		List<Forecast_Factors_d> forecast_d = fdService.selectByLatestDate();
-		List<Forecast_Factors_m> forecast_m = fmService.selectByLatestDate();
+		List<DaysForecast20> forecast_d = fdService.selectByLatestDate();
+		List<MonthlyForecast20> forecast_m = fmService.selectByLatestDate();
 		int size_d =forecast_d.size();
 		int size_m =forecast_m.size();
 		
@@ -66,8 +66,8 @@ public class ForecastController {
 	public @ResponseBody Map<String, Object> getForecast_ajax_json() {
 		
 		Map<String, Object> data = new HashMap<>();
-		List<Forecast_Factors_d> forecast_d = fdService.selectByLatestDate();
-		List<Forecast_Factors_m> forecast_m = fmService.selectByLatestDate();
+		List<DaysForecast20> forecast_d = fdService.selectByLatestDate();
+		List<MonthlyForecast20> forecast_m = fmService.selectByLatestDate();
 		int size_d =forecast_d.size();
 		int size_m =forecast_m.size();
 		

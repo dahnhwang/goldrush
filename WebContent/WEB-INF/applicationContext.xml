@@ -84,6 +84,16 @@
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
 		<property name="mapperInterface" value="dao.IForecast_Factors_mDao"></property>
 	</bean>
+	
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="IDaysForecast20Dao">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+		<property name="mapperInterface" value="dao.IDaysForecast20Dao"></property>
+	</bean>
+	
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean" id="IMonthlyForecast20Dao">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+		<property name="mapperInterface" value="dao.IMonthlyForecast20Dao"></property>
+	</bean>
 
 	<bean
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager"

@@ -446,30 +446,30 @@ $(function() {
 					var today = data.sizeToday
 					var exRate = data.exrate
 
-					for (var i = 0; i < data.size_d; i++) {
-
-						var ourGold_d = data.forecast_d[i].gold_price
-						ourGold_d = ourGold_d / 28.35 * 3.75 * exRate;
-						ourGold_d = Math.floor(ourGold_d, 0)
-						var ourDate_d = data.forecast_d[i].k_month
+for(var i=0; i<data.size_d;i++){
+						
+						var ourGold_d =data.forecast_d[i].forecast_price
+						ourGold_d = ourGold_d/ 28.35 * 3.75 * exRate;
+						ourGold_d = Math.floor(ourGold_d,0)
+						var ourDate_d =data.forecast_d[i].forecastD_date
 						ourDate_d = moment(ourDate_d).format('YYYY-MM-DD');
-
+						
 						forecastOurPrice_d.push(ourGold_d)
 						forecastOurDate_d.push(ourDate_d)
-
+						
 					}
 
-					for (var i = 0; i < 10; i++) {
-
-						var ourGold_m = data.forecast_m[i].gold_price
-						ourGold_m = ourGold_m / 28.35 * 3.75 * exRate;
-						ourGold_m = Math.floor(ourGold_m, 0)
-						var ourDate_m = data.forecast_m[i].k_month
+					for(var i=0; i<10;i++){
+						
+						var ourGold_m =data.forecast_m[i].forecast_price
+						ourGold_m = ourGold_m/ 28.35 * 3.75 * exRate;
+						ourGold_m = Math.floor(ourGold_m,0)
+						var ourDate_m =data.forecast_m[i].forecastM_date
 						ourDate_m = moment(ourDate_m).format('YYYY-MM-DD');
-
+						
 						forecastOurPrice_m.push(ourGold_m)
 						forecastOurDate_m.push(ourDate_m)
-
+						
 					}
 
 					for (var i = 0; i < today; i++) {
@@ -523,7 +523,7 @@ $(function() {
 							crosshair : true
 						} ],
 						yAxis : [ { // Primary yAxis
-							min : 170000,
+							min : 165000,
 							max : 220000,
 							labels : {
 								format : '￦ {value}',
@@ -539,7 +539,7 @@ $(function() {
 								}
 							}
 						}, { // Secondary yAxis
-							min : 170000,
+							min : 165000,
 							max : 220000,
 							title : {
 								text : 'Won',
@@ -748,36 +748,30 @@ $('.select-session')
 										var today = data.sizeToday
 										var exRate = data.exrate
 
-										for (var i = 0; i < data.size_d; i++) {
-
-											var ourGold_d = data.forecast_d[i].gold_price
-											ourGold_d = ourGold_d / 28.35
-													* 3.75 * exRate;
-											ourGold_d = Math
-													.floor(ourGold_d, 0)
-											var ourDate_d = data.forecast_d[i].k_month
-											ourDate_d = moment(ourDate_d)
-													.format('YYYY-MM-DD');
-
+										for(var i=0; i<data.size_d;i++){
+											
+											var ourGold_d =data.forecast_d[i].forecast_price
+											ourGold_d = ourGold_d/ 28.35 * 3.75 * exRate;
+											ourGold_d = Math.floor(ourGold_d,0)
+											var ourDate_d =data.forecast_d[i].forecastD_date
+											ourDate_d = moment(ourDate_d).format('YYYY-MM-DD');
+											
 											forecastOurPrice_d.push(ourGold_d)
 											forecastOurDate_d.push(ourDate_d)
-
+											
 										}
 
-										for (var i = 0; i < 10; i++) {
-
-											var ourGold_m = data.forecast_m[i].gold_price
-											ourGold_m = ourGold_m / 28.35
-													* 3.75 * exRate;
-											ourGold_m = Math
-													.floor(ourGold_m, 0)
-											var ourDate_m = data.forecast_m[i].k_month
-											ourDate_m = moment(ourDate_m)
-													.format('YYYY-MM-DD');
-
+										for(var i=0; i<10;i++){
+											
+											var ourGold_m =data.forecast_m[i].forecast_price
+											ourGold_m = ourGold_m/ 28.35 * 3.75 * exRate;
+											ourGold_m = Math.floor(ourGold_m,0)
+											var ourDate_m =data.forecast_m[i].forecastM_date
+											ourDate_m = moment(ourDate_m).format('YYYY-MM-DD');
+											
 											forecastOurPrice_m.push(ourGold_m)
 											forecastOurDate_m.push(ourDate_m)
-
+											
 										}
 
 										for (var i = 0; i < today; i++) {
@@ -840,7 +834,7 @@ $('.select-session')
 											} ],
 											yAxis : [
 													{ // Primary yAxis
-														min : 170000,
+														min : 165000,
 														max : 220000,
 														labels : {
 															format : '￦ {value}',
@@ -859,7 +853,7 @@ $('.select-session')
 														}
 													},
 													{ // Secondary yAxis
-														min : 170000,
+														min : 165000,
 														max : 220000,
 														title : {
 															text : 'Won',
@@ -1070,36 +1064,30 @@ $('.select-session')
 										var today = data.sizeToday
 										var exRate = data.exrate
 
-										for (var i = 0; i < data.size_d; i++) {
-
-											var ourGold_d = data.forecast_d[i].gold_price
-											ourGold_d = ourGold_d / 28.35
-													* 3.75 * exRate;
-											ourGold_d = Math
-													.floor(ourGold_d, 0)
-											var ourDate_d = data.forecast_d[i].k_month
-											ourDate_d = moment(ourDate_d)
-													.format('YYYY-MM-DD');
-
+										for(var i=0; i<data.size_d;i++){
+											
+											var ourGold_d =data.forecast_d[i].forecast_price
+											ourGold_d = ourGold_d/ 28.35 * 3.75 * exRate;
+											ourGold_d = Math.floor(ourGold_d,0)
+											var ourDate_d =data.forecast_d[i].forecastD_date
+											ourDate_d = moment(ourDate_d).format('YYYY-MM-DD');
+											
 											forecastOurPrice_d.push(ourGold_d)
 											forecastOurDate_d.push(ourDate_d)
-
+											
 										}
 
-										for (var i = 0; i < 10; i++) {
-
-											var ourGold_m = data.forecast_m[i].gold_price
-											ourGold_m = ourGold_m / 28.35
-													* 3.75 * exRate;
-											ourGold_m = Math
-													.floor(ourGold_m, 0)
-											var ourDate_m = data.forecast_m[i].k_month
-											ourDate_m = moment(ourDate_m)
-													.format('YYYY-MM-DD');
-
+										for(var i=0; i<10;i++){
+											
+											var ourGold_m =data.forecast_m[i].forecast_price
+											ourGold_m = ourGold_m/ 28.35 * 3.75 * exRate;
+											ourGold_m = Math.floor(ourGold_m,0)
+											var ourDate_m =data.forecast_m[i].forecastM_date
+											ourDate_m = moment(ourDate_m).format('YYYY-MM-DD');
+											
 											forecastOurPrice_m.push(ourGold_m)
 											forecastOurDate_m.push(ourDate_m)
-
+											
 										}
 
 										for (var i = 0; i < today; i++) {
@@ -1162,7 +1150,7 @@ $('.select-session')
 											} ],
 											yAxis : [
 													{ // Primary yAxis
-														min : 170000,
+														min : 165000,
 														max : 220000,
 														labels : {
 															format : '￦ {value}',
@@ -1181,7 +1169,7 @@ $('.select-session')
 														}
 													},
 													{ // Secondary yAxis
-														min : 170000,
+														min : 165000,
 														max : 220000,
 														title : {
 															text : 'Won',
@@ -1391,36 +1379,30 @@ $('.select-session')
 										var today = data.sizeToday
 										var exRate = data.exrate
 
-										for (var i = 0; i < data.size_d; i++) {
-
-											var ourGold_d = data.forecast_d[i].gold_price
-											ourGold_d = ourGold_d / 28.35
-													* 3.75 * exRate;
-											ourGold_d = Math
-													.floor(ourGold_d, 0)
-											var ourDate_d = data.forecast_d[i].k_month
-											ourDate_d = moment(ourDate_d)
-													.format('YYYY-MM-DD');
-
+										for(var i=0; i<data.size_d;i++){
+											
+											var ourGold_d =data.forecast_d[i].forecast_price
+											ourGold_d = ourGold_d/ 28.35 * 3.75 * exRate;
+											ourGold_d = Math.floor(ourGold_d,0)
+											var ourDate_d =data.forecast_d[i].forecastD_date
+											ourDate_d = moment(ourDate_d).format('YYYY-MM-DD');
+											
 											forecastOurPrice_d.push(ourGold_d)
 											forecastOurDate_d.push(ourDate_d)
-
+											
 										}
 
-										for (var i = 0; i < 10; i++) {
-
-											var ourGold_m = data.forecast_m[i].gold_price
-											ourGold_m = ourGold_m / 28.35
-													* 3.75 * exRate;
-											ourGold_m = Math
-													.floor(ourGold_m, 0)
-											var ourDate_m = data.forecast_m[i].k_month
-											ourDate_m = moment(ourDate_m)
-													.format('YYYY-MM-DD');
-
+										for(var i=0; i<10;i++){
+											
+											var ourGold_m =data.forecast_m[i].forecast_price
+											ourGold_m = ourGold_m/ 28.35 * 3.75 * exRate;
+											ourGold_m = Math.floor(ourGold_m,0)
+											var ourDate_m =data.forecast_m[i].forecastM_date
+											ourDate_m = moment(ourDate_m).format('YYYY-MM-DD');
+											
 											forecastOurPrice_m.push(ourGold_m)
 											forecastOurDate_m.push(ourDate_m)
-
+											
 										}
 
 										for (var i = 0; i < today; i++) {
@@ -1483,7 +1465,7 @@ $('.select-session')
 											} ],
 											yAxis : [
 													{ // Primary yAxis
-														min : 170000,
+														min : 165000,
 														max : 220000,
 														labels : {
 															format : '￦ {value}',
@@ -1502,7 +1484,7 @@ $('.select-session')
 														}
 													},
 													{ // Secondary yAxis
-														min : 170000,
+														min : 165000,
 														max : 220000,
 														title : {
 															text : 'Won',
@@ -1807,34 +1789,30 @@ $('.daily-forecast')
 									var today = data.sizeToday
 									var exRate = data.exrate
 
-									for (var i = 0; i < data.size_d; i++) {
-
-										var ourGold_d = data.forecast_d[i].gold_price
-										ourGold_d = ourGold_d / 28.35 * 3.75
-												* exRate;
-										ourGold_d = Math.floor(ourGold_d, 0)
-										var ourDate_d = data.forecast_d[i].k_month
-										ourDate_d = moment(ourDate_d).format(
-												'YYYY-MM-DD');
-
+									for(var i=0; i<data.size_d;i++){
+										
+										var ourGold_d =data.forecast_d[i].forecast_price
+										ourGold_d = ourGold_d/ 28.35 * 3.75 * exRate;
+										ourGold_d = Math.floor(ourGold_d,0)
+										var ourDate_d =data.forecast_d[i].forecastD_date
+										ourDate_d = moment(ourDate_d).format('YYYY-MM-DD');
+										
 										forecastOurPrice_d.push(ourGold_d)
 										forecastOurDate_d.push(ourDate_d)
-
+										
 									}
 
-									for (var i = 0; i < 10; i++) {
-
-										var ourGold_m = data.forecast_m[i].gold_price
-										ourGold_m = ourGold_m / 28.35 * 3.75
-												* exRate;
-										ourGold_m = Math.floor(ourGold_m, 0)
-										var ourDate_m = data.forecast_m[i].k_month
-										ourDate_m = moment(ourDate_m).format(
-												'YYYY-MM-DD');
-
+									for(var i=0; i<10;i++){
+										
+										var ourGold_m =data.forecast_m[i].forecast_price
+										ourGold_m = ourGold_m/ 28.35 * 3.75 * exRate;
+										ourGold_m = Math.floor(ourGold_m,0)
+										var ourDate_m =data.forecast_m[i].forecastM_date
+										ourDate_m = moment(ourDate_m).format('YYYY-MM-DD');
+										
 										forecastOurPrice_m.push(ourGold_m)
 										forecastOurDate_m.push(ourDate_m)
-
+										
 									}
 
 									for (var i = 0; i < today; i++) {
@@ -1892,8 +1870,8 @@ $('.daily-forecast')
 										} ],
 										yAxis : [
 												{ // Primary yAxis
-													min : 189000,
-													max : 222000,
+													min : 187000,
+													max : 202000,
 													labels : {
 														format : '￦ {value}',
 														style : {
@@ -1911,8 +1889,8 @@ $('.daily-forecast')
 													}
 												},
 												{ // Secondary yAxis
-													min : 189000,
-													max : 222000,
+													min : 187000,
+													max : 202000,
 													title : {
 														text : 'Won',
 														style : {
@@ -2204,34 +2182,30 @@ $('.monthly-forecast')
 									var today = data.sizeToday
 									var exRate = data.exrate
 
-									for (var i = 0; i < data.size_d; i++) {
-
-										var ourGold_d = data.forecast_d[i].gold_price
-										ourGold_d = ourGold_d / 28.35 * 3.75
-												* exRate;
-										ourGold_d = Math.floor(ourGold_d, 0)
-										var ourDate_d = data.forecast_d[i].k_month
-										ourDate_d = moment(ourDate_d).format(
-												'YYYY-MM-DD');
-
+									for(var i=0; i<data.size_d;i++){
+										
+										var ourGold_d =data.forecast_d[i].forecast_price
+										ourGold_d = ourGold_d/ 28.35 * 3.75 * exRate;
+										ourGold_d = Math.floor(ourGold_d,0)
+										var ourDate_d =data.forecast_d[i].forecastD_date
+										ourDate_d = moment(ourDate_d).format('YYYY-MM-DD');
+										
 										forecastOurPrice_d.push(ourGold_d)
 										forecastOurDate_d.push(ourDate_d)
-
+										
 									}
 
-									for (var i = 0; i < 10; i++) {
-
-										var ourGold_m = data.forecast_m[i].gold_price
-										ourGold_m = ourGold_m / 28.35 * 3.75
-												* exRate;
-										ourGold_m = Math.floor(ourGold_m, 0)
-										var ourDate_m = data.forecast_m[i].k_month
-										ourDate_m = moment(ourDate_m).format(
-												'YYYY-MM-DD');
-
+									for(var i=0; i<10;i++){
+										
+										var ourGold_m =data.forecast_m[i].forecast_price
+										ourGold_m = ourGold_m/ 28.35 * 3.75 * exRate;
+										ourGold_m = Math.floor(ourGold_m,0)
+										var ourDate_m =data.forecast_m[i].forecastM_date
+										ourDate_m = moment(ourDate_m).format('YYYY-MM-DD');
+										
 										forecastOurPrice_m.push(ourGold_m)
 										forecastOurDate_m.push(ourDate_m)
-
+										
 									}
 
 									for (var i = 0; i < today; i++) {
@@ -2289,7 +2263,7 @@ $('.monthly-forecast')
 										} ],
 										yAxis : [
 												{ // Primary yAxis
-													min : 170000,
+													min : 165000,
 													max : 220000,
 													labels : {
 														format : '￦ {value}',
@@ -2308,7 +2282,7 @@ $('.monthly-forecast')
 													}
 												},
 												{ // Secondary yAxis
-													min : 170000,
+													min : 165000,
 													max : 220000,
 													title : {
 														text : 'Won',

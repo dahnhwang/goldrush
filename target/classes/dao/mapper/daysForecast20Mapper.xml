@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.IDaysForecast20Dao">
+	<resultMap type="DaysForecast20" id="DaysForecast20Map">
+	</resultMap>
+	<select id="selectAllForecast" resultMap="DaysForecast20Map">
+		select * from
+		20days_forecast
+	</select>
+	<select id="selectForecast" parameterType="int"
+		resultMap="DaysForecast20Map">
+		select * from 20days_forecast where f_id=#{f_id}
+	</select>
+	
+	<select id="selectForecastByDate" parameterType="String" resultMap="DaysForecast20Map">
+	select * from 20days_forecast where f_date=#{f_date}
+	</select>
+	
+</mapper>

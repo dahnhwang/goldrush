@@ -20,20 +20,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import model.DaysForecast20;
 import model.FactorsDaily;
 import model.FactorsMonth;
 import model.FactorsRecent;
 import model.Forecast;
 import model.ForecastOthers;
-import model.Forecast_Factors_d;
-import model.Forecast_Factors_m;
+import model.MonthlyForecast20;
 import model.Price;
 import model.News;
+import service.IDaysForecast20Service;
 import service.IFactorsRecentService;
 import service.IForecastOthersService;
 import service.IForecastService;
-import service.IForecast_Factors_dService;
-import service.IForecast_Factors_mService;
+import service.IMonthlyForecast20Service;
 import service.IPriceService;
 import service.INewsService;
 import service.NewsService;
@@ -54,10 +54,10 @@ public class MainController {
 	private IForecastService fService;
 	
 	@Autowired
-	private IForecast_Factors_dService fdService;
+	private IDaysForecast20Service fdService;
 	
 	@Autowired
-	private IForecast_Factors_mService fmService;
+	private IMonthlyForecast20Service fmService;
 	
 
 	@RequestMapping("index.do")
@@ -141,8 +141,8 @@ public class MainController {
 
 		Map<String, Object> data = new HashMap<>();	
 		
-		List<Forecast_Factors_d> forecast_d = fdService.selectByLatestDate();
-		List<Forecast_Factors_m> forecast_m = fmService.selectByLatestDate();
+		List<DaysForecast20> forecast_d = fdService.selectByLatestDate();
+		List<MonthlyForecast20> forecast_m = fmService.selectByLatestDate();
 		int size_d =forecast_d.size();
 		int size_m =forecast_m.size();
 		
