@@ -1053,7 +1053,8 @@ a.button:hover {
 }
 
 .news_img {
-	background: url(../images/markus-spiske-484245.jpg);
+	background: linear-gradient(rgba(20, 20, 20, .5), rgba(20, 20, 20, .5)),
+		url(../images/markus-spiske-484245.jpg);
 	background-attachment: fixed;
 	background-position: 0 center;
 	background-size: 120%;
@@ -2609,7 +2610,11 @@ background-color
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -2770,7 +2775,11 @@ background-color
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -2931,7 +2940,11 @@ background-color
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -3092,7 +3105,11 @@ background-color
 
 
 
+
+
 :rgb
+
+
 
 
 
@@ -3253,7 +3270,11 @@ background-color
 
 
 
+
+
 :rgb
+
+
 
 
 
