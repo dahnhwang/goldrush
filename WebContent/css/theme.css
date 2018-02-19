@@ -926,6 +926,16 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 	color: white;
 }
 
+.center-join3>span {
+	display: block;
+	padding: 2%;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 30px;
+	line-height: 50px;
+	color: white;
+}
+
 .center-desc {
 	text-align: center;
 }
@@ -965,6 +975,18 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 .center-square {
 	width: 700px;
 	height: 175px;
+	text-align: left;
+	margin: 0 auto;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: black;
+	padding: 30px;
+	font-size: 17px;
+	line-height: 28px;
+}
+
+.center-square-forecast {
+	width: 700px;
+	height: 200px;
 	text-align: left;
 	margin: 0 auto;
 	background-color: rgba(255, 255, 255, 0.8);
@@ -1064,6 +1086,10 @@ a.button:hover {
 }
 
 .center-join2 {
+	height: 550px;
+}
+
+.center-join3 {
 	height: 550px;
 }
 
@@ -2651,7 +2677,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -2844,7 +2878,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -3037,7 +3079,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -3230,7 +3280,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
@@ -3423,7 +3481,15 @@ background-color
 
 
 
+
+
+
+
 :rgb
+
+
+
+
 
 
 
