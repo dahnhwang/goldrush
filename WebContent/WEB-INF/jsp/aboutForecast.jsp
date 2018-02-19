@@ -23,7 +23,11 @@
 <link type="text/css"
 	href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600'
 	rel='stylesheet'>
-
+<style>
+body {
+	background-color: black;
+}
+</style>
 
 <script>
 	window.onload = function() {
