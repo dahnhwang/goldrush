@@ -86,7 +86,7 @@
 					<div class="module" style="overflow: hidden">
 
 						<div class="module-head">
-							<h3>타 예측기관 금값 예측 그래프</h3>
+							<span><b style="color: black">타 예측기관 금값 예측 그래프 &nbsp;</b></span>
 							<input type="button" value="일별 예측"
 								class="daily-forecast btn btn-default btn-xs"> <input
 								type="button" value="월별 예측"
@@ -98,6 +98,7 @@
 								style="min-width: 310px; height: 400px; margin: 0 auto"></div>
 
 						</div>
+						<div id="space"></div>
 					</div>
 					<!--/.content-->
 				</div>

@@ -380,13 +380,13 @@ $(function() {
 							renderTo : 'container2'
 						},
 						series : [ {
-							name : '실제 금값',
+							name : '실제 금 가격',
 							data : myData,
 							pointStart : Date.UTC(1989, 0, 1),
 							pointInterval : 1000 * 60 * 60 * 32.75
 						// one hour
 						}, {
-							name : '우리 예측 금값',
+							name : 'GoldMine 예측모델을 사용한 기간별 금 가격',
 							type : 'spline',
 							data : myData2,
 							pointStart : Date.UTC(1989, 0, 1),
@@ -659,7 +659,7 @@ $('.select-session')
 											},
 											series : [
 													{
-														name : '실제 금값',
+														name : '실제 금 가격',
 														data : myData,
 														pointStart : Date.UTC(
 																1989, 0, 1),
@@ -667,7 +667,7 @@ $('.select-session')
 													// one hour
 													},
 													{
-														name : '우리 예측 금값',
+														name : 'GoldMine 예측모델을 사용한 기간별 금 가격',
 														type : 'spline',
 														data : myData2,
 														pointStart : Date.UTC(
@@ -981,7 +981,7 @@ $('.select-session')
 											},
 											series : [
 													{
-														name : '실제 금값',
+														name : '실제 금 가격',
 														data : myData,
 														pointStart : Date.UTC(
 																2008, 0, 1),
@@ -989,7 +989,7 @@ $('.select-session')
 													// one hour
 													},
 													{
-														name : '우리 예측 금값',
+														name : 'GoldMine 예측모델을 사용한 기간별 금 가격',
 														type : 'spline',
 														data : myData2,
 														pointStart : Date.UTC(
@@ -1302,7 +1302,7 @@ $('.select-session')
 											},
 											series : [
 													{
-														name : '실제 금값',
+														name : '실제 금 가격',
 														data : myData,
 														pointStart : Date.UTC(
 																2017, 0, 1),
@@ -1310,7 +1310,7 @@ $('.select-session')
 													// one hour
 													},
 													{
-														name : '우리 예측 금값',
+														name : 'GoldMine 예측모델을 사용한 기간별 금 가격',
 														type : 'spline',
 														data : myData2,
 														pointStart : Date.UTC(
@@ -1725,7 +1725,7 @@ $('.daily-forecast')
 										},
 										series : [
 												{
-													name : '실제 금값',
+													name : '실제 금 가격',
 													data : myData,
 													pointStart : Date.UTC(1989,
 															0, 1),
@@ -1733,7 +1733,7 @@ $('.daily-forecast')
 												// one hour
 												},
 												{
-													name : '우리 예측 금값',
+													name : 'GoldMine 예측모델을 사용한 기간별 금 가격',
 													type : 'spline',
 													data : myData2,
 													pointStart : Date.UTC(1989,
@@ -2122,7 +2122,7 @@ $('.monthly-forecast')
 										},
 										series : [
 												{
-													name : '실제 금값',
+													name : '실제 금 가격',
 													data : myData,
 													pointStart : Date.UTC(1989,
 															0, 1),
@@ -2130,7 +2130,7 @@ $('.monthly-forecast')
 												// one hour
 												},
 												{
-													name : '우리 예측 금값',
+													name : 'GoldMine 예측모델을 사용한 기간별 금 가격',
 													type : 'spline',
 													data : myData2,
 													pointStart : Date.UTC(1989,
