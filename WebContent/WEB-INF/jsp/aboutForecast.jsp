@@ -214,7 +214,7 @@ body {
 						xValueFormatString : "DD MMM, YYYY",
 						color : "#F08080",
 						dataPoints : monthly
-					}, {
+					}/* , {
 						type : "line",
 						showInLegend : true,
 						name : "Total Visit",
@@ -230,7 +230,7 @@ body {
 						xValueFormatString : "DD MMM, YYYY",
 						color : "#F08080",
 						dataPoints : monthly_max
-					} ]
+					}  */]
 				});
 				chart2.render();
 				function toogleDataSeries(e) {
@@ -277,7 +277,7 @@ body {
 						xValueFormatString : "DD MMM, YYYY",
 						color : "#F08080",
 						dataPoints : daily
-					}, {
+					}/* , {
 						type : "line",
 						showInLegend : true,
 						name : "Total Visit",
@@ -293,7 +293,7 @@ body {
 						xValueFormatString : "DD MMM, YYYY",
 						color : "#F08080",
 						dataPoints : daily_max
-					} ]
+					}  */]
 				});
 				chart1.render();
 				function toogleDataSeries(e) {
