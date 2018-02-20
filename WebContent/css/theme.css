@@ -986,7 +986,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
 .center-square-forecast {
 	width: 700px;
-	height: 200px;
+	height: 230px;
 	text-align: left;
 	margin: 0 auto;
 	background-color: rgba(255, 255, 255, 0.8);
@@ -1090,7 +1090,7 @@ a.button:hover {
 }
 
 .center-join3 {
-	height: 550px;
+	height: 600px;
 }
 
 .index_img {
